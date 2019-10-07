@@ -3,6 +3,8 @@ package game;
 import com.jme3.asset.AssetManager;
 import com.jme3.asset.TextureKey;
 import com.jme3.bullet.BulletAppState;
+import com.jme3.bullet.collision.shapes.CapsuleCollisionShape;
+import com.jme3.bullet.control.GhostControl;
 import com.jme3.bullet.control.RigidBodyControl;
 import com.jme3.material.Material;
 import com.jme3.math.Vector3f;
@@ -12,15 +14,15 @@ import com.jme3.scene.Node;
 import com.jme3.scene.shape.Sphere;
 import com.jme3.texture.Texture;
 
-import java.awt.*;
 
 public class Ball {
-    Material material;
+    private Material material;
 
     private RigidBodyControl physics;
+    private GhostControl ghost;
     private Sphere sphere;
 
-    private static int gravity;
+    private static int gravity = -100;
     private static int speed = 50;
 
     Ball(AssetManager assetManager) {
@@ -34,19 +36,24 @@ public class Ball {
         sphere.setTextureMode(Sphere.TextureMode.Projected);
     }
 
-    void shoot(Node root, Camera camera, BulletAppState bulletAppState) {
+    Geometry shoot(Node root, Camera camera, BulletAppState bulletAppState) {
         Geometry geometry = new Geometry("ball", sphere);
         geometry.setMaterial(material);
         root.attachChild(geometry);
 
         geometry.setLocalTranslation(camera.getLocation());
         physics = new RigidBodyControl(20f);
+        CapsuleCollisionShape shape=new CapsuleCollisionShape(3.1f, 0.2f);
+        ghost=new GhostControl(shape);
 
         geometry.addControl(physics);
+        geometry.addControl(ghost);
         bulletAppState.getPhysicsSpace().add(physics);
+        bulletAppState.getPhysicsSpace().add(ghost);
 
-        physics.setGravity(new Vector3f(0, -100, 0));
+        physics.setGravity(new Vector3f(0, gravity, 0));
         Vector3f cameraDirection = camera.getDirection().mult(speed);
         physics.setLinearVelocity(new Vector3f(cameraDirection.x, 0f, cameraDirection.z));
+        return geometry;
     }
 }
