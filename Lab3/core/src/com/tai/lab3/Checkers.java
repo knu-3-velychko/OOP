@@ -5,31 +5,65 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class Checkers {
 
-    short[][] matrix = {
-            {2, 0, 2, 0, 2, 0, 2, 0},
-            {0, 2, 0, 2, 0, 2, 0, 2},
-            {2, 0, 2, 0, 2, 0, 2, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 0, 0, 0, 0, 0, 0, 0},
-            {0, 1, 0, 1, 0, 1, 0, 1},
-            {1, 0, 1, 0, 1, 0, 1, 0},
-            {0, 1, 0, 1, 0, 1, 0, 1}
-    };
+    enum Type {
+        NONE,
+        WHITE, BLACK,
+        WHITE_HOVER, BLACK_HOVER,
+        WHITE_KING, BLACK_KING,
+        WHITE_KING_HOVER, BLACK_KING_HOVER
+    }
+
+    Type[][] matrix;
+
+    Type playerColor;
 
     private Texture blackPiece;
     private Texture whitePiece;
     private Texture hoverBlackPiece;
     private Texture hoverWhitePiece;
+    private Texture blackPieceKing;
+    private Texture whitePieceKing;
+    private Texture hoverBlackPieceKing;
+    private Texture hoverWhitePieceKing;
 
     private SpriteBatch batch;
 
     Checkers(Constants.Color color) {
         batch = new SpriteBatch();
 
+        playerColor = (color == Constants.Color.Black ? Type.BLACK : Type.WHITE);
+
+        matrix = new Type[Constants.SIZE][Constants.SIZE];
+
         this.blackPiece = new Texture("BlackPiece.png");
         this.whitePiece = new Texture("WhitePiece.png");
         this.hoverBlackPiece = new Texture("BlackPiece_hover.png");
         this.hoverWhitePiece = new Texture("WhitePiece_hover.png");
+        this.blackPieceKing = new Texture("BlackKing.png");
+        this.whitePieceKing = new Texture("WhiteKing.png");
+        this.hoverBlackPieceKing = new Texture("BlackKing_hover.png");
+        this.hoverWhitePieceKing = new Texture("WhiteKing_hover.png");
+
+        setMatrix();
+    }
+
+    void setMatrix() {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 8; j++) {
+                matrix[i][j] = ((i % 2 != j % 2) ? Type.NONE : playerColor);
+            }
+        }
+        for (int i = 3; i < 5; i++) {
+            for (int j = 0; j < 8; j++) {
+                matrix[i][j] = Type.NONE;
+            }
+        }
+        Type type = (playerColor == Type.BLACK ? Type.WHITE : Type.BLACK);
+        for (int i = 5; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                matrix[i][j] = ((i % 2 != j % 2) ? Type.NONE : type);
+            }
+        }
     }
 
     void render() {
@@ -39,11 +73,29 @@ public class Checkers {
             for (int j = 0; j < 8; j++) {
                 Texture tile = null;
                 switch (matrix[i][j]) {
-                    case 1:
+                    case WHITE:
                         tile = whitePiece;
                         break;
-                    case 2:
+                    case BLACK:
                         tile = blackPiece;
+                        break;
+                    case WHITE_HOVER:
+                        tile = hoverWhitePiece;
+                        break;
+                    case BLACK_HOVER:
+                        tile = hoverBlackPiece;
+                        break;
+                    case WHITE_KING:
+                        tile = whitePieceKing;
+                        break;
+                    case BLACK_KING:
+                        tile = blackPieceKing;
+                        break;
+                    case WHITE_KING_HOVER:
+                        tile = hoverWhitePieceKing;
+                        break;
+                    case BLACK_KING_HOVER:
+                        tile = hoverBlackPieceKing;
                         break;
                 }
                 if (tile != null) {

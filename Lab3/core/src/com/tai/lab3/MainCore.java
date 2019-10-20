@@ -12,10 +12,12 @@ public class MainCore extends Game {
     }
 
     void changeScreen(Screen screen) {
+        this.screen.hide();
         this.screen = screen;
     }
 
     void exit(){
+
         Gdx.app.exit();
     }
 }

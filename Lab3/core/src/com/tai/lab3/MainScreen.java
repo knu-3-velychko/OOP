@@ -21,6 +21,10 @@ public class MainScreen implements Screen {
     private BitmapFont font;
     private Skin skin;
 
+    TextButton runWhiteButton;
+    TextButton runBlackButton;
+    TextButton exitButton;
+
     public MainScreen(final MainCore mainCore) {
         this.mainCore = mainCore;
 
@@ -47,9 +51,9 @@ public class MainScreen implements Screen {
     private void setUpButtons() {
         float x = (Constants.SCREEN_WIDTH - Constants.BUTTON_WIDTH) / 2;
         float y = (Constants.SCREEN_HEIGHT - Constants.BUTTON_HEIGHT * 5) / 2;
-        TextButton runWhiteButton = addButton("Start white", Constants.BUTTON_WIDTH, Constants.BUTTON_HEIGHT, x, y + 4 * Constants.BUTTON_HEIGHT);
-        TextButton runBlackButton = addButton("Start black", Constants.BUTTON_WIDTH, Constants.BUTTON_HEIGHT, x, y + 2 * Constants.BUTTON_HEIGHT);
-        TextButton exitButton = addButton("Exit", Constants.BUTTON_WIDTH, Constants.BUTTON_HEIGHT, x, y);
+        runWhiteButton = addButton("Start white", Constants.BUTTON_WIDTH, Constants.BUTTON_HEIGHT, x, y + 4 * Constants.BUTTON_HEIGHT);
+        runBlackButton = addButton("Start black", Constants.BUTTON_WIDTH, Constants.BUTTON_HEIGHT, x, y + 2 * Constants.BUTTON_HEIGHT);
+        exitButton = addButton("Exit", Constants.BUTTON_WIDTH, Constants.BUTTON_HEIGHT, x, y);
 
         runWhiteButton.addListener(new ChangeListener() {
             @Override
@@ -115,7 +119,9 @@ public class MainScreen implements Screen {
 
     @Override
     public void hide() {
-
+        runBlackButton.remove();
+        runWhiteButton.remove();
+        exitButton.remove();
     }
 
     @Override
