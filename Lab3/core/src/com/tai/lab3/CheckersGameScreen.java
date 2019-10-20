@@ -11,11 +11,11 @@ public class CheckersGameScreen implements Screen {
     private Board board;
     private Checkers checkers;
 
-    public CheckersGameScreen(MainCore gameCore) {
+    public CheckersGameScreen(MainCore gameCore, Constants.Color color) {
         this.gameCore = gameCore;
 
-        board=new Board();
-        checkers=new Checkers();
+        board = new Board();
+        checkers = new Checkers(color);
     }
 
     @Override

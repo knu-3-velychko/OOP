@@ -11,7 +11,6 @@ class Board {
 
     private SpriteBatch batch;
 
-
     Board() {
         batch = new SpriteBatch();
 
@@ -26,7 +25,7 @@ class Board {
         float start = (Constants.getMaxDimension() - Constants.TILE_SIZE * 8) / 2;
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
-                batch.draw(i % 2 != j % 2 ? whiteSquare : blackSquare,
+                batch.draw((i % 2 != j % 2) ? whiteSquare : blackSquare,
                         j * Constants.TILE_SIZE + start,
                         i * Constants.TILE_SIZE,
                         Constants.TILE_SIZE,
