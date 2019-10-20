@@ -8,4 +8,7 @@ public class Checkers {
             {1, 0, 0, 0, 1},
             {1, 1, 1, 0, 1}
     };
+
+    public void render() {
+    }
 }

@@ -18,13 +18,12 @@ class Board {
         this.blackSquare = new Texture("BlackSquare.png");
         this.whiteSquare = new Texture("WhiteSquare.png");
         this.hoverBlackSquare = new Texture("BlackSquare_hover.png");
-        this.hoverWhiteSquare = new Texture("BlackSquare_hover.png");
+        this.hoverWhiteSquare = new Texture("WhiteSquare_hover.png");
     }
 
     void render() {
         batch.begin();
         float start = (Constants.getMaxDimension() - Constants.TILE_SIZE * 8) / 2;
-        System.out.println(Constants.getMaxDimension());
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
                 batch.draw(i % 2 != j % 2 ? whiteSquare : blackSquare,
