@@ -47,7 +47,38 @@ public class Checkers {
         setMatrix();
     }
 
-    void setMatrix() {
+    boolean setHover(int i, int j) {
+        switch (matrix[i][j]) {
+            case WHITE:
+                matrix[i][j] = Type.WHITE_HOVER;
+                return true;
+            case BLACK:
+                matrix[i][j] = Type.BLACK_HOVER;
+                return true;
+            case WHITE_HOVER:
+                matrix[i][j] = Type.WHITE;
+                return false;
+            case BLACK_HOVER:
+                matrix[i][j] = Type.BLACK;
+                return false;
+            case WHITE_KING:
+                matrix[i][j] = Type.WHITE_KING_HOVER;
+                return true;
+            case BLACK_KING:
+                matrix[i][j] = Type.BLACK_KING_HOVER;
+                return true;
+            case WHITE_KING_HOVER:
+                matrix[i][j] = Type.WHITE_KING;
+                return false;
+            case BLACK_KING_HOVER:
+                matrix[i][j] = Type.BLACK_KING;
+                return false;
+        }
+
+        return true;
+    }
+
+    private void setMatrix() {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 8; j++) {
                 matrix[i][j] = ((i % 2 != j % 2) ? Type.NONE : playerColor);
