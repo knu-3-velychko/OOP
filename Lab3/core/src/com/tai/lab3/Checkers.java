@@ -19,6 +19,9 @@ public class Checkers {
 
     float start;
 
+    private int x;
+    private int y;
+
     private Texture blackPiece;
     private Texture whitePiece;
     private Texture hoverBlackPiece;
@@ -49,16 +52,8 @@ public class Checkers {
         setMatrix();
     }
 
+
     boolean setHover(int xPos, int yPos, boolean playerTurn) {
-
-        for (int i = 0; i < 8; i++) {
-            for (int j = 0; j < 8; j++) {
-                System.out.print(matrix[i][j]);
-                System.out.print(" ");
-            }
-            System.out.println();
-        }
-
 
         int j = (int) ((xPos - start) / Constants.TILE_SIZE);
         int i = 7 - (int) (yPos / Constants.TILE_SIZE);
@@ -68,34 +63,96 @@ public class Checkers {
         if (!validate(i, j, playerTurn))
             return false;
 
-        switch (matrix[i][j]) {
+        x = i;
+        y = j;
+
+        return setPieceState();
+    }
+
+    private boolean setPieceState() {
+        switch (matrix[x][y]) {
             case WHITE:
-                matrix[i][j] = Type.WHITE_HOVER;
+                matrix[x][y] = Type.WHITE_HOVER;
                 return true;
             case BLACK:
-                matrix[i][j] = Type.BLACK_HOVER;
+                matrix[x][y] = Type.BLACK_HOVER;
                 return true;
             case WHITE_HOVER:
-                matrix[i][j] = Type.WHITE;
+                matrix[x][y] = Type.WHITE;
                 return false;
             case BLACK_HOVER:
-                matrix[i][j] = Type.BLACK;
+                matrix[x][y] = Type.BLACK;
                 return false;
             case WHITE_KING:
-                matrix[i][j] = Type.WHITE_KING_HOVER;
+                matrix[x][y] = Type.WHITE_KING_HOVER;
                 return true;
             case BLACK_KING:
-                matrix[i][j] = Type.BLACK_KING_HOVER;
+                matrix[x][y] = Type.BLACK_KING_HOVER;
                 return true;
             case WHITE_KING_HOVER:
-                matrix[i][j] = Type.WHITE_KING;
+                matrix[x][y] = Type.WHITE_KING;
                 return false;
             case BLACK_KING_HOVER:
-                matrix[i][j] = Type.BLACK_KING;
+                matrix[x][y] = Type.BLACK_KING;
                 return false;
         }
+        return false;
+    }
 
-        return true;
+    boolean movePiece(int xPos, int yPos, boolean playerTurn) {
+
+        int j = (int) ((xPos - start) / Constants.TILE_SIZE);
+        int i = 7 - (int) (yPos / Constants.TILE_SIZE);
+
+        if (i == x && j == y)
+            return setPieceState();
+
+        if (playerTurn && i <= x)
+            return true;
+        if (!playerTurn && i >= x)
+            return true;
+
+        if (j != y + 2 && j != y + 1 && j != y - 2 && j != y - 1)
+            return true;
+
+        System.out.println(i);
+        System.out.println(j);
+
+        if (j == y + 1 || j == y - 1) {
+
+            if (i != x + 1 && i != x - 1)
+                return true;
+
+            if (matrix[i][j] != Type.NONE)
+                return true;
+
+        }
+
+        if (j == y + 2 || j == y - 2) {
+            if (i != x + 2 && i != x - 2)
+                return true;
+            if (matrix[i][j] != Type.NONE)
+                return true;
+
+            if (j == y + 2) {
+                if (matrix[i - 1][j - 1] == Type.NONE || isPlayerColor(matrix[i - 1][j - 1]))
+                    return true;
+                else
+                    matrix[i - 1][j - 1] = Type.NONE;
+            } else if (j == y - 2) {
+                if (matrix[i - 1][j + 1] == Type.NONE || isPlayerColor(matrix[i - 1][j - 1]))
+                    return true;
+                else
+                    matrix[i - 1][j + 1] = Type.NONE;
+            } else
+                return true;
+
+        }
+        matrix[i][j] = matrix[x][y];
+        matrix[x][y] = Type.NONE;
+        x = i;
+        y = j;
+        return setPieceState();
     }
 
     private boolean validate(int x, int y, boolean playerTurn) {
@@ -129,6 +186,15 @@ public class Checkers {
         return false;
     }
 
+    boolean canMove(int x, int y, boolean playerTurn) {
+        if (playerTurn) {
+            if (matrix[x + 1][y + 1] == Type.NONE || matrix[x - 1][y - 1] == Type.NONE)
+                return true;
+            else
+                return true;
+        }
+        return false;
+    }
 
     private boolean isBlack(Type color) {
         return color == Type.BLACK ||

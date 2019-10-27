@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ca806ff-f902-47a2-a22d-f549885617b7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/core/src/com/tai/lab3/MonteCarlo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/com/tai/lab3/Checkers.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/tai/lab3/Checkers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/com/tai/lab3/CheckersGameScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/tai/lab3/CheckersGameScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/com/tai/lab3/GameGestureDetector.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/tai/lab3/GameGestureDetector.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -251,7 +249,7 @@
       <updated>1570992255033</updated>
       <workItem from="1572092012865" duration="4160000" />
       <workItem from="1572117849896" duration="1843000" />
-      <workItem from="1572187635653" duration="4603000" />
+      <workItem from="1572187635653" duration="16266000" />
     </task>
     <servers />
   </component>
@@ -272,6 +270,6 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Lab3$Desktop.ic" NAME="Desktop Coverage Results" MODIFIED="1571567513004" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Lab3$Desktop.ic" NAME="Desktop Coverage Results" MODIFIED="1572209138486" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

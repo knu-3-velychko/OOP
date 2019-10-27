@@ -79,10 +79,11 @@ public class CheckersGameScreen implements Screen, InputProcessor {
     @Override
     public boolean touchDown(int screenX, int screenY, int pointer, int button) {
         // ignore if its not left mouse button or first touch pointer
-        System.out.println("Hey!");
         if (button != Input.Buttons.LEFT || pointer > 0) return false;
         if (!pieceHover)
             pieceHover = checkers.setHover(screenX, screenY, true);
+        else
+            pieceHover =checkers.movePiece(screenX, screenY, true);
         return true;
     }
 
