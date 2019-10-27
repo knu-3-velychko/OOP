@@ -15,7 +15,9 @@ public class Checkers {
 
     Type[][] matrix;
 
-    Type playerColor;
+    private Type playerColor;
+
+    float start;
 
     private Texture blackPiece;
     private Texture whitePiece;
@@ -47,7 +49,25 @@ public class Checkers {
         setMatrix();
     }
 
-    boolean setHover(int i, int j) {
+    boolean setHover(int xPos, int yPos, boolean playerTurn) {
+
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                System.out.print(matrix[i][j]);
+                System.out.print(" ");
+            }
+            System.out.println();
+        }
+
+
+        int j = (int) ((xPos - start) / Constants.TILE_SIZE);
+        int i = 7 - (int) (yPos / Constants.TILE_SIZE);
+        System.out.println(i);
+        System.out.println(j);
+        System.out.println(matrix[i][j]);
+        if (!validate(i, j, playerTurn))
+            return false;
+
         switch (matrix[i][j]) {
             case WHITE:
                 matrix[i][j] = Type.WHITE_HOVER;
@@ -78,6 +98,53 @@ public class Checkers {
         return true;
     }
 
+    private boolean validate(int x, int y, boolean playerTurn) {
+        if (x >= 8 || y >= 8)
+            return false;
+        boolean valid;
+        valid = isPlayerColor(matrix[x][y]);
+        return valid && playerTurn;
+    }
+
+    private boolean isPlayerColor(Type color) {
+        if (playerColor == Type.BLACK)
+            return isBlack(color);
+        else
+            return isWhite(color);
+    }
+
+    boolean canJump() {
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                if (isPlayerColor(playerColor)) {
+                    if (!isPlayerColor(matrix[i + 1][j + 1]) &&
+                            matrix[i + 2][j + 2] == Type.NONE)
+                        return true;
+                    if (!isPlayerColor(matrix[i + 1][j - 1]) &&
+                            matrix[i + 2][j - 2] == Type.NONE)
+                        return true;
+                }
+            }
+        }
+        return false;
+    }
+
+
+    private boolean isBlack(Type color) {
+        return color == Type.BLACK ||
+                color == Type.BLACK_KING ||
+                color == Type.BLACK_HOVER ||
+                color == Type.BLACK_KING_HOVER;
+    }
+
+    private boolean isWhite(Type color) {
+        return color == Type.WHITE ||
+                color == Type.WHITE_KING ||
+                color == Type.WHITE_HOVER ||
+                color == Type.WHITE_KING_HOVER;
+    }
+
+
     private void setMatrix() {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 8; j++) {
@@ -99,7 +166,7 @@ public class Checkers {
 
     void render() {
         batch.begin();
-        float start = (Constants.getMaxDimension() - Constants.TILE_SIZE * 8) / 2;
+        start = (Constants.getMaxDimension() - Constants.TILE_SIZE * 8) / 2;
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
                 Texture tile = null;

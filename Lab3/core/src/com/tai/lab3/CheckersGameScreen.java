@@ -1,21 +1,27 @@
 package com.tai.lab3;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
+import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 
-public class CheckersGameScreen implements Screen {
+public class CheckersGameScreen implements Screen, InputProcessor {
 
-    final MainCore gameCore;
+    private final MainCore gameCore;
 
     private Board board;
     private Checkers checkers;
 
-    public CheckersGameScreen(MainCore gameCore, Constants.Color color) {
+    private boolean pieceHover = false;
+
+    CheckersGameScreen(MainCore gameCore, Constants.Color color) {
         this.gameCore = gameCore;
 
         board = new Board();
         checkers = new Checkers(color);
+
+        Gdx.input.setInputProcessor(this);
     }
 
     @Override
@@ -53,5 +59,50 @@ public class CheckersGameScreen implements Screen {
     @Override
     public void dispose() {
 
+    }
+
+    @Override
+    public boolean keyDown(int keycode) {
+        return false;
+    }
+
+    @Override
+    public boolean keyUp(int keycode) {
+        return false;
+    }
+
+    @Override
+    public boolean keyTyped(char character) {
+        return false;
+    }
+
+    @Override
+    public boolean touchDown(int screenX, int screenY, int pointer, int button) {
+        // ignore if its not left mouse button or first touch pointer
+        System.out.println("Hey!");
+        if (button != Input.Buttons.LEFT || pointer > 0) return false;
+        if (!pieceHover)
+            pieceHover = checkers.setHover(screenX, screenY, true);
+        return true;
+    }
+
+    @Override
+    public boolean touchUp(int screenX, int screenY, int pointer, int button) {
+        return false;
+    }
+
+    @Override
+    public boolean touchDragged(int screenX, int screenY, int pointer) {
+        return false;
+    }
+
+    @Override
+    public boolean mouseMoved(int screenX, int screenY) {
+        return false;
+    }
+
+    @Override
+    public boolean scrolled(int amount) {
+        return false;
     }
 }
