@@ -2,8 +2,18 @@ package com.tai.lab3;
 
 import com.badlogic.gdx.Gdx;
 
-public class Constants {
-    public enum Color {White, Black}
+enum Type {
+    NONE,
+    WHITE, BLACK,
+    WHITE_HOVER, BLACK_HOVER,
+    WHITE_KING, BLACK_KING,
+    WHITE_KING_HOVER, BLACK_KING_HOVER
+}
+
+enum Color {White, Black}
+
+
+class Constants {
 
     static final int SIZE = 8;
 
