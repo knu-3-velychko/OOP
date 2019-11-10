@@ -1,8 +1,13 @@
 package com.tai.lab3;
 
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
-public class ChekersRenderer {
+class CheckersRenderer {
+    private SpriteBatch batch;
+
+    private float start;
+
     private Texture blackPiece;
     private Texture whitePiece;
     private Texture hoverBlackPiece;
@@ -12,7 +17,10 @@ public class ChekersRenderer {
     private Texture hoverBlackPieceKing;
     private Texture hoverWhitePieceKing;
 
-    ChekersRenderer(){
+    CheckersRenderer(float start) {
+        batch = new SpriteBatch();
+        this.start = start;
+
         this.blackPiece = new Texture("BlackPiece.png");
         this.whitePiece = new Texture("WhitePiece.png");
         this.hoverBlackPiece = new Texture("BlackPiece_hover.png");
@@ -23,9 +31,8 @@ public class ChekersRenderer {
         this.hoverWhitePieceKing = new Texture("WhiteKing_hover.png");
     }
 
-    void render() {
+    void render(Type[][] matrix) {
         batch.begin();
-        start = (Constants.getMaxDimension() - Constants.TILE_SIZE * 8) / 2;
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
                 Texture tile = null;

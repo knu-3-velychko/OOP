@@ -7,6 +7,10 @@ sourceSets.main.resources.srcDirs = ["../android/assets"]
 project.ext.mainClassName = "com.tai.lab3.desktop.DesktopLauncher"
 project.ext.assetsDir = new File("../android/assets")
 
+dependencies {
+    implementation 'org.junit.jupiter:junit-jupiter-api:5.5.2'
+}
+
 task run(dependsOn: classes, type: JavaExec) {
     main = project.mainClassName
     classpath = sourceSets.main.runtimeClasspath

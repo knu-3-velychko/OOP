@@ -8,10 +8,10 @@ import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration;
 
 public class AndroidLauncher extends AndroidApplication {
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		AndroidApplicationConfiguration configuration = new AndroidApplicationConfiguration();
-		initialize(new CheckersMain(), configuration);
-	}
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        AndroidApplicationConfiguration configuration = new AndroidApplicationConfiguration();
+        initialize(new MainCore(), configuration);
+    }
 }

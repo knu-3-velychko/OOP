@@ -14,13 +14,13 @@ public class CheckersGameScreen implements Screen {
 
     private boolean pieceHover = false;
 
-    CheckersGameScreen(MainCore gameCore, Constants.Color color) {
+    CheckersGameScreen(MainCore gameCore, Color color) {
         this.gameCore = gameCore;
 
         board = new Board();
         checkers = new Checkers(color);
 
-        playersTurn = (color == Constants.Color.White);
+        playersTurn = (color == Color.White);
 
         Gdx.input.setInputProcessor(new GameInputProcessor());
     }

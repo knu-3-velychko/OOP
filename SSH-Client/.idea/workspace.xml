@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4c3f545a-8862-4ec4-bee8-fbf0187de9d9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../Lab3/core/src/com/tai/lab3/Color.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab3/core/src/com/tai/lab3/TurnValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab3/core/src/com/tai/lab3/Type.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab3/.idea/caches/gradle_models.ser" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab3/.idea/caches/gradle_models.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab3/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab3/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab3/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab3/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab3/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab3/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab3/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab3/core/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab3/core/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab3/core/src/com/tai/lab3/AlphaBeta.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab3/core/src/com/tai/lab3/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab3/core/src/com/tai/lab3/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab3/core/src/com/tai/lab3/Checkers.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab3/core/src/com/tai/lab3/Checkers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab3/core/src/com/tai/lab3/CheckersGameScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab3/core/src/com/tai/lab3/CheckersGameScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab3/core/src/com/tai/lab3/ChekersRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab3/core/src/com/tai/lab3/CheckersRenderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab3/core/src/com/tai/lab3/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab3/core/src/com/tai/lab3/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab3/core/src/com/tai/lab3/GameInputProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab3/core/src/com/tai/lab3/GameInputProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab3/core/src/com/tai/lab3/MainCore.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab3/core/src/com/tai/lab3/MainCore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab3/core/src/com/tai/lab3/MainScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab3/core/src/com/tai/lab3/MainScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab3/desktop/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab3/desktop/build.gradle" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="633" />
+    <option name="width" value="654" />
+    <option name="height" value="687" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Lab3" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4c3f545a-8862-4ec4-bee8-fbf0187de9d9" name="Default Changelist" comment="" />
+      <created>1573315948045</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1573315948045</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1296" height="696" extended-state="6" />
+    <layout>
+      <window_info id="Project" />
+      <window_info id="Structure" side_tool="true" />
+      <window_info id="Image Layers" />
+      <window_info id="Designer" />
+      <window_info id="Resources Explorer" />
+      <window_info id="Capture Tool" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info id="Captures" order="0" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="TODO" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="right" id="Codota" />
+    </layout>
+  </component>
+</project>

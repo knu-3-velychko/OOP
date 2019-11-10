@@ -59,7 +59,7 @@ public class MainScreen implements Screen {
             @Override
             public void changed(ChangeEvent event, Actor actor) {
                 System.out.println("Button pressed");
-                mainCore.changeScreen(new CheckersGameScreen(mainCore, Constants.Color.White));
+                mainCore.changeScreen(new CheckersGameScreen(mainCore, Color.White));
             }
         });
 
@@ -67,7 +67,7 @@ public class MainScreen implements Screen {
             @Override
             public void changed(ChangeEvent event, Actor actor) {
                 System.out.println("Button pressed");
-                mainCore.changeScreen(new CheckersGameScreen(mainCore, Constants.Color.Black));
+                mainCore.changeScreen(new CheckersGameScreen(mainCore, Color.Black));
             }
         });
 

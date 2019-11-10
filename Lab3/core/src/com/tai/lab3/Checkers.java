@@ -1,8 +1,6 @@
 package com.tai.lab3;
 
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-
-public class Checkers {
+class Checkers {
 
     private Type[][] matrix;
 
@@ -13,20 +11,23 @@ public class Checkers {
     private int x;
     private int y;
 
-
-
-    private SpriteBatch batch;
+    private CheckersRenderer checkersRenderer;
 
     Checkers(Color color) {
-        batch = new SpriteBatch();
+        start = (Constants.getMaxDimension() - Constants.TILE_SIZE * 8) / 2;
 
         playerColor = (color == Color.Black ? Type.BLACK : Type.WHITE);
 
         matrix = new Type[Constants.SIZE][Constants.SIZE];
 
         setMatrix();
+
+        checkersRenderer = new CheckersRenderer(start);
     }
 
+    void render() {
+        checkersRenderer.render(matrix);
+    }
 
     boolean setHover(int xPos, int yPos, boolean playerTurn) {
 
