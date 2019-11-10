@@ -14,10 +14,10 @@ class Constants {
     static final float BUTTON_HEIGHT = SCREEN_HEIGHT / 10;
 
     static float getMinDimension() {
-        return (SCREEN_HEIGHT > SCREEN_WIDTH) ? SCREEN_WIDTH : SCREEN_HEIGHT;
+        return Math.min(SCREEN_HEIGHT, SCREEN_WIDTH);
     }
 
     static float getMaxDimension() {
-        return (SCREEN_HEIGHT > SCREEN_WIDTH) ? SCREEN_HEIGHT : SCREEN_WIDTH;
+        return Math.max(SCREEN_HEIGHT, SCREEN_WIDTH);
     }
 }

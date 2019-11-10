@@ -29,23 +29,12 @@ class Board {
         setMatrix();
     }
 
-    void setMatrix() {
+    private void setMatrix() {
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
                 matrix[i][j] = ((i % 2 != j % 2) ? Color.WHITE : Color.BLACK);
             }
         }
-    }
-
-    void setHightlighted(int i, int j) {
-        matrix[i][j] = Color.HIGHTLIGHTED;
-    }
-
-    void setHover(int i, int j) {
-        if (matrix[i][j] == Color.BLACK)
-            matrix[i][j] = Color.BLACK_HOVER;
-        else
-            matrix[i][j] = Color.WHITE_HOVER;
     }
 
     void render() {

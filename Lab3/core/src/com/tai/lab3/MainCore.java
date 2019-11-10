@@ -16,8 +16,7 @@ public class MainCore extends Game {
         this.screen = screen;
     }
 
-    void exit(){
-
+    void exit() {
         Gdx.app.exit();
     }
 }

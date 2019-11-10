@@ -2,26 +2,46 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ca806ff-f902-47a2-a22d-f549885617b7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/core/src/test/java/com/tai/lab3/GameInputProcessorTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/test/java/com/tai/lab3/TypeTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/test/java/com/tai/lab3/BoardTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/src/com/tai/lab3/AndroidLauncher.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/com/tai/lab3/AndroidLauncher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/project.properties" beforeDir="false" afterPath="$PROJECT_DIR$/android/project.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/res/drawable-anydpi-v26/ic_launcher.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/res/drawable-anydpi-v26/ic_launcher.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/res/drawable-anydpi-v26/ic_launcher_foreground.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/res/drawable-anydpi-v26/ic_launcher_foreground.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/res/drawable/ic_blackking.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/res/drawable/ic_blackking.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/res/values/styles.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_blackking.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_blackking.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_blackking_hover.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_blackking_hover.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_blackpiece.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_blackpiece.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_blackpiece_hover.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_blackpiece_hover.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_blacksquare.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_blacksquare.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_blacksquare_hover.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_blacksquare_hover.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_whiteking.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_whiteking.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_whiteking_hover.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_whiteking_hover.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_whitepiece.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_whitepiece.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_whitepiece_hover.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_whitepiece_hover.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_whitesquare.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_whitesquare.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_whitesquare_hover.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_whitesquare_hover.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/core/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/com/tai/lab3/AlphaBeta.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/com/tai/lab3/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/tai/lab3/Board.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/com/tai/lab3/Checkers.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/tai/lab3/Checkers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/com/tai/lab3/CheckersGameScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/tai/lab3/CheckersGameScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/com/tai/lab3/ChekersRenderer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/com/tai/lab3/CheckersValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/tai/lab3/CheckersValidator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/com/tai/lab3/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/tai/lab3/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/com/tai/lab3/MainScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/tai/lab3/MainScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/com/tai/lab3/GameInputProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/tai/lab3/GameInputProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/com/tai/lab3/MainCore.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/com/tai/lab3/MainCore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/test/java/com/tai/lab3/ColorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/test/java/com/tai/lab3/ColorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/test/java/com/tai/lab3/GameInputProcessorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/test/java/com/tai/lab3/GameInputProcessorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/test/java/com/tai/lab3/TypeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/test/java/com/tai/lab3/TypeTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/desktop/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/desktop/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/desktop/src/com/tai/lab3/desktop/DesktopLauncher.java" beforeDir="false" afterPath="$PROJECT_DIR$/desktop/src/com/tai/lab3/desktop/DesktopLauncher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sonar-scanner.properties" beforeDir="false" afterPath="$PROJECT_DIR$/sonar-scanner.properties" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -96,40 +116,62 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/com/tai/lab3/Constants.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-120">
-              <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+            <state relative-caret-position="371">
+              <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+              <folding>
+                <element signature="e#442#443#0" expanded="true" />
+                <element signature="e#502#503#0" expanded="true" />
+                <element signature="e#540#541#0" expanded="true" />
+                <element signature="e#600#601#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/com/tai/lab3/GameInputProcessor.java">
+        <entry file="file://$PROJECT_DIR$/core/src/test/java/com/tai/lab3/BoardTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6">
-              <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+            <state relative-caret-position="90">
+              <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/com/tai/lab3/Checkers.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="815">
+              <caret line="47" column="28" selection-start-line="47" selection-start-column="28" selection-end-line="47" selection-end-column="28" />
+              <folding>
+                <element signature="e#557#558#0" expanded="true" />
+                <element signature="e#604#605#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/core/src/test/java/com/tai/lab3/GameInputProcessorTest.java">
+        <entry file="file://$PROJECT_DIR$/core/src/test/java/com/tai/lab3/CheckersTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="339">
-              <caret line="43" column="21" lean-forward="true" selection-start-line="43" selection-start-column="21" selection-end-line="43" selection-end-column="21" />
+            <state relative-caret-position="263">
+              <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
               <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#274#275#0" expanded="true" />
                 <element signature="e#327#328#0" expanded="true" />
-                <element signature="e#362#363#0" expanded="true" />
-                <element signature="e#284#285#0" expanded="true" />
-                <element signature="e#338#339#0" expanded="true" />
-                <element signature="e#371#372#0" expanded="true" />
-                <element signature="e#425#426#0" expanded="true" />
-                <element signature="e#516#517#0" expanded="true" />
-                <element signature="e#574#575#0" expanded="true" />
-                <element signature="e#617#618#0" expanded="true" />
-                <element signature="e#683#684#0" expanded="true" />
-                <element signature="e#718#719#0" expanded="true" />
-                <element signature="e#784#785#0" expanded="true" />
-                <element signature="e#875#876#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/com/tai/lab3/CheckersValidator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+              <folding>
+                <element signature="e#123#124#0" expanded="true" />
+                <element signature="e#149#150#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -150,6 +192,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>start</find>
+      <find>mo</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -159,21 +202,29 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/desktop/build.gradle" />
-        <option value="$PROJECT_DIR$/core/src/com/tai/lab3/CheckersGameScreen.java" />
         <option value="$PROJECT_DIR$/core/src/com/tai/lab3/ChekersRenderer.java" />
-        <option value="$PROJECT_DIR$/core/src/com/tai/lab3/CheckersRenderer.java" />
-        <option value="$PROJECT_DIR$/core/src/com/tai/lab3/Checkers.java" />
         <option value="$PROJECT_DIR$/core/src/com/tai/lab3/MainScreen.java" />
-        <option value="$PROJECT_DIR$/core/src/com/tai/lab3/Constants.java" />
         <option value="$PROJECT_DIR$/core/src/com/tai/lab3/Type.java" />
         <option value="$PROJECT_DIR$/core/src/com/tai/lab3/Color.java" />
         <option value="$PROJECT_DIR$/android/src/com/tai/lab3/AndroidLauncher.java" />
-        <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/android/build.gradle" />
+        <option value="$PROJECT_DIR$/core/src/com/tai/lab3/MainCore.java" />
+        <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/core/build.gradle" />
-        <option value="$PROJECT_DIR$/core/src/test/java/com/tai/lab3/TypeTest.java" />
+        <option value="$PROJECT_DIR$/core/src/test/java/com/tai/lab3/MainCoreTest.java" />
+        <option value="$PROJECT_DIR$/core/src/com/tai/lab3/CheckersGameScreen.java" />
         <option value="$PROJECT_DIR$/core/src/test/java/com/tai/lab3/ColorTest.java" />
+        <option value="$PROJECT_DIR$/core/src/test/java/com/tai/lab3/TypeTest.java" />
+        <option value="$PROJECT_DIR$/core/src/com/tai/lab3/GameInputProcessor.java" />
+        <option value="$PROJECT_DIR$/core/src/com/tai/lab3/CheckersRenderer.java" />
         <option value="$PROJECT_DIR$/core/src/test/java/com/tai/lab3/GameInputProcessorTest.java" />
+        <option value="$PROJECT_DIR$/core/src/com/tai/lab3/Constants.java" />
+        <option value="$PROJECT_DIR$/core/src/test/java/com/tai/lab3/ConstantsTest.java" />
+        <option value="$PROJECT_DIR$/core/src/com/tai/lab3/Board.java" />
+        <option value="$PROJECT_DIR$/core/src/test/java/com/tai/lab3/BoardTest.java" />
+        <option value="$PROJECT_DIR$/core/src/com/tai/lab3/CheckersValidator.java" />
+        <option value="$PROJECT_DIR$/core/src/com/tai/lab3/Checkers.java" />
+        <option value="$PROJECT_DIR$/core/src/test/java/com/tai/lab3/CheckersTest.java" />
       </list>
     </option>
   </component>
@@ -278,6 +329,17 @@
               <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="tai" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
+            <path>
+              <item name="Lab3" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="C:\Users\Taya\Documents\Projects\3course\OOP\Lab3" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="core" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="test" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="tai" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="lab3" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -297,6 +359,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
@@ -319,8 +382,26 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Android JUnit.All in core">
-    <configuration name="All in core (1)" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Android JUnit.BoardTest">
+    <configuration name="All in Lab3 (3)" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Lab3" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in Lab3" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Lab3" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in core (3)" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
       <module name="core" />
       <option name="PACKAGE_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
@@ -338,7 +419,7 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TypeTest.valueOf" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BoardTest" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
       <module name="core" />
       <extension name="coverage">
         <pattern>
@@ -347,9 +428,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.tai.lab3" />
-      <option name="MAIN_CLASS_NAME" value="com.tai.lab3.TypeTest" />
-      <option name="METHOD_NAME" value="valueOf" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="com.tai.lab3.BoardTest" />
+      <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
@@ -357,21 +437,6 @@
     </configuration>
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
       <option name="TEST_OBJECT" value="class" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <method v="2">
-        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="com.tai.lab3 in core" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
-      <module name="core" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.tai.lab3.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.tai.lab3" />
-      <option name="TEST_OBJECT" value="package" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
@@ -442,41 +507,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Lab3:core [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/core" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="clean" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Android App.android" />
       <item itemvalue="Application.Desktop" />
-      <item itemvalue="Gradle.Lab3:core [clean]" />
-      <item itemvalue="Android JUnit.com.tai.lab3 in core" />
+      <item itemvalue="Android JUnit.All in Lab3 (3)" />
+      <item itemvalue="Android JUnit.All in Lab3" />
       <item itemvalue="Android JUnit.All in core" />
-      <item itemvalue="Android JUnit.TypeTest.valueOf" />
-      <item itemvalue="Android JUnit.All in core (1)" />
+      <item itemvalue="Android JUnit.All in core (3)" />
+      <item itemvalue="Android JUnit.BoardTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Android JUnit.BoardTest" />
+        <item itemvalue="Android JUnit.All in core (3)" />
         <item itemvalue="Android JUnit.All in core" />
-        <item itemvalue="Android JUnit.All in core (1)" />
-        <item itemvalue="Android JUnit.TypeTest.valueOf" />
-        <item itemvalue="Android JUnit.com.tai.lab3 in core" />
-        <item itemvalue="Gradle.Lab3:core [clean]" />
+        <item itemvalue="Android JUnit.All in Lab3" />
+        <item itemvalue="Android JUnit.All in Lab3 (3)" />
       </list>
     </recent_temporary>
   </component>
@@ -499,94 +545,72 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="com_tai_lab3_in_core - 2019.11.09 at 21h 12m 35s.xml">
-      <configuration name="com.tai.lab3 in core" configurationId="AndroidJUnit" />
-    </history-entry>
-    <history-entry file="ColorTest - 2019.11.09 at 21h 13m 15s.xml">
-      <configuration name="ColorTest" configurationId="AndroidJUnit" />
-    </history-entry>
-    <history-entry file="ColorTest - 2019.11.09 at 21h 13m 32s.xml">
-      <configuration name="ColorTest" configurationId="AndroidJUnit" />
-    </history-entry>
-    <history-entry file="ColorTest - 2019.11.09 at 21h 13m 56s.xml">
-      <configuration name="ColorTest" configurationId="AndroidJUnit" />
-    </history-entry>
-    <history-entry file="All_in_core - 2019.11.09 at 21h 14m 24s.xml">
-      <configuration name="All in core" configurationId="AndroidJUnit" />
-    </history-entry>
-    <history-entry file="All_in_core - 2019.11.09 at 21h 15m 17s.xml">
-      <configuration name="All in core" configurationId="AndroidJUnit" />
-    </history-entry>
-    <history-entry file="All_in_core - 2019.11.10 at 12h 38m 08s.xml">
-      <configuration name="All in core" configurationId="AndroidJUnit" />
-    </history-entry>
-    <history-entry file="TypeTest_valueOf - 2019.11.10 at 13h 18m 20s.xml">
-      <configuration name="TypeTest.valueOf" configurationId="AndroidJUnit" />
-    </history-entry>
-    <history-entry file="All_in_core_(1) - 2019.11.10 at 13h 21m 06s.xml">
+    <history-entry file="All_in_core_(1) - 2019.11.10 at 20h 09m 48s.xml">
       <configuration name="All in core (1)" configurationId="AndroidJUnit" />
     </history-entry>
-    <history-entry file="All_in_core - 2019.11.10 at 13h 29m 50s.xml">
+    <history-entry file="All_in_core_(1) - 2019.11.10 at 20h 10m 10s.xml">
+      <configuration name="All in core (1)" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="All_in_core_(2) - 2019.11.10 at 20h 10m 55s.xml">
+      <configuration name="All in core (2)" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="All_in_core - 2019.11.10 at 20h 34m 59s.xml">
       <configuration name="All in core" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="All_in_core_(3) - 2019.11.10 at 20h 36m 18s.xml">
+      <configuration name="All in core (3)" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="BoardTest - 2019.11.10 at 20h 37m 04s.xml">
+      <configuration name="BoardTest" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="BoardTest - 2019.11.10 at 20h 37m 44s.xml">
+      <configuration name="BoardTest" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="BoardTest - 2019.11.10 at 20h 37m 56s.xml">
+      <configuration name="BoardTest" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="BoardTest - 2019.11.10 at 20h 38m 19s.xml">
+      <configuration name="BoardTest" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="BoardTest - 2019.11.10 at 20h 38m 53s.xml">
+      <configuration name="BoardTest" configurationId="AndroidJUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="696" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.32686085" />
-      <window_info id="Structure" order="2" side_tool="true" />
-      <window_info id="Build Variants" order="3" side_tool="true" />
-      <window_info id="Image Layers" order="4" />
-      <window_info id="Designer" order="5" />
-      <window_info id="Resources Explorer" order="6" />
-      <window_info id="Capture Tool" order="7" />
-      <window_info id="Favorites" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Run" order="0" weight="0.3285968" />
-      <window_info anchor="bottom" id="Logcat" order="1" />
-      <window_info anchor="bottom" id="TODO" order="2" />
-      <window_info anchor="bottom" id="Android Profiler" order="3" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Debug" order="4" />
-      <window_info anchor="bottom" id="Terminal" order="5" weight="0.3285968" />
-      <window_info anchor="bottom" id="Event Log" order="6" side_tool="true" weight="0.3285968" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Build" order="8" weight="0.3232682" />
-      <window_info anchor="bottom" id="SonarQube" order="9" weight="0.3285968" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.3285968" />
-      <window_info anchor="bottom" id="Find" order="11" weight="0.3285968" />
-      <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
-      <window_info anchor="right" id="Capture Analysis" order="1" />
-      <window_info active="true" anchor="right" id="Gradle" order="2" sideWeight="0.45648313" visible="true" weight="0.32928804" />
-      <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info anchor="right" id="Palette&#9;" order="4" />
-      <window_info anchor="right" id="Codota" order="5" sideWeight="0.8703375" weight="0.32928804" />
-      <window_info anchor="right" id="Coverage" order="6" sideWeight="0.5435169" side_tool="true" visible="true" weight="0.32928804" />
-      <window_info anchor="right" id="Assistant" order="7" weight="0.32928804" />
-    </layout>
-    <layout-to-restore>
       <window_info id="Capture Tool" order="0" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.32686085" />
+      <window_info content_ui="combo" id="Project" order="1" weight="0.32686085" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Designer" order="4" />
       <window_info id="Build Variants" order="5" side_tool="true" />
-      <window_info id="Resources Explorer" order="6" />
+      <window_info id="Resources Explorer" order="6" weight="0.32928804" />
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info id="Captures" order="8" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection Results" weight="0.3285968" />
       <window_info anchor="bottom" id="TODO" order="0" />
       <window_info anchor="bottom" id="Android Profiler" order="1" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Logcat" order="2" />
-      <window_info anchor="bottom" id="Terminal" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49919093" weight="0.3285968" />
+      <window_info anchor="bottom" id="Terminal" order="3" weight="0.3285968" />
+      <window_info anchor="bottom" id="Event Log" order="4" sideWeight="0.5008091" side_tool="true" weight="0.3285968" />
       <window_info anchor="bottom" id="Version Control" order="5" />
       <window_info anchor="bottom" id="Build" order="6" weight="0.3232682" />
-      <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
+      <window_info anchor="bottom" id="Logcat" order="7" />
+      <window_info anchor="bottom" id="Debug" order="8" />
+      <window_info anchor="bottom" id="SonarQube" order="9" weight="0.3285968" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.3285968" />
+      <window_info anchor="bottom" id="Find" order="11" weight="0.3285968" />
+      <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" weight="0.32928804" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
-      <window_info anchor="right" id="Gradle" order="2" />
+      <window_info anchor="right" id="Gradle" order="2" sideWeight="0.45470694" weight="0.32928804" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info anchor="right" id="Palette&#9;" order="4" />
-      <window_info anchor="right" id="Codota" order="5" />
-    </layout-to-restore>
+      <window_info anchor="right" id="Codota" order="5" sideWeight="0.8703375" weight="0.32928804" />
+      <window_info anchor="right" id="Coverage" order="6" sideWeight="0.5452931" side_tool="true" weight="0.32928804" />
+      <window_info anchor="right" id="Assistant" order="7" weight="0.32928804" />
+    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -625,77 +649,25 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Lab3$All_in_core.ic" NAME="All in core Coverage Results" MODIFIED="1573385378047" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Lab3$All_in_core__4_.ic" NAME="All in core (4) Coverage Results" MODIFIED="1573409085675" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Lab3$All_in_core.ic" NAME="All in core Coverage Results" MODIFIED="1573410885207" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Lab3$Desktop.exec" NAME="Desktop Coverage Results" MODIFIED="1573327978966" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="jacoco" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Lab3$All_in_core__3_.ic" NAME="All in core (3) Coverage Results" MODIFIED="1573410961363" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Lab3$ColorTest.ic" NAME="ColorTest Coverage Results" MODIFIED="1573325213169" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.tai.lab3.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/Lab3$com_tai_lab3_in_core.ic" NAME="com.tai.lab3 in core Coverage Results" MODIFIED="1573382179390" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.tai.lab3.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Lab3$All_in_core__1_.ic" NAME="All in core (1) Coverage Results" MODIFIED="1573384855713" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Lab3$All_in_core__2_.ic" NAME="All in core (2) Coverage Results" MODIFIED="1573409439754" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Lab3$All_in_core__1_.ic" NAME="All in core (1) Coverage Results" MODIFIED="1573409370845" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Lab3$Desktop.ic" NAME="Desktop Coverage Results" MODIFIED="1572209138486" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/core/src/com/tai/lab3/CheckersValidator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="21" lean-forward="true" selection-start-column="21" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/desktop/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="10" column="61" selection-start-line="10" selection-start-column="61" selection-end-line="10" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1044">
-          <caret line="58" selection-start-line="58" selection-end-line="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/desktop/src/com/tai/lab3/desktop/DesktopLauncher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/tai/lab3/CheckersGameScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/tai/lab3/CheckersRenderer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/tai/lab3/MainScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
-          <caret line="49" selection-start-line="49" selection-end-line="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/tai/lab3/Checkers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="27" column="19" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
-          <folding>
-            <element signature="e#604#605#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -717,13 +689,6 @@
     <entry file="file://$PROJECT_DIR$/settings.gradle">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" selection-start-line="2" selection-end-line="4" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/android/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
@@ -733,27 +698,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/android/android.iml">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/tai/lab3/Board.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/test/java/com/tai/lab3/ColorTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="20" column="1" lean-forward="true" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/test/java/com/tai/lab3/TypeTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="20" column="8" lean-forward="true" selection-start-line="20" selection-start-column="8" selection-end-line="27" selection-end-column="47" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/com/tai/lab3/Type.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -769,38 +713,180 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/tai/lab3/Constants.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.10/37e7ec91522313dabc753c72196dd665ea4a9332/gdx-1.9.10-sources.jar!/com/badlogic/gdx/scenes/scene2d/Stage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-120">
-          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+        <state relative-caret-position="117">
+          <caret line="91" selection-start-line="91" selection-end-line="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/tai/lab3/MainScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="36" column="20" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/test/java/com/tai/lab3/MainCoreTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/tai/lab3/MainCore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="28" lean-forward="true" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
+          <folding>
+            <element signature="e#192#193#0" expanded="true" />
+            <element signature="e#242#243#0" expanded="true" />
+            <element signature="e#364#365#0" expanded="true" />
+            <element signature="e#394#395#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/tai/lab3/CheckersRenderer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="497">
+          <caret line="33" column="34" lean-forward="true" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/com/tai/lab3/GameInputProcessor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6">
-          <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+        <state relative-caret-position="-216">
+          <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/tai/lab3/CheckersGameScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="26" column="5" lean-forward="true" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/test/java/com/tai/lab3/ColorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/test/java/com/tai/lab3/GameInputProcessorTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="43" column="21" lean-forward="true" selection-start-line="43" selection-start-column="21" selection-end-line="43" selection-end-column="21" />
+        <state>
+          <caret column="21" lean-forward="true" selection-start-column="21" selection-end-column="21" />
           <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1611#1780#0" expanded="true" />
+            <element signature="e#1779#1780#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="92" column="26" selection-start-line="92" selection-start-column="26" selection-end-line="92" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/test/java/com/tai/lab3/ConstantsTest.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/desktop/src/com/tai/lab3/desktop/DesktopLauncher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="47" selection-start-line="9" selection-start-column="47" selection-end-line="9" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/test/java/com/tai/lab3/TypeTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/tai/lab3/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="371">
+          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+          <folding>
+            <element signature="e#442#443#0" expanded="true" />
+            <element signature="e#502#503#0" expanded="true" />
+            <element signature="e#540#541#0" expanded="true" />
+            <element signature="e#600#601#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/tai/lab3/Board.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="31" column="30" lean-forward="true" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/test/java/com/tai/lab3/BoardTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/tai/lab3/CheckersValidator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+          <folding>
+            <element signature="e#123#124#0" expanded="true" />
+            <element signature="e#149#150#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/tai/lab3/Checkers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="815">
+          <caret line="47" column="28" selection-start-line="47" selection-start-column="28" selection-end-line="47" selection-end-column="28" />
+          <folding>
+            <element signature="e#557#558#0" expanded="true" />
+            <element signature="e#604#605#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/test/java/com/tai/lab3/CheckersTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#274#275#0" expanded="true" />
             <element signature="e#327#328#0" expanded="true" />
-            <element signature="e#362#363#0" expanded="true" />
-            <element signature="e#284#285#0" expanded="true" />
-            <element signature="e#338#339#0" expanded="true" />
-            <element signature="e#371#372#0" expanded="true" />
-            <element signature="e#425#426#0" expanded="true" />
-            <element signature="e#516#517#0" expanded="true" />
-            <element signature="e#574#575#0" expanded="true" />
-            <element signature="e#617#618#0" expanded="true" />
-            <element signature="e#683#684#0" expanded="true" />
-            <element signature="e#718#719#0" expanded="true" />
-            <element signature="e#784#785#0" expanded="true" />
-            <element signature="e#875#876#0" expanded="true" />
           </folding>
         </state>
       </provider>

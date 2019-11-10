@@ -10,9 +10,6 @@ public class CheckersGameScreen implements Screen {
 
     private Board board;
     private Checkers checkers;
-    private boolean playersTurn;
-
-    private boolean pieceHover = false;
 
     CheckersGameScreen(MainCore gameCore, Color color) {
         this.gameCore = gameCore;
@@ -20,9 +17,9 @@ public class CheckersGameScreen implements Screen {
         board = new Board();
         checkers = new Checkers(color);
 
-        playersTurn = (color == Color.White);
+        boolean playersTurn = (color == Color.White);
 
-        Gdx.input.setInputProcessor(new GameInputProcessor());
+        Gdx.input.setInputProcessor(new GameInputProcessor(checkers, playersTurn));
     }
 
     @Override
