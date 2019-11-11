@@ -1,6 +1,6 @@
-
-
 apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'jacoco'
 
 sourceCompatibility = 11
 targetCompatibility = 11
@@ -10,6 +10,10 @@ version '1.0-SNAPSHOT'
 
 repositories {
     jcenter()
+    mavenCentral()
+    flatDir {
+        dirs 'libs'
+    }
 }
 
 project.ext {
@@ -17,6 +21,14 @@ project.ext {
 }
 
 dependencies {
+    implementation name: 'jme3-niftygui-3.2.4-stable'
+    implementation name: 'jme3-niftygui-3.2.4-stable-javadoc'
+    implementation name: 'jme3-niftygui-3.2.4-stable-sources'
+    implementation name: 'jme3-niftygui'
+    implementation name: 'nifty-1.4.3'
+    implementation name: 'nifty-default-controls-1.4.3'
+    implementation name: 'nifty-style-black-1.4.3'
+    implementation name: 'xpp3-1.1.4c'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.3.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.3.1'
 
@@ -25,14 +37,35 @@ dependencies {
     implementation "org.jmonkeyengine:jme3-desktop:$jmeVer"
 
     // implementation "org.jmonkeyengine:jme3-lwjgl:$jmeVer"
-    implementation "org.jmonkeyengine:jme3-lwjgl3:$jmeVer"
+    implementation "org.jmonkeyengine:jme3-lwjgl" +
+            "3:$jmeVer"
     implementation "org.jmonkeyengine:jme3-effects:$jmeVer"
-    // implementation "org.jmonkeyengine:jme3-jogg:$jmeVer"
-    // implementation "org.jmonkeyengine:jme3-plugins:$jmeVer"
+    implementation "org.jmonkeyengine:jme3-jogg:$jmeVer"
+    implementation "org.jmonkeyengine:jme3-plugins:$jmeVer"
 
     implementation "org.jmonkeyengine:jme3-bullet:$jmeVer"
 
     implementation "org.jmonkeyengine:jme3-bullet-native:$jmeVer"
     // implementation "org.jmonkeyengine:jme3-jbullet:$jmeVer"
 
+    implementation 'org.junit.jupiter:junit-jupiter-api:5.5.2'
+    testImplementation('org.junit.jupiter:junit-jupiter-api:5.3.0')
+    testImplementation('org.junit.jupiter:junit-jupiter-params:5.3.0')
+    testImplementation 'org.mockito:mockito-core:2.7.22'
+    testRuntime('org.junit.jupiter:junit-jupiter-engine:5.3.0')
+
 }
+
+test {
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}
+
+jacoco{
+    toolVersion = "0.7.7.201606060606"
+    reportsDir = file("$buildDir/reports/jacoco")
+}
+
+mainClassName = 'game/Main'
