@@ -1,4 +1,4 @@
-package game;
+package main.java.game;
 
 class Pair {
     public double x;

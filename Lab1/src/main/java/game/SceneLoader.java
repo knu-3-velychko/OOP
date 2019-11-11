@@ -1,4 +1,4 @@
-package game;
+package main.java.game;
 
 
 import com.jme3.asset.AssetManager;

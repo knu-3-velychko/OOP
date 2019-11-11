@@ -1,14 +1,12 @@
-package game;
+package main.java.game;
 
 import com.jme3.app.SimpleApplication;
 import com.jme3.bullet.BulletAppState;
 import com.jme3.input.KeyInput;
-import com.jme3.input.controls.ActionListener;
 import com.jme3.input.controls.KeyTrigger;
 import com.jme3.math.ColorRGBA;
 import com.jme3.math.Vector3f;
 import com.jme3.niftygui.NiftyJmeDisplay;
-import com.jme3.scene.Geometry;
 import de.lessvoid.nifty.Nifty;
 import de.lessvoid.nifty.NiftyMethodInvoker;
 import de.lessvoid.nifty.controls.TextField;
@@ -51,15 +49,15 @@ public class GameController extends SimpleApplication {
 
     private void setUpKeys() {
         inputManager.addMapping("Shoot", new KeyTrigger(KeyInput.KEY_SPACE));
-        inputManager.addListener(shootListener, "Shoot");
+        //inputManager.addListener(shootListener, "Shoot");
     }
 
-    static private Geometry ball0;
-    private ActionListener shootListener = (name, isPressed, tpf) -> {
-        if (!isPressed) {
-            ball0 = ball.shoot(rootNode, cam, bulletAppState);
-        }
-    };
+//    static private Geometry ball0;
+//    private ActionListener shootListener = (name, isPressed, tpf) -> {
+//        if (!isPressed) {
+//            ball0 = ball.shoot(rootNode, cam, bulletAppState);
+//        }
+//    };
 
     private void nifty() {
         niftyDisplay = NiftyJmeDisplay.newNiftyJmeDisplay(assetManager, inputManager, audioRenderer, guiViewPort);
@@ -86,6 +84,8 @@ public class GameController extends SimpleApplication {
             field1 = screen.findNiftyControl("input" + (i + 1) + "_1", TextField.class);
             field2 = screen.findNiftyControl("input" + (i + 1) + "_2", TextField.class);
 
+            assert field1 != null;
+            assert field2 != null;
             if ("0".equals(field1.getText()) && "0".equals(field2.getText()))
                 break;
             value1 = Double.parseDouble(field1.getText());

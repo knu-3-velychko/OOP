@@ -1,4 +1,4 @@
-package game;
+package main.java.game;
 
 import com.jme3.asset.AssetManager;
 import com.jme3.asset.TextureKey;
@@ -15,7 +15,7 @@ import com.jme3.scene.shape.Sphere;
 import com.jme3.texture.Texture;
 
 
-public class Ball {
+class Ball {
     private Material material;
 
     private RigidBodyControl physics;
@@ -43,8 +43,8 @@ public class Ball {
 
         geometry.setLocalTranslation(camera.getLocation());
         physics = new RigidBodyControl(20f);
-        CapsuleCollisionShape shape=new CapsuleCollisionShape(3.1f, 0.2f);
-        ghost=new GhostControl(shape);
+        CapsuleCollisionShape shape = new CapsuleCollisionShape(3.1f, 0.2f);
+        ghost = new GhostControl(shape);
 
         geometry.addControl(physics);
         geometry.addControl(ghost);
