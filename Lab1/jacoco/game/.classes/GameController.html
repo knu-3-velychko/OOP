@@ -1,0 +1,198 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: GameController</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">game</a> ]
+</div>
+
+<h1>Coverage Summary for Class: GameController (game)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">GameController</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (5/ 5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (50/ 50)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package game;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import com.jme3.app.SimpleApplication;
+<i>4</i>&nbsp;import com.jme3.bullet.BulletAppState;
+<i>5</i>&nbsp;import com.jme3.bullet.PhysicsSpace;
+<i>6</i>&nbsp;import com.jme3.bullet.PhysicsTickListener;
+<i>7</i>&nbsp;import com.jme3.bullet.control.RigidBodyControl;
+<i>8</i>&nbsp;import com.jme3.bullet.objects.PhysicsGhostObject;
+<i>9</i>&nbsp;import com.jme3.font.BitmapText;
+<i>10</i>&nbsp;import com.jme3.input.KeyInput;
+<i>11</i>&nbsp;import com.jme3.input.controls.KeyTrigger;
+<i>12</i>&nbsp;import com.jme3.math.ColorRGBA;
+<i>13</i>&nbsp;import com.jme3.math.Vector3f;
+<i>14</i>&nbsp;import com.jme3.niftygui.NiftyJmeDisplay;
+<i>15</i>&nbsp;import com.jme3.scene.Geometry;
+<i>16</i>&nbsp;import com.jme3.scene.shape.Sphere;
+<i>17</i>&nbsp;import de.lessvoid.nifty.Nifty;
+<i>18</i>&nbsp;import de.lessvoid.nifty.NiftyMethodInvoker;
+<i>19</i>&nbsp;import de.lessvoid.nifty.builder.LayerBuilder;
+<i>20</i>&nbsp;import de.lessvoid.nifty.builder.PanelBuilder;
+<i>21</i>&nbsp;import de.lessvoid.nifty.builder.ScreenBuilder;
+<i>22</i>&nbsp;import de.lessvoid.nifty.elements.Element;
+<i>23</i>&nbsp;import de.lessvoid.nifty.screen.Screen;
+<i>24</i>&nbsp;import de.lessvoid.nifty.controls.TextField;
+<i>25</i>&nbsp;
+<i>26</i>&nbsp;import java.util.ArrayList;
+<i>27</i>&nbsp;import java.util.Objects;
+<i>28</i>&nbsp;import java.util.logging.Level;
+<i>29</i>&nbsp;import java.util.logging.Logger;
+<i>30</i>&nbsp;
+<b class="fc"><i>31</i>&nbsp;public class GameController extends SimpleApplication {</b>
+<i>32</i>&nbsp;    private BulletAppState bulletAppState;
+<i>33</i>&nbsp;
+<b class="fc"><i>34</i>&nbsp;    private ArrayList&lt;Velocity2D&gt; velocities = new ArrayList&lt;&gt;();</b>
+<i>35</i>&nbsp;
+<i>36</i>&nbsp;    private Nifty nifty;
+<i>37</i>&nbsp;    private NiftyJmeDisplay niftyDisplay;
+<i>38</i>&nbsp;
+<i>39</i>&nbsp;    @Override
+<i>40</i>&nbsp;    public void simpleInitApp() {
+<b class="fc"><i>41</i>&nbsp;        nifty();</b>
+<b class="fc"><i>42</i>&nbsp;    }</b>
+<i>43</i>&nbsp;
+<i>44</i>&nbsp;    private void setUp() {
+<b class="fc"><i>45</i>&nbsp;        bulletAppState = new BulletAppState();</b>
+<b class="fc"><i>46</i>&nbsp;        stateManager.attach(bulletAppState);</b>
+<i>47</i>&nbsp;
+<b class="fc"><i>48</i>&nbsp;        viewPort.setBackgroundColor(new ColorRGBA(0.7f, 0.8f, 1f, 1f));</b>
+<i>49</i>&nbsp;
+<b class="fc"><i>50</i>&nbsp;        cam.setLocation(new Vector3f(0f, 0f, 50f));</b>
+<b class="fc"><i>51</i>&nbsp;        bulletAppState.getPhysicsSpace().setGravity(new Vector3f(0.0f, 0.0f, 0.0f));</b>
+<i>52</i>&nbsp;
+<b class="fc"><i>53</i>&nbsp;        SceneLoader sceneLoader = new SceneLoader(rootNode, bulletAppState, assetManager);</b>
+<b class="fc"><i>54</i>&nbsp;        Simulation simulation = new Simulation(assetManager, rootNode, bulletAppState);</b>
+<i>55</i>&nbsp;
+<b class="fc"><i>56</i>&nbsp;        simulation.run(velocities);</b>
+<b class="fc"><i>57</i>&nbsp;    }</b>
+<i>58</i>&nbsp;
+<i>59</i>&nbsp;
+<i>60</i>&nbsp;    private void nifty() {
+<b class="fc"><i>61</i>&nbsp;        niftyDisplay = NiftyJmeDisplay.newNiftyJmeDisplay(assetManager, inputManager, audioRenderer, guiViewPort);</b>
+<b class="fc"><i>62</i>&nbsp;        nifty = niftyDisplay.getNifty();</b>
+<i>63</i>&nbsp;
+<b class="fc"><i>64</i>&nbsp;        nifty.fromXml(&quot;GUI/Screen.xml&quot;, &quot;start&quot;);</b>
+<b class="fc"><i>65</i>&nbsp;        viewPort.addProcessor(niftyDisplay);</b>
+<b class="fc"><i>66</i>&nbsp;        flyCam.setDragToRotate(true);</b>
+<i>67</i>&nbsp;
+<i>68</i>&nbsp;        // Controls onclick on button
+<b class="fc"><i>69</i>&nbsp;        Element niftyElement = Objects.requireNonNull(nifty.getCurrentScreen()).findElementById(&quot;okButton&quot;);</b>
+<b class="fc"><i>70</i>&nbsp;        assert niftyElement != null;</b>
+<b class="fc"><i>71</i>&nbsp;        niftyElement.getElementInteraction().getPrimary().setOnClickMethod(new NiftyMethodInvoker(nifty, &quot;okButtonClick()&quot;, this));</b>
+<b class="fc"><i>72</i>&nbsp;        System.out.println(this.getViewPort().getProcessors().get(0));</b>
+<b class="fc"><i>73</i>&nbsp;    }</b>
+<i>74</i>&nbsp;
+<i>75</i>&nbsp;    public final void okButtonClick() {
+<b class="fc"><i>76</i>&nbsp;        Logger LOGGER = Logger.getLogger(GameController.class.getName());</b>
+<i>77</i>&nbsp;
+<b class="fc"><i>78</i>&nbsp;        Screen screen = nifty.getCurrentScreen();</b>
+<i>79</i>&nbsp;        TextField field1, field2, field3, field4;
+<i>80</i>&nbsp;        float value1, value2, value3, value4;
+<b class="fc"><i>81</i>&nbsp;        for (int i = 0; i &lt; 10; i++) {</b>
+<b class="fc"><i>82</i>&nbsp;            assert screen != null;</b>
+<b class="fc"><i>83</i>&nbsp;            field1 = screen.findNiftyControl(&quot;input&quot; + (i + 1) + &quot;_1&quot;, TextField.class);</b>
+<b class="fc"><i>84</i>&nbsp;            field2 = screen.findNiftyControl(&quot;input&quot; + (i + 1) + &quot;_2&quot;, TextField.class);</b>
+<b class="fc"><i>85</i>&nbsp;            field3 = screen.findNiftyControl(&quot;input&quot; + (i + 1) + &quot;_3&quot;, TextField.class);</b>
+<b class="fc"><i>86</i>&nbsp;            field4 = screen.findNiftyControl(&quot;input&quot; + (i + 1) + &quot;_4&quot;, TextField.class);</b>
+<i>87</i>&nbsp;
+<b class="fc"><i>88</i>&nbsp;            assert field1 != null;</b>
+<b class="fc"><i>89</i>&nbsp;            assert field2 != null;</b>
+<b class="fc"><i>90</i>&nbsp;            assert field3 != null;</b>
+<b class="fc"><i>91</i>&nbsp;            assert field4 != null;</b>
+<b class="fc"><i>92</i>&nbsp;            if (&quot;0&quot;.equals(field1.getText()) &amp;&amp; &quot;0&quot;.equals(field2.getText()) &amp;&amp; &quot;0&quot;.equals(field3.getText()) &amp;&amp; &quot;0&quot;.equals(field4.getText()))</b>
+<b class="fc"><i>93</i>&nbsp;                break;</b>
+<b class="fc"><i>94</i>&nbsp;            value1 = (float) Double.parseDouble(field1.getText());</b>
+<b class="fc"><i>95</i>&nbsp;            value2 = (float) Double.parseDouble(field2.getText());</b>
+<b class="fc"><i>96</i>&nbsp;            value3 = (float) Double.parseDouble(field3.getText());</b>
+<b class="fc"><i>97</i>&nbsp;            value4 = (float) Double.parseDouble(field4.getText());</b>
+<i>98</i>&nbsp;
+<b class="fc"><i>99</i>&nbsp;            System.out.println(value3);</b>
+<b class="fc"><i>100</i>&nbsp;            System.out.println(value4);</b>
+<i>101</i>&nbsp;
+<i>102</i>&nbsp;
+<b class="fc"><i>103</i>&nbsp;            velocities.add(new Velocity2D(new Pair(value1, value2), new Pair(value3, value4)));</b>
+<i>104</i>&nbsp;        }
+<i>105</i>&nbsp;
+<b class="fc"><i>106</i>&nbsp;        for (int i = 0; i &lt; velocities.size(); i++) {</b>
+<b class="fc"><i>107</i>&nbsp;            LOGGER.log(Level.WARNING, &quot;Vector {0} : {1} - {2}&quot;, new Object[]{i, velocities.get(i).getStart().getX(), velocities.get(i).getStart().getY()});</b>
+<i>108</i>&nbsp;        }
+<b class="fc"><i>109</i>&nbsp;        System.out.println(&quot;here&quot;);</b>
+<i>110</i>&nbsp;
+<b class="fc"><i>111</i>&nbsp;        viewPort.removeProcessor(niftyDisplay);</b>
+<b class="fc"><i>112</i>&nbsp;        setUp();</b>
+<b class="fc"><i>113</i>&nbsp;    }</b>
+<i>114</i>&nbsp;
+<i>115</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2019-11-12 10:50</div>
+</div>
+</body>
+</html>

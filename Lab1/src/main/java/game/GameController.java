@@ -1,9 +1,7 @@
-package main.java.game;
+package game;
 
 import com.jme3.app.SimpleApplication;
 import com.jme3.bullet.BulletAppState;
-import com.jme3.input.KeyInput;
-import com.jme3.input.controls.KeyTrigger;
 import com.jme3.math.ColorRGBA;
 import com.jme3.math.Vector3f;
 import com.jme3.niftygui.NiftyJmeDisplay;
@@ -20,10 +18,8 @@ import java.util.logging.Logger;
 
 public class GameController extends SimpleApplication {
     private BulletAppState bulletAppState;
-    private SceneLoader sceneLoader;
-    private Ball ball;
 
-    private ArrayList<Pair> vectors = new ArrayList<>();
+    private ArrayList<Velocity2D> velocities = new ArrayList<>();
 
     private Nifty nifty;
     private NiftyJmeDisplay niftyDisplay;
@@ -36,28 +32,18 @@ public class GameController extends SimpleApplication {
     private void setUp() {
         bulletAppState = new BulletAppState();
         stateManager.attach(bulletAppState);
-        bulletAppState.setDebugEnabled(true);
+
         viewPort.setBackgroundColor(new ColorRGBA(0.7f, 0.8f, 1f, 1f));
 
-        cam.setLocation(new Vector3f(0, 8f, 0));
+        cam.setLocation(new Vector3f(0f, 0f, 50f));
+        bulletAppState.getPhysicsSpace().setGravity(new Vector3f(0.0f, 0.0f, 0.0f));
 
-        sceneLoader = new SceneLoader(rootNode, bulletAppState, assetManager);
-        ball = new Ball(assetManager);
+        SceneLoader sceneLoader = new SceneLoader(rootNode, bulletAppState, assetManager);
+        Simulation simulation = new Simulation(assetManager, rootNode, bulletAppState);
 
-        setUpKeys();
+        simulation.run(velocities);
     }
 
-    private void setUpKeys() {
-        inputManager.addMapping("Shoot", new KeyTrigger(KeyInput.KEY_SPACE));
-        //inputManager.addListener(shootListener, "Shoot");
-    }
-
-//    static private Geometry ball0;
-//    private ActionListener shootListener = (name, isPressed, tpf) -> {
-//        if (!isPressed) {
-//            ball0 = ball.shoot(rootNode, cam, bulletAppState);
-//        }
-//    };
 
     private void nifty() {
         niftyDisplay = NiftyJmeDisplay.newNiftyJmeDisplay(assetManager, inputManager, audioRenderer, guiViewPort);
@@ -69,34 +55,43 @@ public class GameController extends SimpleApplication {
 
         // Controls onclick on button
         Element niftyElement = Objects.requireNonNull(nifty.getCurrentScreen()).findElementById("okButton");
-        assert niftyElement != null;
-        niftyElement.getElementInteraction().getPrimary().setOnClickMethod(new NiftyMethodInvoker(nifty, "wow()", this));
+        niftyElement.getElementInteraction().getPrimary().setOnClickMethod(new NiftyMethodInvoker(nifty, "okButtonClick()", this));
+        System.out.println(this.getViewPort().getProcessors().get(0));
     }
 
-    final void okButtonClick() {
+    public final void okButtonClick() {
         Logger LOGGER = Logger.getLogger(GameController.class.getName());
 
         Screen screen = nifty.getCurrentScreen();
-        TextField field1, field2;
-        double value1, value2;
+        TextField field1, field2, field3, field4;
+        float value1, value2, value3, value4;
         for (int i = 0; i < 10; i++) {
-            assert screen != null;
+
             field1 = screen.findNiftyControl("input" + (i + 1) + "_1", TextField.class);
             field2 = screen.findNiftyControl("input" + (i + 1) + "_2", TextField.class);
+            field3 = screen.findNiftyControl("input" + (i + 1) + "_3", TextField.class);
+            field4 = screen.findNiftyControl("input" + (i + 1) + "_4", TextField.class);
 
-            assert field1 != null;
-            assert field2 != null;
-            if ("0".equals(field1.getText()) && "0".equals(field2.getText()))
+            if ("0".equals(field1.getText()) && "0".equals(field2.getText()) && "0".equals(field3.getText()) && "0".equals(field4.getText()))
                 break;
-            value1 = Double.parseDouble(field1.getText());
-            value2 = Double.parseDouble(field2.getText());
-            vectors.add(new Pair(value1, value2));
+            value1 = (float) Double.parseDouble(field1.getText());
+            value2 = (float) Double.parseDouble(field2.getText());
+            value3 = (float) Double.parseDouble(field3.getText());
+            value4 = (float) Double.parseDouble(field4.getText());
+
+            System.out.println(value3);
+            System.out.println(value4);
+
+
+            velocities.add(new Velocity2D(new Pair(value1, value2), new Pair(value3, value4)));
         }
 
-        for (int i = 0; i < vectors.size(); i++) {
-            LOGGER.log(Level.WARNING, "Vector {0} : {1} - {2}", new Object[]{i, vectors.get(i).x, vectors.get(i).y});
+        for (int i = 0; i < velocities.size(); i++) {
+            LOGGER.log(Level.WARNING, "Vector {0} : {1} - {2}", new Object[]{i, velocities.get(i).getStart().getX(), velocities.get(i).getStart().getY()});
         }
-        guiViewPort.removeProcessor(niftyDisplay);
+        System.out.println("here");
+
+        viewPort.removeProcessor(niftyDisplay);
         setUp();
     }
 

@@ -1,0 +1,129 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: Ball</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">game</a> ]
+</div>
+
+<h1>Coverage Summary for Class: Ball (game)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Ball</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (18/ 18)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package game;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import com.jme3.asset.AssetManager;
+<i>4</i>&nbsp;import com.jme3.asset.TextureKey;
+<i>5</i>&nbsp;import com.jme3.bullet.BulletAppState;
+<i>6</i>&nbsp;import com.jme3.bullet.collision.shapes.CapsuleCollisionShape;
+<i>7</i>&nbsp;import com.jme3.bullet.control.GhostControl;
+<i>8</i>&nbsp;import com.jme3.bullet.control.RigidBodyControl;
+<i>9</i>&nbsp;import com.jme3.material.Material;
+<i>10</i>&nbsp;import com.jme3.math.Vector3f;
+<i>11</i>&nbsp;import com.jme3.renderer.Camera;
+<i>12</i>&nbsp;import com.jme3.scene.Geometry;
+<i>13</i>&nbsp;import com.jme3.scene.Node;
+<i>14</i>&nbsp;import com.jme3.scene.shape.Sphere;
+<i>15</i>&nbsp;import com.jme3.texture.Texture;
+<i>16</i>&nbsp;
+<i>17</i>&nbsp;
+<i>18</i>&nbsp;class Ball {
+<i>19</i>&nbsp;    private Material material;
+<i>20</i>&nbsp;
+<i>21</i>&nbsp;    private Sphere sphere;
+<i>22</i>&nbsp;
+<b class="fc"><i>23</i>&nbsp;    Ball(AssetManager assetManager) {</b>
+<b class="fc"><i>24</i>&nbsp;        material = new Material(assetManager, &quot;Common/MatDefs/Misc/Unshaded.j3md&quot;);</b>
+<b class="fc"><i>25</i>&nbsp;        TextureKey key = new TextureKey(&quot;Textures/Terrain/Rock/Rock.PNG&quot;);</b>
+<b class="fc"><i>26</i>&nbsp;        key.setGenerateMips(true);</b>
+<b class="fc"><i>27</i>&nbsp;        Texture texture = assetManager.loadTexture(key);</b>
+<b class="fc"><i>28</i>&nbsp;        material.setTexture(&quot;ColorMap&quot;, texture);</b>
+<i>29</i>&nbsp;
+<b class="fc"><i>30</i>&nbsp;        sphere = new Sphere(32, 32, 3f, true, false);</b>
+<b class="fc"><i>31</i>&nbsp;        sphere.setTextureMode(Sphere.TextureMode.Projected);</b>
+<b class="fc"><i>32</i>&nbsp;    }</b>
+<i>33</i>&nbsp;
+<i>34</i>&nbsp;    Geometry shoot(Node root, BulletAppState bulletAppState, Vector3f start, Vector3f velocity) {
+<b class="fc"><i>35</i>&nbsp;        Geometry geometry = new Geometry(&quot;ball&quot;, sphere);</b>
+<b class="fc"><i>36</i>&nbsp;        geometry.setMaterial(material);</b>
+<b class="fc"><i>37</i>&nbsp;        geometry.setLocalTranslation(start);</b>
+<b class="fc"><i>38</i>&nbsp;        root.attachChild(geometry);</b>
+<b class="fc"><i>39</i>&nbsp;        RigidBodyControl physics = new RigidBodyControl(20f);</b>
+<b class="fc"><i>40</i>&nbsp;        geometry.addControl(physics);</b>
+<b class="fc"><i>41</i>&nbsp;        bulletAppState.getPhysicsSpace().add(geometry);</b>
+<b class="fc"><i>42</i>&nbsp;        physics.setLinearVelocity(velocity);</b>
+<i>43</i>&nbsp;
+<b class="fc"><i>44</i>&nbsp;        return geometry;</b>
+<i>45</i>&nbsp;    }
+<i>46</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2019-11-12 10:50</div>
+</div>
+</body>
+</html>

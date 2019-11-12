@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>GameControllerTest.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Lab1$Tests_in__Lab1_.exec</a> &gt; <a href="index.source.html" class="el_package">game</a> &gt; <span class="el_source">GameControllerTest.java</span></div><h1>GameControllerTest.java</h1><pre class="source lang-java linenums">package game;
+
+import com.jme3.bullet.BulletAppState;
+import com.jme3.math.Vector3f;
+import com.jme3.niftygui.NiftyJmeDisplay;
+import de.lessvoid.nifty.Nifty;
+import de.lessvoid.nifty.controls.TextField;
+import de.lessvoid.nifty.screen.Screen;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+
+import static org.junit.Assert.*;
+
+<span class="fc" id="L15">public class GameControllerTest {</span>
+<span class="fc" id="L16">    private GameController gameController = new GameController();</span>
+
+    @Before
+    public void setUp() {
+<span class="fc" id="L20">        gameController.start();</span>
+<span class="fc" id="L21">    }</span>
+
+    @Test
+    public void simpleInitApp() {
+<span class="fc" id="L25">        assertEquals(gameController.getViewPort().getProcessors().get(0).getClass(), NiftyJmeDisplay.class);</span>
+<span class="fc" id="L26">        assertTrue(gameController.getFlyByCamera().isDragToRotate());</span>
+<span class="fc" id="L27">    }</span>
+
+    @Test
+    public void okButtonClick_branch1() {
+<span class="fc" id="L31">        gameController.okButtonClick();</span>
+<span class="fc" id="L32">        assertEquals(gameController.getCamera().getLocation(), new Vector3f(0, 0f, 50));</span>
+<span class="fc" id="L33">        assertTrue(gameController.getViewPort().getProcessors().isEmpty());</span>
+<span class="fc" id="L34">        assertNotEquals(gameController.getStateManager().getState(BulletAppState.class), null);</span>
+<span class="fc" id="L35">    }</span>
+
+    @Test
+    public void okButtonClick_branch2() {
+<span class="fc" id="L39">        gameController.start();</span>
+<span class="fc" id="L40">        NiftyJmeDisplay controller = (NiftyJmeDisplay) gameController.getViewPort().getProcessors().get(0);</span>
+<span class="fc" id="L41">        Nifty nifty = controller.getNifty();</span>
+<span class="fc" id="L42">        Screen screen = nifty.getCurrentScreen();</span>
+        TextField field1, field2, field3, field4;
+<span class="fc" id="L44">        assertNotNull(screen);</span>
+<span class="fc" id="L45">        field1 = screen.findNiftyControl(&quot;input&quot; + 1 + &quot;_1&quot;, TextField.class);</span>
+<span class="fc" id="L46">        field2 = screen.findNiftyControl(&quot;input&quot; + 1 + &quot;_2&quot;, TextField.class);</span>
+<span class="fc" id="L47">        field3 = screen.findNiftyControl(&quot;input&quot; + 1 + &quot;_3&quot;, TextField.class);</span>
+<span class="fc" id="L48">        field4 = screen.findNiftyControl(&quot;input&quot; + 1 + &quot;_4&quot;, TextField.class);</span>
+<span class="fc" id="L49">        assertNotNull(field1);</span>
+<span class="fc" id="L50">        field1.setText(&quot;10&quot;);</span>
+<span class="fc" id="L51">        assertNotNull(field2);</span>
+<span class="fc" id="L52">        field2.setText(&quot;20&quot;);</span>
+<span class="fc" id="L53">        assertNotNull(field3);</span>
+<span class="fc" id="L54">        field3.setText(&quot;30&quot;);</span>
+<span class="fc" id="L55">        assertNotNull(field4);</span>
+<span class="fc" id="L56">        field4.setText(&quot;40&quot;);</span>
+
+<span class="fc" id="L58">        gameController.okButtonClick();</span>
+<span class="fc" id="L59">        assertEquals(gameController.getCamera().getLocation(), new Vector3f(0, 0f, 50));</span>
+<span class="fc" id="L60">        assertTrue(gameController.getViewPort().getProcessors().isEmpty());</span>
+<span class="fc" id="L61">        assertNotEquals(gameController.getStateManager().getState(BulletAppState.class), null);</span>
+<span class="fc" id="L62">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>

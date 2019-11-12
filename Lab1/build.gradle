@@ -1,11 +1,9 @@
 apply plugin: 'java'
-apply plugin: 'application'
-apply plugin: 'jacoco'
 
 sourceCompatibility = 11
 targetCompatibility = 11
 
-group ''
+group 'game'
 version '1.0-SNAPSHOT'
 
 
@@ -19,7 +17,6 @@ repositories {
 
 project.ext {
     jmeVer = '3.2.4-stable'
-    junitVersion = '5.3.0'
 }
 
 dependencies {
@@ -31,9 +28,6 @@ dependencies {
     implementation name: 'nifty-default-controls-1.4.3'
     implementation name: 'nifty-style-black-1.4.3'
     implementation name: 'xpp3-1.1.4c'
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.3.1'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.3.1'
-
 
     implementation "org.jmonkeyengine:jme3-core:$jmeVer"
     implementation "org.jmonkeyengine:jme3-desktop:$jmeVer"
@@ -50,31 +44,13 @@ dependencies {
     implementation "org.jmonkeyengine:jme3-bullet-native:$jmeVer"
     // implementation "org.jmonkeyengine:jme3-jbullet:$jmeVer"
 
-    implementation 'org.junit.jupiter:junit-jupiter-api:5.5.2'
+    // This dependency is used by the application.
+    implementation 'com.google.guava:guava:28.0-jre'
+
+    // Use JUnit test framework
+    testImplementation 'junit:junit:4.12'
+
     implementation 'org.mockito:mockito-core:2.7.22'
-    testImplementation('org.junit.jupiter:junit-jupiter-api:5.3.0')
-    testImplementation('org.junit.jupiter:junit-jupiter-params:5.3.0')
     testImplementation 'org.mockito:mockito-core:2.7.22'
-    testRuntime('org.junit.jupiter:junit-jupiter-engine:5.3.0')
 
 }
-
-sourceCompatibility = 1.7
-[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
-
-sourceSets.main.java.srcDirs = ["src/"]
-sourceSets.test.resources.srcDirs = ["src/"]
-
-test {
-    useJUnitPlatform()
-    testLogging {
-        events "passed", "skipped", "failed"
-    }
-}
-
-jacoco{
-    toolVersion = "0.7.7.201606060606"
-    reportsDir = file("$buildDir/reports/jacoco")
-}
-
-mainClassName = 'game/Main'

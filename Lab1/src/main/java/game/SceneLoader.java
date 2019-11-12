@@ -1,5 +1,4 @@
-package main.java.game;
-
+package game;
 
 import com.jme3.asset.AssetManager;
 import com.jme3.asset.TextureKey;
@@ -12,9 +11,8 @@ import com.jme3.scene.Node;
 import com.jme3.scene.shape.Box;
 import com.jme3.texture.Texture;
 
-public class SceneLoader {
+class SceneLoader {
     private Box ground;
-    private Box[] walls;
     private Material material;
 
     SceneLoader(Node root, BulletAppState bulletAppState, AssetManager assetManager) {
@@ -23,14 +21,7 @@ public class SceneLoader {
     }
 
     private void setTexture(AssetManager assetManager) {
-        walls = new Box[4];
-
-        ground = new Box(100f, 0.1f, 100f);
-
-        walls[0] = new Box(100f, 100f, 0.1f);
-        walls[1] = new Box(100f, 100f, 0.1f);
-        walls[2] = new Box(0.1f, 100f, 100f);
-        walls[3] = new Box(0.1f, 100f, 100f);
+        ground = new Box(100f, 100f, 0.1f);
 
         material = new Material(assetManager, "Common/MatDefs/Misc/Unshaded.j3md");
         TextureKey groundKey = new TextureKey("Textures/Terrain/BrickWall/BrickWall.jpg");
@@ -41,12 +32,7 @@ public class SceneLoader {
     }
 
     private void initialize(Node root, BulletAppState bulletAppState) {
-        initializeBox(ground, "Ground", 0f, -0.1f, 0f, root, bulletAppState);
-
-        initializeBox(walls[0], "Wall", 0.1f, -0.1f, 100f, root, bulletAppState);
-        initializeBox(walls[1], "Wall", 0.1f, -0.1f, -100f, root, bulletAppState);
-        initializeBox(walls[2], "Wall", 100f, -0.1f, 0.1f, root, bulletAppState);
-        initializeBox(walls[3], "Wall", -100f, -0.1f, 0.1f, root, bulletAppState);
+        initializeBox(ground, "Ground", 0.1f, -0.1f, -100f, root, bulletAppState);
     }
 
     private void initializeBox(Box box, String name, Float x, Float y, Float z, Node root, BulletAppState bulletAppState) {

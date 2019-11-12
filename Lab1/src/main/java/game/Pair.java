@@ -1,11 +1,29 @@
-package main.java.game;
+package game;
 
 class Pair {
-    public double x;
-    public double y;
+    public float getX() {
+        return x;
+    }
 
-    Pair(double x, double y) {
+    public void setX(float x) {
+        this.x = x;
+    }
+
+    public float getY() {
+        return y;
+    }
+
+    public void setY(float y) {
+        this.y = y;
+    }
+
+    private float x;
+    private float y;
+
+    Pair(float x, float y) {
         this.x = x;
         this.y = y;
     }
+
+
 }

@@ -2,16 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="92152975-28f9-4ba6-83a5-59d49ba91119" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/game/Simulation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/game/Velocity2D.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/game/BallTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/game/GameControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/game/PairTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/game/SceneLoaderTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/game/SimulationTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.scannerwork/report-task.txt" beforeDir="false" afterPath="$PROJECT_DIR$/.scannerwork/report-task.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/Ball.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Ball.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/BallTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/BallTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/BallTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/GUI.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/GameController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/Pair.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Pair.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/SceneLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/SceneLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/GUI/Screen.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/GUI/Screen.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,7 +33,11 @@
     </execution>
   </component>
   <component name="CoverageViewManager">
-    <option name="myElementSize" value="146" />
+    <option name="myElementSize" value="78" />
+  </component>
+  <component name="ExportToHTMLSettings">
+    <option name="OPEN_IN_BROWSER" value="true" />
+    <option name="OUTPUT_DIRECTORY" value="C:\Users\Taya\Documents\Projects\OOP\Lab1\jacoco" />
   </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
@@ -63,9 +75,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="FxmlFile" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
+        <option value="JUnit4 Test Class" />
       </list>
     </option>
   </component>
@@ -81,28 +94,30 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/tests" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/Telegram Desktop/Lab1" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/jacoco" />
+    <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="coverage" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="game" />
+      <recent name="" />
       <recent name="main.java.game" />
       <recent name="game.tests" />
       <recent name="test" />
-      <recent name="" />
-      <recent name="game" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Taya\Documents\Projects\OOP\Lab1\src\test\java" />
       <recent name="C:\Users\Taya\Documents\Projects\OOP\Lab1\src\tests" />
       <recent name="C:\Users\Taya\Documents\Projects\OOP\Lab1\src\main\java" />
       <recent name="C:\Users\Taya\Documents\Projects\OOP\Lab1\src\main\java\game" />
@@ -120,13 +135,13 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main (1)">
-    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="main.java.game.Main" />
+  <component name="RunManager" selected="Gradle.Tests in 'Lab1'">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="game.Main" />
       <module name="Lab1.main" />
-      <extension name="coverage">
+      <extension name="coverage" runner="jacoco">
         <pattern>
-          <option name="PATTERN" value="main.java.game.*" />
+          <option name="PATTERN" value="game.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -139,7 +154,28 @@
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;main.java.game.BallTest&quot;" />
+        <option name="scriptParameters" value="--tests &quot;game.BallTest&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanTest" />
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <extension name="coverage" runner="jacoco" />
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="GameControllerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;game.GameControllerTest&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -154,12 +190,12 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="BallTest.shoot" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="PairTest" type="GradleRunConfiguration" factoryName="Gradle" editBeforeRun="true" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;tests.BallTest.shoot&quot;" />
+        <option name="scriptParameters" value="--tests &quot;game.PairTest&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -169,28 +205,10 @@
             <option value=":test" />
           </list>
         </option>
-        <option name="vmOptions" />
+        <option name="vmOptions" value="" />
       </ExternalSystemSettings>
+      <extension name="coverage" runner="jacoco" />
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="Lab1 [jacocoTestCoverageVerification]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="jacocoTestCoverageVerification" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
     <configuration name="Tests in 'Lab1'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -210,26 +228,34 @@
         </option>
         <option name="vmOptions" value="" />
       </ExternalSystemSettings>
-      <extension name="coverage" runner="jacoco" />
+      <extension name="coverage" runner="jacoco">
+        <pattern>
+          <option name="PATTERN" value="game.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Gradle.Lab1 [jacocoTestCoverageVerification]" />
-      <item itemvalue="Gradle.Tests in 'Lab1'" />
+      <item itemvalue="Application.Main" />
       <item itemvalue="Gradle.BallTest" />
-      <item itemvalue="Gradle.BallTest.shoot" />
-      <item itemvalue="Application.Main (1)" />
+      <item itemvalue="Gradle.Tests in 'Lab1'" />
+      <item itemvalue="Gradle.GameControllerTest" />
+      <item itemvalue="Gradle.PairTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main (1)" />
-        <item itemvalue="Gradle.BallTest" />
-        <item itemvalue="Gradle.BallTest" />
-        <item itemvalue="Gradle.BallTest.shoot" />
         <item itemvalue="Gradle.Tests in 'Lab1'" />
+        <item itemvalue="Gradle.PairTest" />
+        <item itemvalue="Gradle.GameControllerTest" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Gradle.BallTest" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="showServicesTree" value="false" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -245,7 +271,7 @@
       <workItem from="1573370872707" duration="1782000" />
       <workItem from="1573419917130" duration="770000" />
       <workItem from="1573494789966" duration="679000" />
-      <workItem from="1573502395364" duration="12613000" />
+      <workItem from="1573502395364" duration="35865000" />
     </task>
     <servers />
   </component>
@@ -266,12 +292,19 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Lab1$PairTest.exec" NAME="PairTest Coverage Results" MODIFIED="1573553872230" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="jacoco" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Lab1$Lab1__test_.ic" NAME="Lab1 [test] Coverage Results" MODIFIED="1573511532771" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/Lab1$Tests_in__Lab1_.exec" NAME="Tests in 'Lab1' Coverage Results" MODIFIED="1573514686665" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="jacoco" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/Lab1$Main.exec" NAME="Main Coverage Results" MODIFIED="1573513797982" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="jacoco" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Lab1$BallTest.exec" NAME="BallTest Coverage Results" MODIFIED="1573551506856" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="jacoco" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Lab1$Tests_in__Lab1_.exec" NAME="Tests in 'Lab1' Coverage Results" MODIFIED="1573554071941" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="jacoco" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>game.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Lab1$BallTest.ic" NAME="BallTest Coverage Results" MODIFIED="1573516053365" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/Lab1$Tests_in__Lab1_.ic" NAME="Tests in 'Lab1' Coverage Results" MODIFIED="1573513740694" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Lab1$Main.exec" NAME="Main Coverage Results" MODIFIED="1573552045126" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="jacoco" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>game.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Lab1$SimulationTest.ic" NAME="SimulationTest Coverage Results" MODIFIED="1573548336187" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Lab1$GameControllerTest.ic" NAME="GameControllerTest Coverage Results" MODIFIED="1573553003236" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Lab1$PairTest.ic" NAME="PairTest Coverage Results" MODIFIED="1573551448248" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Lab1$BallTest.ic" NAME="BallTest Coverage Results" MODIFIED="1573551473130" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Lab1$Tests_in__Lab1_.ic" NAME="Tests in 'Lab1' Coverage Results" MODIFIED="1573548130857" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
