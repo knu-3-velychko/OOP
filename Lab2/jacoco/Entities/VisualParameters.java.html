@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>VisualParameters.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Lab2$Tests_in__Lab2_.exec</a> &gt; <a href="index.source.html" class="el_package">Entities</a> &gt; <span class="el_source">VisualParameters.java</span></div><h1>VisualParameters.java</h1><pre class="source lang-java linenums">package Entities;
+
+import java.util.Objects;
+
+public class VisualParameters {
+    private String color;
+    private float opacity;
+    private int cutType;
+
+    public String getColor() {
+<span class="fc" id="L11">        return color;</span>
+    }
+
+    public void setColor(String color) {
+<span class="fc" id="L15">        this.color = color;</span>
+<span class="fc" id="L16">    }</span>
+
+    public float getOpacity() {
+<span class="fc" id="L19">        return opacity;</span>
+    }
+
+    public void setOpacity(float opacity) {
+<span class="fc" id="L23">        this.opacity = opacity;</span>
+<span class="fc" id="L24">    }</span>
+
+    public int getCutType() {
+<span class="fc" id="L27">        return cutType;</span>
+    }
+
+    public void setCutType(int cutType) {
+<span class="fc" id="L31">        this.cutType = cutType;</span>
+<span class="fc" id="L32">    }</span>
+
+<span class="fc" id="L34">    public VisualParameters() {</span>
+<span class="fc" id="L35">    }</span>
+
+<span class="fc" id="L37">    public VisualParameters(String color, float opacity, int cutType) {</span>
+<span class="fc" id="L38">        this.color = color;</span>
+<span class="fc" id="L39">        this.opacity = opacity;</span>
+<span class="fc" id="L40">        this.cutType = cutType;</span>
+<span class="fc" id="L41">    }</span>
+
+    @Override
+    public boolean equals(Object object) {
+<span class="fc bfc" id="L45" title="All 2 branches covered.">        if (!(object instanceof VisualParameters)) return false;</span>
+<span class="fc bfc" id="L46" title="All 2 branches covered.">        if (object == this) return true;</span>
+
+<span class="fc" id="L48">        VisualParameters parameters = (VisualParameters) object;</span>
+<span class="fc bfc" id="L49" title="All 2 branches covered.">        return Objects.equals(this.color, parameters.color) &amp;&amp;</span>
+<span class="fc bfc" id="L50" title="All 2 branches covered.">                Objects.equals(this.opacity, parameters.opacity) &amp;&amp;</span>
+<span class="fc bfc" id="L51" title="All 2 branches covered.">                Objects.equals(this.cutType, parameters.cutType);</span>
+
+    }
+
+    @Override
+    public int hashCode() {
+<span class="fc" id="L57">        return Objects.hash(color, opacity, cutType);</span>
+    }
+
+    @Override
+    public String toString() {
+<span class="fc" id="L62">        return &quot;Entities.VisualParameters{&quot; +</span>
+                &quot;color: &quot; +
+                color +
+                &quot;, opacity: &quot; +
+                opacity +
+                &quot;, cut type: &quot; +
+                cutType +
+                &quot;}&quot;;
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>

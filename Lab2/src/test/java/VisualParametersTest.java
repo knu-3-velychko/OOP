@@ -62,4 +62,75 @@ public class VisualParametersTest {
         assertEquals(emptyParameters.getCutType(), newCutType);
         assertEquals(parameters.getCutType(), newCutType);
     }
+
+    @Test
+    public void testEquals() {
+        parametersNotEquals(emptyParameters, parameters);
+
+        parametersNotEquals(new Object(), parameters);
+        parametersNotEquals(new Object(), emptyParameters);
+
+        assertEquals(emptyParameters, emptyParameters);
+        assertEquals(parameters, parameters);
+
+        VisualParameters newEmptyParameters = new VisualParameters();
+        VisualParameters newParameters = new VisualParameters(color, opacity, cutType);
+
+        parametersEquals(emptyParameters, newEmptyParameters);
+        parametersEquals(parameters, newParameters);
+
+        newEmptyParameters.setColor(color);
+        parametersNotEquals(parameters,newEmptyParameters);
+        newEmptyParameters.setOpacity(opacity);
+        parametersNotEquals(parameters,newEmptyParameters);
+
+    }
+
+    private void parametersNotEquals(Object parameters1, Object parameters2) {
+        assertNotEquals(parameters1, parameters2);
+        assertNotEquals(parameters2, parameters1);
+    }
+
+    private void parametersEquals(Object parameters1, Object parameters2) {
+        assertEquals(parameters1, parameters2);
+        assertEquals(parameters2, parameters1);
+    }
+
+    @Test
+    public void testHashCode() {
+        assertNotEquals(emptyParameters.hashCode(), parameters.hashCode());
+
+        assertEquals(emptyParameters.hashCode(), emptyParameters.hashCode());
+        assertEquals(parameters.hashCode(), parameters.hashCode());
+
+        VisualParameters newEmptyParameters = new VisualParameters();
+        VisualParameters newParameters = new VisualParameters(color, opacity, cutType);
+
+        assertEquals(emptyParameters.hashCode(), newEmptyParameters.hashCode());
+        assertEquals(parameters.hashCode(), newParameters.hashCode());
+    }
+
+    @Test
+    public void testToString() {
+        String emptyString = "Entities.VisualParameters{" +
+                "color: " +
+                null +
+                ", opacity: " +
+                0.0 +
+                ", cut type: " +
+                0 +
+                "}";
+
+        String parametersString = "Entities.VisualParameters{" +
+                "color: " +
+                color +
+                ", opacity: " +
+                opacity +
+                ", cut type: " +
+                cutType +
+                "}";
+
+        assertEquals(emptyString, emptyParameters.toString());
+        assertEquals(parametersString, parameters.toString());
+    }
 }
