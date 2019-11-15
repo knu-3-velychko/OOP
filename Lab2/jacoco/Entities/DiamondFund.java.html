@@ -2,25 +2,30 @@
 
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class DiamondFund {
     private List&lt;Gem&gt; gems;
 
-<span class="nc" id="L10">    public DiamondFund() {</span>
-<span class="nc" id="L11">        gems = new ArrayList&lt;&gt;();</span>
-<span class="nc" id="L12">    }</span>
+<span class="fc" id="L11">    public DiamondFund() {</span>
+<span class="fc" id="L12">        gems = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L13">    }</span>
 
-<span class="nc" id="L14">    public DiamondFund(List&lt;Gem&gt; gems) {</span>
-<span class="nc" id="L15">        this.gems = gems;</span>
-<span class="nc" id="L16">    }</span>
+<span class="fc" id="L15">    public DiamondFund(List&lt;Gem&gt; gems) {</span>
+<span class="fc" id="L16">        this.gems = gems;</span>
+<span class="fc" id="L17">    }</span>
 
     public void addGem(Gem gem) {
-<span class="nc" id="L19">        gems.add(gem);</span>
-<span class="nc" id="L20">    }</span>
+<span class="fc" id="L20">        gems.add(gem);</span>
+<span class="fc" id="L21">    }</span>
+
+    public List&lt;Gem&gt; getGems() {
+<span class="fc" id="L24">        return gems;</span>
+    }
 
     public void sortGems() {
-        //TODO
-<span class="nc" id="L24">    }</span>
+<span class="fc" id="L28">        Collections.sort(gems);</span>
+<span class="fc" id="L29">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>

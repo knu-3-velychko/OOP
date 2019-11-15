@@ -2,6 +2,7 @@ package Entities;
 
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class DiamondFund {
@@ -19,7 +20,11 @@ public class DiamondFund {
         gems.add(gem);
     }
 
+    public List<Gem> getGems() {
+        return gems;
+    }
+
     public void sortGems() {
-        //TODO
+        Collections.sort(gems);
     }
 }
