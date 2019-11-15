@@ -5,9 +5,9 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class VisualParametersTest {
-    private String color = "red";
-    private float opacity = 50.0f;
-    private int cutType = 10;
+    private final String color = "red";
+    private final float opacity = 50.0f;
+    private final int cutType = 10;
 
     private VisualParameters emptyParameters = new VisualParameters();
     private VisualParameters parameters = new VisualParameters(color, opacity, cutType);
@@ -33,8 +33,8 @@ public class VisualParametersTest {
 
     @Test
     public void getOpacity() {
-        assertEquals(emptyParameters.getOpacity(), 0.0, 0.1e-10);
-        assertEquals(parameters.getOpacity(), opacity, 0.1e-10);
+        assertEquals(emptyParameters.getOpacity(), 0.0, 0.1e10);
+        assertEquals(parameters.getOpacity(), opacity, 0.1e10);
     }
 
     @Test
@@ -43,8 +43,8 @@ public class VisualParametersTest {
         emptyParameters.setOpacity(newOpacity);
         parameters.setOpacity(newOpacity);
 
-        assertEquals(emptyParameters.getOpacity(), newOpacity, 0.1e-10);
-        assertEquals(parameters.getOpacity(), newOpacity, 0.1e-10);
+        assertEquals(emptyParameters.getOpacity(), newOpacity, 0.1e10);
+        assertEquals(parameters.getOpacity(), newOpacity, 0.1e10);
     }
 
     @Test
@@ -67,8 +67,8 @@ public class VisualParametersTest {
     public void testEquals() {
         parametersNotEquals(emptyParameters, parameters);
 
-        parametersNotEquals(new Object(), parameters);
         parametersNotEquals(new Object(), emptyParameters);
+        parametersNotEquals(new Object(), parameters);
 
         assertEquals(emptyParameters, emptyParameters);
         assertEquals(parameters, parameters);

@@ -47,7 +47,7 @@ public class VisualParameters {
 
         VisualParameters parameters = (VisualParameters) object;
         return Objects.equals(this.color, parameters.color) &&
-                Objects.equals(this.opacity, parameters.opacity) &&
+                this.opacity == parameters.opacity &&
                 Objects.equals(this.cutType, parameters.cutType);
 
     }

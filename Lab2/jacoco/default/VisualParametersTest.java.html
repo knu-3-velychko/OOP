@@ -5,9 +5,9 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 <span class="fc" id="L7">public class VisualParametersTest {</span>
-<span class="fc" id="L8">    private String color = &quot;red&quot;;</span>
-<span class="fc" id="L9">    private float opacity = 50.0f;</span>
-<span class="fc" id="L10">    private int cutType = 10;</span>
+<span class="fc" id="L8">    private final String color = &quot;red&quot;;</span>
+<span class="fc" id="L9">    private final float opacity = 50.0f;</span>
+<span class="fc" id="L10">    private final int cutType = 10;</span>
 
 <span class="fc" id="L12">    private VisualParameters emptyParameters = new VisualParameters();</span>
 <span class="fc" id="L13">    private VisualParameters parameters = new VisualParameters(color, opacity, cutType);</span>
@@ -33,8 +33,8 @@ import static org.junit.Assert.*;
 
     @Test
     public void getOpacity() {
-<span class="fc" id="L36">        assertEquals(emptyParameters.getOpacity(), 0.0, 0.1e-10);</span>
-<span class="fc" id="L37">        assertEquals(parameters.getOpacity(), opacity, 0.1e-10);</span>
+<span class="fc" id="L36">        assertEquals(emptyParameters.getOpacity(), 0.0, 0.1e10);</span>
+<span class="fc" id="L37">        assertEquals(parameters.getOpacity(), opacity, 0.1e10);</span>
 <span class="fc" id="L38">    }</span>
 
     @Test
@@ -43,8 +43,8 @@ import static org.junit.Assert.*;
 <span class="fc" id="L43">        emptyParameters.setOpacity(newOpacity);</span>
 <span class="fc" id="L44">        parameters.setOpacity(newOpacity);</span>
 
-<span class="fc" id="L46">        assertEquals(emptyParameters.getOpacity(), newOpacity, 0.1e-10);</span>
-<span class="fc" id="L47">        assertEquals(parameters.getOpacity(), newOpacity, 0.1e-10);</span>
+<span class="fc" id="L46">        assertEquals(emptyParameters.getOpacity(), newOpacity, 0.1e10);</span>
+<span class="fc" id="L47">        assertEquals(parameters.getOpacity(), newOpacity, 0.1e10);</span>
 <span class="fc" id="L48">    }</span>
 
     @Test
@@ -67,8 +67,8 @@ import static org.junit.Assert.*;
     public void testEquals() {
 <span class="fc" id="L68">        parametersNotEquals(emptyParameters, parameters);</span>
 
-<span class="fc" id="L70">        parametersNotEquals(new Object(), parameters);</span>
-<span class="fc" id="L71">        parametersNotEquals(new Object(), emptyParameters);</span>
+<span class="fc" id="L70">        parametersNotEquals(new Object(), emptyParameters);</span>
+<span class="fc" id="L71">        parametersNotEquals(new Object(), parameters);</span>
 
 <span class="fc" id="L73">        assertEquals(emptyParameters, emptyParameters);</span>
 <span class="fc" id="L74">        assertEquals(parameters, parameters);</span>

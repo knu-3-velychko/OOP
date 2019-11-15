@@ -2,7 +2,9 @@ package Entities;
 
 import Entities.Preciousness;
 
-public class Gem {
+import java.util.Objects;
+
+public class Gem implements Comparable<Gem> {
     private String id;
     private String name;
     private Preciousness preciousness;
@@ -26,11 +28,11 @@ public class Gem {
         this.name = name;
     }
 
-    public Preciousness getPresiousness() {
+    public Preciousness getPreciousness() {
         return preciousness;
     }
 
-    public void setPresiousness(Preciousness preciousness) {
+    public void setPreciousness(Preciousness preciousness) {
         this.preciousness = preciousness;
     }
 
@@ -78,8 +80,6 @@ public class Gem {
                 name +
                 ", preciousness: " +
                 preciousness +
-                ", preciousness: " +
-                preciousness +
                 ", origin: " +
                 origin +
                 ", visual parameters: " +
@@ -88,4 +88,32 @@ public class Gem {
                 value +
                 "}";
     }
+
+    @Override
+    public boolean equals(Object object) {
+        if (!(object instanceof Gem)) return false;
+        if (this == object) return true;
+        Gem gem = (Gem) object;
+        return Objects.equals(this.name, gem.name) &&
+                this.preciousness == gem.preciousness &&
+                Objects.equals(this.origin, gem.origin) &&
+                this.visualParameters == gem.visualParameters &&
+                Objects.equals(this.value, gem.value);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, preciousness, origin, visualParameters, value);
+    }
+
+    @Override
+    public int compareTo(Gem gem) {
+        if (this.name == null && gem.name == null) return 0;
+        else if (this.name == null) return -1;
+        else if(gem.name==null) return 1;
+        int result = this.name.compareTo(gem.name);
+        if (result == 0) return Float.compare(this.value, gem.value);
+        return result;
+    }
+
 }

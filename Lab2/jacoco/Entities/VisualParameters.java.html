@@ -46,8 +46,8 @@ public class VisualParameters {
 <span class="fc bfc" id="L46" title="All 2 branches covered.">        if (object == this) return true;</span>
 
 <span class="fc" id="L48">        VisualParameters parameters = (VisualParameters) object;</span>
-<span class="fc bfc" id="L49" title="All 2 branches covered.">        return Objects.equals(this.color, parameters.color) &amp;&amp;</span>
-<span class="fc bfc" id="L50" title="All 2 branches covered.">                Objects.equals(this.opacity, parameters.opacity) &amp;&amp;</span>
+<span class="fc bfc" id="L49" title="All 4 branches covered.">        return Objects.equals(this.color, parameters.color) &amp;&amp;</span>
+                this.opacity == parameters.opacity &amp;&amp;
 <span class="fc bfc" id="L51" title="All 2 branches covered.">                Objects.equals(this.cutType, parameters.cutType);</span>
 
     }
