@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://localhost:8080/schema/"
+           elementFormDefault="qualified">
+
+    <xs:simpleType name="preciousnessRestriction">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Precious"/>
+            <xs:enumeration value="Semiprecious"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="percent">
+        <xs:restriction base="xs:float">
+            <xs:minInclusive value="0.0"/>
+            <xs:maxInclusive value="100.0"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="cutTypeRestriction">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="4"/>
+            <xs:maxInclusive value="15"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="valueRestriction">
+        <xs:restriction base="xs:float">
+            <xs:minInclusive value="0.0"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:element name="gems">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="gem" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="gem-name" type="xs:string"/>
+
+                            <xs:element name="preciousness">
+                                <xs:complexType>
+                                    <xs:simpleContent>
+                                        <xs:extension base="preciousnessRestriction"/>
+                                    </xs:simpleContent>
+                                </xs:complexType>
+                            </xs:element>
+
+                            <xs:element name="origin" type="xs:string"/>
+
+                            <xs:element name="visual-parameters">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="color" type="xs:string"/>
+
+                                        <xs:element name="opacity">
+                                            <xs:complexType>
+                                                <xs:simpleContent>
+                                                    <xs:extension base="percent"/>
+                                                </xs:simpleContent>
+                                            </xs:complexType>
+                                        </xs:element>
+
+                                        <xs:element name="cut-type">
+                                            <xs:complexType>
+                                                <xs:simpleContent>
+                                                    <xs:extension base="cutTypeRestriction"/>
+                                                </xs:simpleContent>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+
+                            <xs:element name="value">
+                                <xs:complexType>
+                                    <xs:simpleContent>
+                                        <xs:extension base="valueRestriction"/>
+                                    </xs:simpleContent>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="id" type="xs:string"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

@@ -5,7 +5,7 @@ import Entities.Gem;
 import Entities.Preciousness;
 import Entities.VisualParameters;
 
-public class DiamondFundXMLBuilder {
+public class DiamondFundXMLBuilder implements XMLBuilder<DiamondFund> {
     private Type state = Type.Empty;
 
     private DiamondFund diamondFund = new DiamondFund();

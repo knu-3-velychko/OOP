@@ -108,19 +108,60 @@ import static org.junit.Assert.*;
 <span class="fc" id="L108">    }</span>
 
     @Test
+    public void addValueTag() {
+<span class="fc" id="L112">        float value = 10.0f;</span>
+<span class="fc" id="L113">        builder.addOpenTag(&quot;gem&quot;).</span>
+<span class="fc" id="L114">                addOpenTag(&quot;value&quot;).addData(Float.toString(value)).addCloseTag(&quot;value&quot;).</span>
+<span class="fc" id="L115">                addCloseTag(&quot;gem&quot;);</span>
+<span class="fc" id="L116">        assertNotNull(builder.getRoot());</span>
+<span class="fc" id="L117">        assertEquals(builder.getRoot().getGems().size(), 1);</span>
+<span class="fc" id="L118">        Gem gem = builder.getRoot().getGems().get(0);</span>
+<span class="fc" id="L119">        assertEquals(gem.getValue(), value, 0.1e-12);</span>
+<span class="fc" id="L120">    }</span>
+
+    @Test
+    public void addWrongTag() {
+<span class="fc" id="L124">        builder.addOpenTag(&quot;gem&quot;).</span>
+<span class="fc" id="L125">                addOpenTag(&quot;tag&quot;).addData(null).addCloseTag(&quot;tag&quot;).</span>
+<span class="fc" id="L126">                addCloseTag(&quot;gem&quot;);</span>
+<span class="fc" id="L127">        assertNotNull(builder.getRoot());</span>
+<span class="fc" id="L128">        assertEquals(builder.getRoot().getGems().size(), 1);</span>
+<span class="fc" id="L129">        Gem gem = builder.getRoot().getGems().get(0);</span>
+<span class="fc" id="L130">        assertNull(gem.getId());</span>
+<span class="fc" id="L131">    }</span>
+
+    @Test
+    public void addEmptyAttribute() {
+<span class="fc" id="L135">        builder.addOpenTag(&quot;gem&quot;).addAttribute(&quot;id&quot;, null).addCloseTag(&quot;gem&quot;);</span>
+<span class="fc" id="L136">        assertNotNull(builder.getRoot());</span>
+<span class="fc" id="L137">        assertEquals(builder.getRoot().getGems().size(), 1);</span>
+<span class="fc" id="L138">        Gem gem = builder.getRoot().getGems().get(0);</span>
+<span class="fc" id="L139">        assertEquals(gem.getId(), &quot;&quot;);</span>
+<span class="fc" id="L140">    }</span>
+
+    @Test
+    public void addWrongAttribute() {
+<span class="fc" id="L144">        builder.addOpenTag(&quot;gem&quot;).addAttribute(&quot;not-id&quot;, &quot;value&quot;).addCloseTag(&quot;gem&quot;);</span>
+<span class="fc" id="L145">        assertNotNull(builder.getRoot());</span>
+<span class="fc" id="L146">        assertEquals(builder.getRoot().getGems().size(), 1);</span>
+<span class="fc" id="L147">        Gem gem = builder.getRoot().getGems().get(0);</span>
+<span class="fc" id="L148">        assertNull(gem.getId());</span>
+<span class="fc" id="L149">    }</span>
+
+    @Test
     public void addAttribute() {
-<span class="fc" id="L112">        String id = &quot;emerald&quot;;</span>
-<span class="fc" id="L113">        builder.addOpenTag(&quot;gem&quot;).addAttribute(&quot;id&quot;, id).addCloseTag(&quot;gem&quot;);</span>
-<span class="fc" id="L114">        assertNotNull(builder.getRoot());</span>
-<span class="fc" id="L115">        assertEquals(builder.getRoot().getGems().size(), 1);</span>
-<span class="fc" id="L116">        Gem gem = builder.getRoot().getGems().get(0);</span>
-<span class="fc" id="L117">        assertEquals(gem.getId(), id);</span>
-<span class="fc" id="L118">    }</span>
+<span class="fc" id="L153">        String id = &quot;emerald&quot;;</span>
+<span class="fc" id="L154">        builder.addOpenTag(&quot;gem&quot;).addAttribute(&quot;id&quot;, id).addCloseTag(&quot;gem&quot;);</span>
+<span class="fc" id="L155">        assertNotNull(builder.getRoot());</span>
+<span class="fc" id="L156">        assertEquals(builder.getRoot().getGems().size(), 1);</span>
+<span class="fc" id="L157">        Gem gem = builder.getRoot().getGems().get(0);</span>
+<span class="fc" id="L158">        assertEquals(gem.getId(), id);</span>
+<span class="fc" id="L159">    }</span>
 
     @Test
     public void getRoot() {
-<span class="fc" id="L122">        assertNotNull(builder.getRoot());</span>
-<span class="fc" id="L123">        assertTrue(builder.getRoot().getGems().isEmpty());</span>
-<span class="fc" id="L124">    }</span>
+<span class="fc" id="L163">        assertNotNull(builder.getRoot());</span>
+<span class="fc" id="L164">        assertTrue(builder.getRoot().getGems().isEmpty());</span>
+<span class="fc" id="L165">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>

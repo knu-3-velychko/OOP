@@ -3,14 +3,14 @@ package XMLParsers;
 import Entities.DiamondFund;
 import XML.XMLValidator;
 
-public class DiamondFondParser {
+public class DiamondFundParser {
     private GemXMLParser<DiamondFund> parser;
 
-    public DiamondFondParser(GemXMLParser<DiamondFund> parser) {
+    public DiamondFundParser(GemXMLParser<DiamondFund> parser) {
         this.parser = parser;
     }
 
-    DiamondFund parse(String xmlPath, String xsdPath) {
+    public DiamondFund parse(String xmlPath, String xsdPath) {
         if (!XMLValidator.validate(xmlPath, xsdPath))
             return null;
         try {

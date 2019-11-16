@@ -1,27 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>DomParser.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Lab2$Tests_in__Lab2_.exec</a> &gt; <a href="index.source.html" class="el_package">XMLParsers</a> &gt; <span class="el_source">DomParser.java</span></div><h1>DomParser.java</h1><pre class="source lang-java linenums">package XMLParsers;
 
+import XML.XMLBuilder;
 import org.w3c.dom.Document;
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
+<span class="nc" id="L12">import javax.xml.parsers.ParserConfigurationException;</span>
 import java.io.File;
 import java.io.IOException;
-
-<span class="nc" id="L12">public class DomParser&lt;T&gt; implements GemXMLParser {</span>
-    @Override
-    public T parseGem(String xmlPath) throws Exception {
-<span class="nc" id="L15">        File xmlFile = new File(xmlPath);</span>
-<span class="nc" id="L16">        DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();</span>
+<span class="nc" id="L15"></span>
+<span class="nc" id="L16">public class DomParser&lt;T&gt; implements GemXMLParser {</span>
+    private XMLBuilder&lt;T&gt; builder;
+<span class="nc" id="L18"></span>
+<span class="nc" id="L19">    DomParser(XMLBuilder&lt;T&gt; builder) {</span>
+<span class="nc" id="L20">        this.builder = builder;</span>
+<span class="nc" id="L21">    }</span>
+<span class="nc" id="L22"></span>
+<span class="nc" id="L23">    @Override</span>
+<span class="nc" id="L24">    public T parseGem(String xmlPath) throws Exception {</span>
+        File xmlFile = new File(xmlPath);
+        DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
         try {
-<span class="nc" id="L18">            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();</span>
-<span class="nc" id="L19">            Document document = dBuilder.parse(xmlFile);</span>
-<span class="nc" id="L20">        } catch (SAXException | ParserConfigurationException | IOException e) {</span>
-<span class="nc" id="L21">            e.printStackTrace();</span>
-<span class="nc" id="L22">            throw new Exception(&quot;Error in DOM. Can't read file.&quot; + e.getMessage());</span>
-<span class="nc" id="L23">        }</span>
-<span class="nc" id="L24">        return null;</span>
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document document = dBuilder.parse(xmlFile);
+            parseNodes(document.getChildNodes());
+        } catch (SAXException | ParserConfigurationException | IOException e) {
+            e.printStackTrace();
+            throw new Exception(&quot;Error in DOM. Can't read file.&quot; + e.getMessage());
+        }
+        return builder.getRoot();
+    }
+
+    private void parseNodes(NodeList childNodes) {
+        for (int i = 0; i &lt; childNodes.getLength(); i++) {
+            Node node = childNodes.item(i);
+
+            parseNode(node);
+            parseAttributes(node);
+
+            if (node.hasChildNodes())
+                parseNodes(node.getChildNodes());
+
+            builder.addCloseTag(node.getNodeName());
+        }
+    }
+
+    private void parseNode(Node node) {
+        if (node.getNodeType() == Node.TEXT_NODE) {
+            String text = node.getNodeValue().replace(&quot;\n&quot;, &quot;&quot;).trim();
+            if (!text.isEmpty()) {
+                builder.addOpenTag(node.getParentNode().getNodeName()).addData(text);
+            }
+        }
+    }
+
+    private void parseAttributes(Node node) {
+        NamedNodeMap attributes = node.getAttributes();
+        if (attributes != null) {
+            for (int i = 0; i &lt; attributes.getLength(); i++) {
+                Node attribute = attributes.item(i);
+                builder.addAttribute(attribute.getNodeName(), attribute.getTextContent());
+            }
+        }
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>
