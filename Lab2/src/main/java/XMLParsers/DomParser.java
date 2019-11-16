@@ -9,7 +9,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.IOException;
 
-public class DomXMLParser<T> implements GemXMLParser {
+public class DomParser<T> implements GemXMLParser {
     @Override
     public T parseGem(String xmlPath) throws Exception {
         File xmlFile = new File(xmlPath);

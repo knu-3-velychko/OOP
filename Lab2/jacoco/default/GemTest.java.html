@@ -109,8 +109,8 @@ import static org.junit.Assert.*;
 
     @Test
     public void getValue() {
-<span class="fc" id="L112">        assertEquals(emptyGem.getValue(), 0.0f, 0.1e10);</span>
-<span class="fc" id="L113">        assertEquals(gem.getValue(), value, 0.1e10);</span>
+<span class="fc" id="L112">        assertEquals(emptyGem.getValue(), 0.0f, 0.1e-12);</span>
+<span class="fc" id="L113">        assertEquals(gem.getValue(), value, 0.1e-12);</span>
 <span class="fc" id="L114">    }</span>
 
     @Test
@@ -119,8 +119,8 @@ import static org.junit.Assert.*;
 <span class="fc" id="L119">        emptyGem.setValue(newValue);</span>
 <span class="fc" id="L120">        gem.setValue(newValue);</span>
 
-<span class="fc" id="L122">        assertEquals(emptyGem.getValue(), newValue, 0.1e10);</span>
-<span class="fc" id="L123">        assertEquals(gem.getValue(), newValue, 0.1e10);</span>
+<span class="fc" id="L122">        assertEquals(emptyGem.getValue(), newValue, 0.1e-12);</span>
+<span class="fc" id="L123">        assertEquals(gem.getValue(), newValue, 0.1e-12);</span>
 <span class="fc" id="L124">    }</span>
 
     @Test

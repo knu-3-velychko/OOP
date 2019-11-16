@@ -1,6 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>DiamondFundXMLBuilder.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Lab2$Tests_in__Lab2_.exec</a> &gt; <a href="index.source.html" class="el_package">XML</a> &gt; <span class="el_source">DiamondFundXMLBuilder.java</span></div><h1>DiamondFundXMLBuilder.java</h1><pre class="source lang-java linenums">package XML;
 
-<span class="nc" id="L3">public class DiamondFundXMLBuilder {</span>
+import Entities.DiamondFund;
+import Entities.Gem;
+import Entities.Preciousness;
+import Entities.VisualParameters;
 
+<span class="fc" id="L8">public class DiamondFundXMLBuilder {</span>
+<span class="fc" id="L9">    private Type state = Type.Empty;</span>
+
+<span class="fc" id="L11">    private DiamondFund diamondFund = new DiamondFund();</span>
+<span class="fc" id="L12">    private Gem gem = null;</span>
+<span class="fc" id="L13">    private VisualParameters visualParameters = new VisualParameters();</span>
+
+
+    public DiamondFundXMLBuilder addOpenTag(String tag) {
+<span class="fc" id="L17">        state = getType(tag);</span>
+
+<span class="fc bfc" id="L19" title="All 3 branches covered.">        switch (state) {</span>
+            case Gem:
+<span class="fc" id="L21">                gem = new Gem();</span>
+<span class="fc" id="L22">                break;</span>
+            case VisualParameters:
+<span class="fc" id="L24">                visualParameters = new VisualParameters();</span>
+<span class="fc" id="L25">                break;</span>
+            default:
+                break;
+        }
+
+<span class="fc" id="L30">        return this;</span>
+    }
+
+    public DiamondFundXMLBuilder addAttribute(String name, String value) {
+<span class="fc bfc" id="L34" title="All 2 branches covered.">        if (value == null) value = &quot;&quot;;</span>
+
+<span class="fc bfc" id="L36" title="All 2 branches covered.">        if (name.equalsIgnoreCase(&quot;id&quot;))</span>
+<span class="fc" id="L37">            gem.setId(value);</span>
+<span class="fc" id="L38">        return this;</span>
+    }
+
+    public DiamondFundXMLBuilder addData(String data) {
+<span class="fc bfc" id="L42" title="All 8 branches covered.">        switch (state) {</span>
+            case Name:
+<span class="fc" id="L44">                gem.setName(data);</span>
+<span class="fc" id="L45">                break;</span>
+            case Preciousness:
+<span class="fc" id="L47">                gem.setPreciousness(Preciousness.valueOf(data));</span>
+<span class="fc" id="L48">                break;</span>
+            case Origin:
+<span class="fc" id="L50">                gem.setOrigin(data);</span>
+<span class="fc" id="L51">                break;</span>
+            case Color:
+<span class="fc" id="L53">                visualParameters.setColor(data);</span>
+<span class="fc" id="L54">                break;</span>
+            case Opacity:
+<span class="fc" id="L56">                visualParameters.setOpacity(Float.parseFloat(data));</span>
+<span class="fc" id="L57">                break;</span>
+            case CutType:
+<span class="fc" id="L59">                visualParameters.setCutType(Integer.parseInt(data));</span>
+<span class="fc" id="L60">                break;</span>
+            case Value:
+<span class="fc" id="L62">                gem.setValue(Float.parseFloat(data));</span>
+<span class="fc" id="L63">                break;</span>
+            default:
+                break;
+        }
+<span class="fc" id="L67">        return this;</span>
+    }
+
+    public DiamondFundXMLBuilder addCloseTag(String tag) {
+<span class="fc" id="L71">        Type endTag = getType(tag);</span>
+<span class="fc bfc" id="L72" title="All 3 branches covered.">        switch (endTag) {</span>
+            case Gem:
+<span class="fc" id="L74">                diamondFund.addGem(gem);</span>
+<span class="fc" id="L75">                break;</span>
+            case VisualParameters:
+<span class="fc" id="L77">                gem.setVisualParameters(visualParameters);</span>
+<span class="fc" id="L78">                break;</span>
+            default:
+                break;
+        }
+<span class="fc" id="L82">        return this;</span>
+    }
+
+    public DiamondFund getRoot() {
+<span class="fc" id="L86">        return diamondFund;</span>
+    }
+
+    private Type getType(String tag) {
+<span class="fc" id="L90">        Type[] types = Type.values();</span>
+
+<span class="fc bfc" id="L92" title="All 2 branches covered.">        for (Type type : types) {</span>
+<span class="fc bfc" id="L93" title="All 2 branches covered.">            if (tag.equalsIgnoreCase(type.toString())) {</span>
+<span class="fc" id="L94">                state = type;</span>
+<span class="fc" id="L95">                return type;</span>
+            }
+        }
+<span class="fc" id="L98">        return Type.Empty;</span>
+    }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>

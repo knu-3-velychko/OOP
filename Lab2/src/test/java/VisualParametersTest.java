@@ -33,8 +33,8 @@ public class VisualParametersTest {
 
     @Test
     public void getOpacity() {
-        assertEquals(emptyParameters.getOpacity(), 0.0, 0.1e10);
-        assertEquals(parameters.getOpacity(), opacity, 0.1e10);
+        assertEquals(emptyParameters.getOpacity(), 0.0, 0.1e-12);
+        assertEquals(parameters.getOpacity(), opacity, 0.1e-12);
     }
 
     @Test
@@ -43,8 +43,8 @@ public class VisualParametersTest {
         emptyParameters.setOpacity(newOpacity);
         parameters.setOpacity(newOpacity);
 
-        assertEquals(emptyParameters.getOpacity(), newOpacity, 0.1e10);
-        assertEquals(parameters.getOpacity(), newOpacity, 0.1e10);
+        assertEquals(emptyParameters.getOpacity(), newOpacity, 0.1e-12);
+        assertEquals(parameters.getOpacity(), newOpacity, 0.1e-12);
     }
 
     @Test

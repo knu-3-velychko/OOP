@@ -109,8 +109,8 @@ public class GemTest {
 
     @Test
     public void getValue() {
-        assertEquals(emptyGem.getValue(), 0.0f, 0.1e10);
-        assertEquals(gem.getValue(), value, 0.1e10);
+        assertEquals(emptyGem.getValue(), 0.0f, 0.1e-12);
+        assertEquals(gem.getValue(), value, 0.1e-12);
     }
 
     @Test
@@ -119,8 +119,8 @@ public class GemTest {
         emptyGem.setValue(newValue);
         gem.setValue(newValue);
 
-        assertEquals(emptyGem.getValue(), newValue, 0.1e10);
-        assertEquals(gem.getValue(), newValue, 0.1e10);
+        assertEquals(emptyGem.getValue(), newValue, 0.1e-12);
+        assertEquals(gem.getValue(), newValue, 0.1e-12);
     }
 
     @Test

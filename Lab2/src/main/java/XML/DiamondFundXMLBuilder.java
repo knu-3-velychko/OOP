@@ -13,18 +13,24 @@ public class DiamondFundXMLBuilder {
     private VisualParameters visualParameters = new VisualParameters();
 
 
-    DiamondFundXMLBuilder addOpenTag(String tag) {
+    public DiamondFundXMLBuilder addOpenTag(String tag) {
         state = getType(tag);
 
-        if (state == Type.Gem) {
-            gem = new Gem();
-        } else if (state == Type.VisualParameters) {
-            visualParameters = new VisualParameters();
+        switch (state) {
+            case Gem:
+                gem = new Gem();
+                break;
+            case VisualParameters:
+                visualParameters = new VisualParameters();
+                break;
+            default:
+                break;
         }
+
         return this;
     }
 
-    DiamondFundXMLBuilder addAttribute(String name, String value) {
+    public DiamondFundXMLBuilder addAttribute(String name, String value) {
         if (value == null) value = "";
 
         if (name.equalsIgnoreCase("id"))
@@ -32,7 +38,7 @@ public class DiamondFundXMLBuilder {
         return this;
     }
 
-    DiamondFundXMLBuilder addData(String data) {
+    public DiamondFundXMLBuilder addData(String data) {
         switch (state) {
             case Name:
                 gem.setName(data);
@@ -41,7 +47,7 @@ public class DiamondFundXMLBuilder {
                 gem.setPreciousness(Preciousness.valueOf(data));
                 break;
             case Origin:
-                gem.setOrigin("data");
+                gem.setOrigin(data);
                 break;
             case Color:
                 visualParameters.setColor(data);
@@ -61,11 +67,22 @@ public class DiamondFundXMLBuilder {
         return this;
     }
 
-    DiamondFundXMLBuilder addCloseTag(String tag) {
+    public DiamondFundXMLBuilder addCloseTag(String tag) {
+        Type endTag = getType(tag);
+        switch (endTag) {
+            case Gem:
+                diamondFund.addGem(gem);
+                break;
+            case VisualParameters:
+                gem.setVisualParameters(visualParameters);
+                break;
+            default:
+                break;
+        }
         return this;
     }
 
-    DiamondFund getRoot() {
+    public DiamondFund getRoot() {
         return diamondFund;
     }
 
