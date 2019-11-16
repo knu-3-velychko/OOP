@@ -11,11 +11,11 @@ import java.io.FileNotFoundException;
 import static javax.xml.stream.XMLStreamConstants.*;
 import static javax.xml.stream.XMLStreamConstants.END_DOCUMENT;
 
-public class StAXParser<T> implements GemXMLParser {
+public class GemStAXParser<T> implements GemXMLParser {
     private XMLBuilder<T> builder;
     private XMLStreamReader reader;
 
-    public StAXParser(XMLBuilder<T> builder) {
+    public GemStAXParser(XMLBuilder<T> builder) {
         this.builder = builder;
     }
 

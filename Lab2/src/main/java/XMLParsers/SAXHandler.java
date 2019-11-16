@@ -11,10 +11,6 @@ public class SAXHandler<T> extends DefaultHandler {
         this.builder = builder;
     }
 
-    public T getRoot() {
-        return builder.getRoot();
-    }
-
     @Override
     public void startElement(String uri, String localName, String qName, Attributes attributes) {
         builder.addOpenTag(qName);

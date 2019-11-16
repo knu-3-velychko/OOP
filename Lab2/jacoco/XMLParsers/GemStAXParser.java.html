@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>GemStAXParser.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Lab2$Tests_in__Lab2_.exec</a> &gt; <a href="index.source.html" class="el_package">XMLParsers</a> &gt; <span class="el_source">GemStAXParser.java</span></div><h1>GemStAXParser.java</h1><pre class="source lang-java linenums">package XMLParsers;
+
+import XML.XMLBuilder;
+
+import javax.xml.stream.XMLInputFactory;
+import javax.xml.stream.XMLStreamException;
+import javax.xml.stream.XMLStreamReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
+import static javax.xml.stream.XMLStreamConstants.*;
+import static javax.xml.stream.XMLStreamConstants.END_DOCUMENT;
+
+public class GemStAXParser&lt;T&gt; implements GemXMLParser {
+    private XMLBuilder&lt;T&gt; builder;
+    private XMLStreamReader reader;
+
+<span class="fc" id="L18">    public GemStAXParser(XMLBuilder&lt;T&gt; builder) {</span>
+<span class="fc" id="L19">        this.builder = builder;</span>
+<span class="fc" id="L20">    }</span>
+
+    @Override
+    public Object parseGem(String xmlPath) throws Exception {
+<span class="fc" id="L24">        XMLInputFactory xmlInputFactory = XMLInputFactory.newInstance();</span>
+        try {
+<span class="fc" id="L26">            FileInputStream stream = new FileInputStream(xmlPath);</span>
+<span class="fc" id="L27">            reader = xmlInputFactory.createXMLStreamReader(stream);</span>
+<span class="fc" id="L28">            parse();</span>
+<span class="nc" id="L29">        } catch (FileNotFoundException | XMLStreamException e) {</span>
+<span class="nc" id="L30">            e.printStackTrace();</span>
+<span class="nc" id="L31">            throw new Exception(&quot;Error &quot; + e.getMessage());</span>
+<span class="fc" id="L32">        }</span>
+<span class="fc" id="L33">        return builder.getRoot();</span>
+    }
+
+    private void parse() throws XMLStreamException {
+<span class="fc bfc" id="L37" title="All 2 branches covered.">        for (int event = reader.getEventType(); reader.hasNext(); event = reader.next()) {</span>
+<span class="fc bfc" id="L38" title="All 4 branches covered.">            switch (event) {</span>
+                case START_ELEMENT:
+<span class="fc" id="L40">                    builder.addOpenTag(reader.getLocalName());</span>
+<span class="fc" id="L41">                    addAttributes();</span>
+<span class="fc" id="L42">                    break;</span>
+                case CHARACTERS:
+<span class="fc" id="L44">                    addData();</span>
+<span class="fc" id="L45">                    break;</span>
+                case END_ELEMENT:
+<span class="fc" id="L47">                    builder.addCloseTag(reader.getLocalName());</span>
+<span class="fc" id="L48">                    break;</span>
+                case END_DOCUMENT:
+                    break;
+            }
+        }
+<span class="fc" id="L53">    }</span>
+
+    private void addAttributes() {
+<span class="fc bfc" id="L56" title="All 2 branches covered.">        for (int i = 0; i &lt; reader.getAttributeCount(); i++) {</span>
+<span class="fc" id="L57">            String name = reader.getAttributeName(i).toString();</span>
+<span class="fc" id="L58">            String value = reader.getAttributeValue(i);</span>
+<span class="fc" id="L59">            builder.addAttribute(name, value);</span>
+        }
+<span class="fc" id="L61">    }</span>
+
+    private void addData() {
+<span class="fc" id="L64">        String data = reader.getText();</span>
+<span class="fc" id="L65">        data = data.replace(&quot;\n&quot;, &quot;&quot;).trim();</span>
+<span class="fc bfc" id="L66" title="All 2 branches covered.">        if (!data.equals(&quot;&quot;))</span>
+<span class="fc" id="L67">            builder.addData(data);</span>
+<span class="fc" id="L68">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>

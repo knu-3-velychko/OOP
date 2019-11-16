@@ -31,8 +31,11 @@ public class DiamondFundXMLBuilder implements XMLBuilder<DiamondFund> {
     }
 
     public DiamondFundXMLBuilder addAttribute(String name, String value) {
-        if(name==null)
+        if (name == null)
             return this;
+
+        if (value == null)
+            value = "";
 
         if (name.equalsIgnoreCase("id"))
             gem.setId(value);
@@ -45,7 +48,7 @@ public class DiamondFundXMLBuilder implements XMLBuilder<DiamondFund> {
                 gem.setName(data);
                 break;
             case Preciousness:
-                    gem.setPreciousness(Preciousness.valueOf(data));
+                gem.setPreciousness(Preciousness.valueOf(data));
                 break;
             case Origin:
                 gem.setOrigin(data);

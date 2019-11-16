@@ -27,5 +27,16 @@ public class DiamondFund {
     public void sortGems() {
 <span class="fc" id="L28">        Collections.sort(gems);</span>
 <span class="fc" id="L29">    }</span>
+
+    @Override
+    public String toString() {
+<span class="fc" id="L33">        StringBuilder result = new StringBuilder(&quot;DiamondFund{\n&quot;);</span>
+<span class="fc bfc" id="L34" title="All 2 branches covered.">        for (Gem gem : gems) {</span>
+<span class="fc" id="L35">            result.append(gem);</span>
+<span class="fc" id="L36">            result.append(&quot;\n&quot;);</span>
+<span class="fc" id="L37">        }</span>
+<span class="fc" id="L38">        result.append(&quot;}&quot;);</span>
+<span class="fc" id="L39">        return result.toString();</span>
+    }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>XMLValidator.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Lab2$Tests_in__Lab2_.exec</a> &gt; <a href="index.source.html" class="el_package">XML</a> &gt; <span class="el_source">XMLValidator.java</span></div><h1>XMLValidator.java</h1><pre class="source lang-java linenums">package XML;
+
+import org.xml.sax.SAXException;
+
+import javax.xml.XMLConstants;
+import javax.xml.transform.stream.StreamSource;
+import javax.xml.validation.Schema;
+import javax.xml.validation.SchemaFactory;
+import javax.xml.validation.Validator;
+import java.io.File;
+import java.io.IOException;
+
+<span class="nc" id="L13">public class XMLValidator {</span>
+    public static boolean validate(String xmlPath, String xsdPath) {
+<span class="fc" id="L15">        SchemaFactory schemaFactory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);</span>
+        try {
+<span class="fc" id="L17">            Schema schema = schemaFactory.newSchema(new File(xsdPath));</span>
+<span class="fc" id="L18">            Validator validator = schema.newValidator();</span>
+<span class="fc" id="L19">            validator.validate(new StreamSource(new File(xmlPath)));</span>
+<span class="fc" id="L20">        } catch (SAXException | IOException e) {</span>
+<span class="fc" id="L21">            e.printStackTrace();</span>
+<span class="fc" id="L22">            return false;</span>
+<span class="fc" id="L23">        }</span>
+<span class="fc" id="L24">        return true;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>

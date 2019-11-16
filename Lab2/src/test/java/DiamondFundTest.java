@@ -75,4 +75,10 @@ public class DiamondFundTest {
         assertEquals(diamondFund.getGems().get(0), newGem);
         assertEquals(diamondFund.getGems().get(1), gem);
     }
+
+    @Test
+    public void testToString() {
+        assertEquals(emptyDiamondFund.toString(),"DiamondFund{\n}");
+        assertEquals(diamondFund.toString(),"DiamondFund{\n"+gem+"\n}");
+    }
 }

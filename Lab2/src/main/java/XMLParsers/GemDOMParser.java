@@ -13,10 +13,10 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.IOException;
 
-public class DomParser<T> implements GemXMLParser {
+public class GemDOMParser<T> implements GemXMLParser {
     private XMLBuilder<T> builder;
 
-    public DomParser(XMLBuilder<T> builder) {
+    public GemDOMParser(XMLBuilder<T> builder) {
         this.builder = builder;
     }
 

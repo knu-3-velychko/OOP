@@ -75,5 +75,11 @@ import static org.junit.Assert.*;
 <span class="fc" id="L75">        assertEquals(diamondFund.getGems().get(0), newGem);</span>
 <span class="fc" id="L76">        assertEquals(diamondFund.getGems().get(1), gem);</span>
 <span class="fc" id="L77">    }</span>
+
+    @Test
+    public void testToString() {
+<span class="fc" id="L81">        assertEquals(emptyDiamondFund.toString(),&quot;DiamondFund{\n}&quot;);</span>
+<span class="fc" id="L82">        assertEquals(diamondFund.toString(),&quot;DiamondFund{\n&quot;+gem+&quot;\n}&quot;);</span>
+<span class="fc" id="L83">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>

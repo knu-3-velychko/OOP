@@ -149,6 +149,15 @@ public class DiamondFundXMLBuilderTest {
     }
 
     @Test
+    public void addNullAttribute() {
+        builder.addOpenTag("gem").addAttribute(null, "value").addCloseTag("gem");
+        assertNotNull(builder.getRoot());
+        assertEquals(builder.getRoot().getGems().size(), 1);
+        Gem gem = builder.getRoot().getGems().get(0);
+        assertNull(gem.getId());
+    }
+
+    @Test
     public void addAttribute() {
         String id = "emerald";
         builder.addOpenTag("gem").addAttribute("id", id).addCloseTag("gem");
