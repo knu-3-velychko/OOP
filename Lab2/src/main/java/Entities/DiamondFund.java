@@ -27,4 +27,15 @@ public class DiamondFund {
     public void sortGems() {
         Collections.sort(gems);
     }
+
+    @Override
+    public String toString() {
+        StringBuilder result = new StringBuilder("DiamondFund{\n");
+        for (Gem gem : gems) {
+            result.append(gem);
+            result.append("\n");
+        }
+        result.append("}");
+        return result.toString();
+    }
 }

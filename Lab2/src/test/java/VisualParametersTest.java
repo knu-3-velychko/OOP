@@ -112,7 +112,7 @@ public class VisualParametersTest {
 
     @Test
     public void testToString() {
-        String emptyString = "Entities.VisualParameters{" +
+        String emptyString = "VisualParameters{" +
                 "color: " +
                 null +
                 ", opacity: " +
@@ -121,7 +121,7 @@ public class VisualParametersTest {
                 0 +
                 "}";
 
-        String parametersString = "Entities.VisualParameters{" +
+        String parametersString = "VisualParameters{" +
                 "color: " +
                 color +
                 ", opacity: " +

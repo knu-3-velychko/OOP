@@ -56,6 +56,8 @@ public class DomParser<T> implements GemXMLParser {
                 builder.addOpenTag(node.getParentNode().getNodeName()).addData(text);
             }
         }
+        else
+            builder.addOpenTag(node.getNodeName());
     }
 
     private void parseAttributes(Node node) {

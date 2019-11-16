@@ -125,7 +125,7 @@ public class GemTest {
 
     @Test
     public void testToString() {
-        String emptyString = "Entities.VisualParameters{" +
+        String emptyString = "Gem{" +
                 "id: " +
                 null +
                 ", name: " +
@@ -140,7 +140,7 @@ public class GemTest {
                 0.0f +
                 "}";
 
-        String gemString = "Entities.VisualParameters{" +
+        String gemString = "Gem{" +
                 "id: " +
                 null +
                 ", name: " +

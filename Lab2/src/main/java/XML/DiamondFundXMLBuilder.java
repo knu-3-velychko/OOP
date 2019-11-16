@@ -31,7 +31,8 @@ public class DiamondFundXMLBuilder implements XMLBuilder<DiamondFund> {
     }
 
     public DiamondFundXMLBuilder addAttribute(String name, String value) {
-        if (value == null) value = "";
+        if(name==null)
+            return this;
 
         if (name.equalsIgnoreCase("id"))
             gem.setId(value);

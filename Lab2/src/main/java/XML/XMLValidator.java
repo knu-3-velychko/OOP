@@ -11,7 +11,7 @@ import java.io.File;
 import java.io.IOException;
 
 public class XMLValidator {
-    public static boolean validate(String xsdPath, String xmlPath) {
+    public static boolean validate(String xmlPath, String xsdPath) {
         SchemaFactory schemaFactory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
         try {
             Schema schema = schemaFactory.newSchema(new File(xsdPath));

@@ -59,7 +59,7 @@ public class VisualParameters {
 
     @Override
     public String toString() {
-        return "Entities.VisualParameters{" +
+        return "VisualParameters{" +
                 "color: " +
                 color +
                 ", opacity: " +

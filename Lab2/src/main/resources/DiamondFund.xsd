@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-           targetNamespace="http://localhost:8080/schema/"
-           elementFormDefault="qualified">
+>
 
     <xs:simpleType name="preciousnessRestriction">
         <xs:restriction base="xs:string">
@@ -36,7 +35,7 @@
                 <xs:element name="gem" maxOccurs="unbounded">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="gem-name" type="xs:string"/>
+                            <xs:element name="name" type="xs:string"/>
 
                             <xs:element name="preciousness">
                                 <xs:complexType>

@@ -2,7 +2,7 @@
 <gems xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="DiamondFund.xsd">
     <gem id="id1">
-        <gem-name>Ruby</gem-name>
+        <name>Ruby</name>
         <preciousness>Precious</preciousness>
         <origin>South Asia</origin>
         <visual-parameters>
@@ -14,7 +14,7 @@
     </gem>
 
     <gem id="id2">
-        <gem-name>Emerald</gem-name>
+        <name>Emerald</name>
         <preciousness>Precious</preciousness>
         <origin>Columbia</origin>
         <visual-parameters>
@@ -26,7 +26,7 @@
     </gem>
 
     <gem id="id3">
-        <gem-name>Garnets</gem-name>
+        <name>Garnets</name>
         <preciousness>Semiprecious</preciousness>
         <origin>USA</origin>
         <visual-parameters>

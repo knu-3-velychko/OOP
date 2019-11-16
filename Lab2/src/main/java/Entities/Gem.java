@@ -71,7 +71,7 @@ public class Gem implements Comparable<Gem> {
 
     @Override
     public String toString() {
-        return "Entities.VisualParameters{" +
+        return "Gem{" +
                 "id: " +
                 id +
                 ", name: " +
