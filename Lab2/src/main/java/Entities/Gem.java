@@ -1,7 +1,5 @@
 package Entities;
 
-import Entities.Preciousness;
-
 import java.util.Objects;
 
 public class Gem implements Comparable<Gem> {
@@ -109,8 +107,8 @@ public class Gem implements Comparable<Gem> {
     @Override
     public int compareTo(Gem gem) {
         if (this.name == null && gem.name == null) return 0;
-        else if (this.name == null) return -1;
-        else if(gem.name==null) return 1;
+        else if (this.name == null) return 1;
+        else if(gem.name==null) return -1;
         int result = this.name.compareTo(gem.name);
         if (result == 0) return Float.compare(this.value, gem.value);
         return result;

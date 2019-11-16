@@ -166,8 +166,8 @@ public class GemTest {
         gemsNotEquals(new Object(), emptyGem);
         gemsNotEquals(new Object(), gem);
 
-        assertEquals(emptyGem,emptyGem);
-        assertEquals(gem,gem);
+        assertEquals(emptyGem, emptyGem);
+        assertEquals(gem, gem);
 
         Gem newEmptyGem = new Gem();
         Gem newGem = new Gem(name, preciousness, origin, visualParameters, value);
@@ -219,20 +219,20 @@ public class GemTest {
         Gem newEmptyGem = new Gem();
         Gem newGem = new Gem(name, preciousness, origin, visualParameters, value);
 
-        assertTrue(emptyGem.compareTo(gem) < 0);
-        assertTrue(gem.compareTo(emptyGem) > 0);
+        assertEquals(emptyGem.compareTo(gem), 1);
+        assertEquals(gem.compareTo(emptyGem), -1);
         assertEquals(emptyGem.compareTo(newEmptyGem), 0);
 
         assertEquals(newGem.compareTo(gem), 0);
         assertEquals(gem.compareTo(newGem), 0);
 
         newGem.setValue(10.0f);
-        assertTrue(newGem.compareTo(gem) > 0);
-        assertTrue(gem.compareTo(newGem) < 0);
+        assertEquals(newGem.compareTo(gem) ,Float.compare(newGem.getValue(), gem.getValue()));
+        assertEquals(gem.compareTo(newGem) ,Float.compare(gem.getValue(), newGem.getValue()));
 
         newGem.setName("yellow");
-        assertTrue(newGem.compareTo(gem) > 0);
-        assertTrue(gem.compareTo(newGem) < 0);
+        assertEquals(newGem.compareTo(gem) ,newGem.getName().compareTo(gem.getName()));
+        assertEquals(gem.compareTo(newGem) ,gem.getName().compareTo(newGem.getName()));
 
     }
 }
