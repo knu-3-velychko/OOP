@@ -15,14 +15,14 @@ public class SSHClient {
 
     private Logger logger;
 
-<span class="nc" id="L18">    public SSHClient(String ip, int port) {</span>
-<span class="nc" id="L19">        address = new InetSocketAddress(ip, port);</span>
+<span class="fc" id="L18">    public SSHClient(String ip, int port) {</span>
+<span class="fc" id="L19">        address = new InetSocketAddress(ip, port);</span>
 
-<span class="nc" id="L21">        writer = new SocketWriter();</span>
-<span class="nc" id="L22">        reader = new SocketReader();</span>
+<span class="fc" id="L21">        writer = new SocketWriter();</span>
+<span class="fc" id="L22">        reader = new SocketReader();</span>
 
-<span class="nc" id="L24">        logger = Logger.getLogger(SSHClient.class.getName());</span>
-<span class="nc" id="L25">    }</span>
+<span class="fc" id="L24">        logger = Logger.getLogger(SSHClient.class.getName());</span>
+<span class="fc" id="L25">    }</span>
 
     public void connect() {
 <span class="nc" id="L28">        try (SocketChannel channel = SocketChannel.open(this.address)) {</span>
@@ -40,13 +40,13 @@ public class SSHClient {
 <span class="nc" id="L40">                response = reader.read(channel);</span>
 <span class="nc" id="L41">                logger.info(&quot;Received response: &quot; + response);</span>
 <span class="nc" id="L42">            }</span>
-<span class="nc" id="L43">        } catch (IOException e) {</span>
-<span class="nc" id="L44">            logger.log(Level.INFO, &quot;Exception handled&quot; + e.getMessage());</span>
+<span class="fc" id="L43">        } catch (IOException e) {</span>
+<span class="fc" id="L44">            logger.log(Level.INFO, &quot;Exception handled&quot; + e.getMessage());</span>
 <span class="nc" id="L45">        }</span>
-<span class="nc" id="L46">    }</span>
+<span class="fc" id="L46">    }</span>
 
     public InetSocketAddress getAddress() {
-<span class="nc" id="L49">        return address;</span>
+<span class="fc" id="L49">        return address;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>

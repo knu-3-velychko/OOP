@@ -1,0 +1,6 @@
+Student {
+Name: Tai;
+Age: 19;
+Faculty: cybernetics;
+}
+
