@@ -15,14 +15,6 @@ jacoco {
     toolVersion = "0.8.4"
 }
 
-jacocoTestReport {
-    reports {
-        xml.enabled true
-        csv.enabled true
-        html.enabled true
-    }
-}
-
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
     testCompile 'org.mockito:mockito-core:2.+'
