@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<gems xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="DiamondFund.xsd">
+    <gem id="id1">
+        <name>Ruby</name>
+        <preciousness>Precious</preciousness>
+        <origin>South Asia</origin>
+        <visual-parameters>
+            <color>green</color>
+            <opacity>50.0</opacity>
+            <cut-type>12</cut-type>
+        </visual-parameters>
+        <value>2.0</value>
+    </gem>
+
+    <gem id="id2">
+        <name>Emerald</name>
+        <preciousness>Precious</preciousness>
+        <origin>Columbia</origin>
+        <visual-parameters>
+            <color>green</color>
+            <opacity>70.0</opacity>
+            <cut-type>10</cut-type>
+        </visual-parameters>
+        <value>5.0</value>
+    </gem>
+
+    <gem id="id3">
+        <name>Garnets</name>
+        <preciousness>Semiprecious</preciousness>
+        <origin>USA</origin>
+        <visual-parameters>
+            <color>red</color>
+            <opacity>30.0</opacity>
+            <cut-type>8</cut-type>
+        </visual-parameters>
+        <value>10.0</value>
+    </gem>
+</gems>

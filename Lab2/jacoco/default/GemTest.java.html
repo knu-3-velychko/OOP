@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>GemTest.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Lab2$Lab2__test_.exec</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">GemTest.java</span></div><h1>GemTest.java</h1><pre class="source lang-java linenums">import Entities.Gem;
+import Entities.Preciousness;
+import Entities.VisualParameters;
+import org.junit.Test;
+
+import static org.junit.Assert.*;
+
+<span class="fc" id="L8">public class GemTest {</span>
+<span class="fc" id="L9">    private final String name = &quot;Emerald&quot;;</span>
+<span class="fc" id="L10">    private final Preciousness preciousness = Preciousness.Precious;</span>
+<span class="fc" id="L11">    private final String origin = &quot;Colombia&quot;;</span>
+<span class="fc" id="L12">    private final VisualParameters visualParameters = new VisualParameters(&quot;green&quot;, 50.0f, 10);</span>
+<span class="fc" id="L13">    private final float value = 5.0f;</span>
+
+<span class="fc" id="L15">    private Gem emptyGem = new Gem();</span>
+<span class="fc" id="L16">    private Gem gem = new Gem(name, preciousness, origin, visualParameters, value);</span>
+
+    @Test
+    public void getId() {
+<span class="fc" id="L20">        assertNull(emptyGem.getId());</span>
+<span class="fc" id="L21">        assertNull(gem.getId());</span>
+<span class="fc" id="L22">    }</span>
+
+    @Test
+    public void setId() {
+<span class="fc" id="L26">        String id = &quot;123&quot;;</span>
+<span class="fc" id="L27">        emptyGem.setId(id);</span>
+<span class="fc" id="L28">        gem.setId(id);</span>
+
+<span class="fc" id="L30">        assertEquals(emptyGem.getId(), id);</span>
+<span class="fc" id="L31">        assertEquals(gem.getId(), id);</span>
+<span class="fc" id="L32">    }</span>
+
+    @Test
+    public void getName() {
+<span class="fc" id="L36">        assertNull(emptyGem.getName());</span>
+<span class="fc" id="L37">        assertNotNull(gem.getName());</span>
+<span class="fc" id="L38">        assertEquals(gem.getName(), name);</span>
+<span class="fc" id="L39">    }</span>
+
+    @Test
+    public void setName() {
+<span class="fc" id="L43">        String newName = &quot;Ruby&quot;;</span>
+<span class="fc" id="L44">        emptyGem.setName(newName);</span>
+<span class="fc" id="L45">        gem.setName(newName);</span>
+
+<span class="fc" id="L47">        assertNotNull(emptyGem.getName());</span>
+<span class="fc" id="L48">        assertNotNull(gem.getName());</span>
+<span class="fc" id="L49">        assertEquals(emptyGem.getName(), newName);</span>
+<span class="fc" id="L50">        assertEquals(gem.getName(), newName);</span>
+<span class="fc" id="L51">    }</span>
+
+    @Test
+    public void getPreciousness() {
+<span class="fc" id="L55">        assertNull(emptyGem.getPreciousness());</span>
+<span class="fc" id="L56">        assertNotNull(gem.getPreciousness());</span>
+<span class="fc" id="L57">        assertEquals(gem.getPreciousness(), preciousness);</span>
+<span class="fc" id="L58">    }</span>
+
+    @Test
+    public void setPreciousness() {
+<span class="fc" id="L62">        Preciousness newPreciousness = Preciousness.Semiprecious;</span>
+<span class="fc" id="L63">        emptyGem.setPreciousness(newPreciousness);</span>
+<span class="fc" id="L64">        gem.setPreciousness(newPreciousness);</span>
+
+<span class="fc" id="L66">        assertNotNull(emptyGem.getPreciousness());</span>
+<span class="fc" id="L67">        assertNotNull(gem.getPreciousness());</span>
+<span class="fc" id="L68">        assertEquals(emptyGem.getPreciousness(), newPreciousness);</span>
+<span class="fc" id="L69">        assertEquals(gem.getPreciousness(), newPreciousness);</span>
+<span class="fc" id="L70">    }</span>
+
+    @Test
+    public void getOrigin() {
+<span class="fc" id="L74">        assertNull(emptyGem.getOrigin());</span>
+<span class="fc" id="L75">        assertNotNull(gem.getOrigin());</span>
+<span class="fc" id="L76">        assertEquals(gem.getOrigin(), origin);</span>
+<span class="fc" id="L77">    }</span>
+
+    @Test
+    public void setOrigin() {
+<span class="fc" id="L81">        String newOrigin = &quot;Muzo&quot;;</span>
+<span class="fc" id="L82">        emptyGem.setOrigin(newOrigin);</span>
+<span class="fc" id="L83">        gem.setOrigin(newOrigin);</span>
+
+<span class="fc" id="L85">        assertNotNull(emptyGem.getOrigin());</span>
+<span class="fc" id="L86">        assertNotNull(gem.getOrigin());</span>
+<span class="fc" id="L87">        assertEquals(emptyGem.getOrigin(), newOrigin);</span>
+<span class="fc" id="L88">        assertEquals(gem.getOrigin(), newOrigin);</span>
+<span class="fc" id="L89">    }</span>
+
+    @Test
+    public void getVisualParameters() {
+<span class="fc" id="L93">        assertNull(emptyGem.getVisualParameters());</span>
+<span class="fc" id="L94">        assertNotNull(gem.getVisualParameters());</span>
+<span class="fc" id="L95">        assertEquals(gem.getVisualParameters(), visualParameters);</span>
+<span class="fc" id="L96">    }</span>
+
+    @Test
+    public void setVisualParameters() {
+<span class="fc" id="L100">        VisualParameters newVisualParameters = new VisualParameters(&quot;yellow&quot;, 30.0f, 12);</span>
+<span class="fc" id="L101">        emptyGem.setVisualParameters(newVisualParameters);</span>
+<span class="fc" id="L102">        gem.setVisualParameters(newVisualParameters);</span>
+
+<span class="fc" id="L104">        assertNotNull(emptyGem.getVisualParameters());</span>
+<span class="fc" id="L105">        assertNotNull(gem.getVisualParameters());</span>
+<span class="fc" id="L106">        assertEquals(emptyGem.getVisualParameters(), newVisualParameters);</span>
+<span class="fc" id="L107">        assertEquals(gem.getVisualParameters(), newVisualParameters);</span>
+<span class="fc" id="L108">    }</span>
+
+    @Test
+    public void getValue() {
+<span class="fc" id="L112">        assertEquals(emptyGem.getValue(), 0.0f, 0.1e-12);</span>
+<span class="fc" id="L113">        assertEquals(gem.getValue(), value, 0.1e-12);</span>
+<span class="fc" id="L114">    }</span>
+
+    @Test
+    public void setValue() {
+<span class="fc" id="L118">        float newValue = 10.0f;</span>
+<span class="fc" id="L119">        emptyGem.setValue(newValue);</span>
+<span class="fc" id="L120">        gem.setValue(newValue);</span>
+
+<span class="fc" id="L122">        assertEquals(emptyGem.getValue(), newValue, 0.1e-12);</span>
+<span class="fc" id="L123">        assertEquals(gem.getValue(), newValue, 0.1e-12);</span>
+<span class="fc" id="L124">    }</span>
+
+    @Test
+    public void testToString() {
+<span class="fc" id="L128">        String emptyString = &quot;Gem{&quot; +</span>
+                &quot;id: &quot; +
+                null +
+                &quot;, name: &quot; +
+                null +
+                &quot;, preciousness: &quot; +
+                null +
+                &quot;, origin: &quot; +
+                null +
+                &quot;, visual parameters: &quot; +
+                null +
+                &quot;, value: &quot; +
+                0.0f +
+                &quot;}&quot;;
+
+<span class="fc" id="L143">        String gemString = &quot;Gem{&quot; +</span>
+                &quot;id: &quot; +
+                null +
+                &quot;, name: &quot; +
+                name +
+                &quot;, preciousness: &quot; +
+                preciousness +
+                &quot;, origin: &quot; +
+                origin +
+                &quot;, visual parameters: &quot; +
+                visualParameters +
+                &quot;, value: &quot; +
+                value +
+                &quot;}&quot;;
+
+<span class="fc" id="L158">        assertEquals(emptyString, emptyGem.toString());</span>
+<span class="fc" id="L159">        assertEquals(gemString, gem.toString());</span>
+<span class="fc" id="L160">    }</span>
+
+    @Test
+    public void testEquals() {
+<span class="fc" id="L164">        gemsNotEquals(emptyGem, gem);</span>
+
+<span class="fc" id="L166">        gemsNotEquals(new Object(), emptyGem);</span>
+<span class="fc" id="L167">        gemsNotEquals(new Object(), gem);</span>
+
+<span class="fc" id="L169">        assertEquals(emptyGem, emptyGem);</span>
+<span class="fc" id="L170">        assertEquals(gem, gem);</span>
+
+<span class="fc" id="L172">        Gem newEmptyGem = new Gem();</span>
+<span class="fc" id="L173">        Gem newGem = new Gem(name, preciousness, origin, visualParameters, value);</span>
+
+<span class="fc" id="L175">        gemsEquals(emptyGem, newEmptyGem);</span>
+<span class="fc" id="L176">        gemsEquals(gem, newGem);</span>
+
+<span class="fc" id="L178">        newEmptyGem.setName(name);</span>
+<span class="fc" id="L179">        gemsNotEquals(gem, newEmptyGem);</span>
+
+<span class="fc" id="L181">        newEmptyGem.setPreciousness(preciousness);</span>
+<span class="fc" id="L182">        gemsNotEquals(gem, newEmptyGem);</span>
+
+<span class="fc" id="L184">        newEmptyGem.setOrigin(origin);</span>
+<span class="fc" id="L185">        gemsNotEquals(gem, newEmptyGem);</span>
+
+<span class="fc" id="L187">        newEmptyGem.setVisualParameters(visualParameters);</span>
+<span class="fc" id="L188">        gemsNotEquals(gem, newEmptyGem);</span>
+<span class="fc" id="L189">    }</span>
+
+
+    private void gemsEquals(Object gem1, Object gem2) {
+<span class="fc" id="L193">        assertEquals(gem1, gem2);</span>
+<span class="fc" id="L194">        assertEquals(gem2, gem1);</span>
+<span class="fc" id="L195">    }</span>
+
+    private void gemsNotEquals(Object gem1, Object gem2) {
+<span class="fc" id="L198">        assertNotEquals(gem1, gem2);</span>
+<span class="fc" id="L199">        assertNotEquals(gem2, gem1);</span>
+<span class="fc" id="L200">    }</span>
+
+    @Test
+
+    public void testHashCode() {
+<span class="fc" id="L205">        assertNotEquals(emptyGem.hashCode(), gem.hashCode());</span>
+
+<span class="fc" id="L207">        assertEquals(emptyGem.hashCode(), emptyGem.hashCode());</span>
+<span class="fc" id="L208">        assertEquals(gem.hashCode(), gem.hashCode());</span>
+
+<span class="fc" id="L210">        Gem newEmptyGem = new Gem();</span>
+<span class="fc" id="L211">        Gem newGem = new Gem(name, preciousness, origin, visualParameters, value);</span>
+
+<span class="fc" id="L213">        assertEquals(emptyGem.hashCode(), newEmptyGem.hashCode());</span>
+<span class="fc" id="L214">        assertEquals(gem.hashCode(), newGem.hashCode());</span>
+<span class="fc" id="L215">    }</span>
+
+    @Test
+    public void compareTo() {
+<span class="fc" id="L219">        Gem newEmptyGem = new Gem();</span>
+<span class="fc" id="L220">        Gem newGem = new Gem(name, preciousness, origin, visualParameters, value);</span>
+
+<span class="fc" id="L222">        assertEquals(emptyGem.compareTo(gem), 1);</span>
+<span class="fc" id="L223">        assertEquals(gem.compareTo(emptyGem), -1);</span>
+<span class="fc" id="L224">        assertEquals(emptyGem.compareTo(newEmptyGem), 0);</span>
+
+<span class="fc" id="L226">        assertEquals(newGem.compareTo(gem), 0);</span>
+<span class="fc" id="L227">        assertEquals(gem.compareTo(newGem), 0);</span>
+
+<span class="fc" id="L229">        newGem.setValue(10.0f);</span>
+<span class="fc" id="L230">        assertEquals(newGem.compareTo(gem) ,Float.compare(newGem.getValue(), gem.getValue()));</span>
+<span class="fc" id="L231">        assertEquals(gem.compareTo(newGem) ,Float.compare(gem.getValue(), newGem.getValue()));</span>
+
+<span class="fc" id="L233">        newGem.setName(&quot;yellow&quot;);</span>
+<span class="fc" id="L234">        assertEquals(newGem.compareTo(gem) ,newGem.getName().compareTo(gem.getName()));</span>
+<span class="fc" id="L235">        assertEquals(gem.compareTo(newGem) ,gem.getName().compareTo(newGem.getName()));</span>
+
+<span class="fc" id="L237">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>

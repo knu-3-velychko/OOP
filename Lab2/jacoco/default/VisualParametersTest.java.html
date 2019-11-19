@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>VisualParametersTest.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Lab2$Lab2__test_.exec</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">VisualParametersTest.java</span></div><h1>VisualParametersTest.java</h1><pre class="source lang-java linenums">import Entities.VisualParameters;
+import jdk.nashorn.internal.runtime.regexp.joni.ast.StringNode;
+import org.junit.Test;
+
+import static org.junit.Assert.*;
+
+<span class="fc" id="L7">public class VisualParametersTest {</span>
+<span class="fc" id="L8">    private final String color = &quot;red&quot;;</span>
+<span class="fc" id="L9">    private final float opacity = 50.0f;</span>
+<span class="fc" id="L10">    private final int cutType = 10;</span>
+
+<span class="fc" id="L12">    private VisualParameters emptyParameters = new VisualParameters();</span>
+<span class="fc" id="L13">    private VisualParameters parameters = new VisualParameters(color, opacity, cutType);</span>
+
+    @Test
+    public void getColor() {
+<span class="fc" id="L17">        assertNull(emptyParameters.getColor());</span>
+<span class="fc" id="L18">        assertNotNull(parameters.getColor());</span>
+<span class="fc" id="L19">        assertEquals(parameters.getColor(), color);</span>
+<span class="fc" id="L20">    }</span>
+
+    @Test
+    public void setColor() {
+<span class="fc" id="L24">        String newColor = &quot;yellow&quot;;</span>
+<span class="fc" id="L25">        emptyParameters.setColor(newColor);</span>
+<span class="fc" id="L26">        parameters.setColor(newColor);</span>
+
+<span class="fc" id="L28">        assertNotNull(emptyParameters.getColor());</span>
+<span class="fc" id="L29">        assertNotNull(parameters.getColor());</span>
+<span class="fc" id="L30">        assertEquals(emptyParameters.getColor(), newColor);</span>
+<span class="fc" id="L31">        assertEquals(parameters.getColor(), newColor);</span>
+<span class="fc" id="L32">    }</span>
+
+    @Test
+    public void getOpacity() {
+<span class="fc" id="L36">        assertEquals(emptyParameters.getOpacity(), 0.0, 0.1e-12);</span>
+<span class="fc" id="L37">        assertEquals(parameters.getOpacity(), opacity, 0.1e-12);</span>
+<span class="fc" id="L38">    }</span>
+
+    @Test
+    public void setOpacity() {
+<span class="fc" id="L42">        float newOpacity = 30.0f;</span>
+<span class="fc" id="L43">        emptyParameters.setOpacity(newOpacity);</span>
+<span class="fc" id="L44">        parameters.setOpacity(newOpacity);</span>
+
+<span class="fc" id="L46">        assertEquals(emptyParameters.getOpacity(), newOpacity, 0.1e-12);</span>
+<span class="fc" id="L47">        assertEquals(parameters.getOpacity(), newOpacity, 0.1e-12);</span>
+<span class="fc" id="L48">    }</span>
+
+    @Test
+    public void getCutType() {
+<span class="fc" id="L52">        assertEquals(emptyParameters.getCutType(), 0);</span>
+<span class="fc" id="L53">        assertEquals(parameters.getCutType(), cutType);</span>
+<span class="fc" id="L54">    }</span>
+
+    @Test
+    public void setCutType() {
+<span class="fc" id="L58">        int newCutType = 12;</span>
+<span class="fc" id="L59">        emptyParameters.setCutType(newCutType);</span>
+<span class="fc" id="L60">        parameters.setCutType(newCutType);</span>
+
+<span class="fc" id="L62">        assertEquals(emptyParameters.getCutType(), newCutType);</span>
+<span class="fc" id="L63">        assertEquals(parameters.getCutType(), newCutType);</span>
+<span class="fc" id="L64">    }</span>
+
+    @Test
+    public void testEquals() {
+<span class="fc" id="L68">        parametersNotEquals(emptyParameters, parameters);</span>
+
+<span class="fc" id="L70">        parametersNotEquals(new Object(), emptyParameters);</span>
+<span class="fc" id="L71">        parametersNotEquals(new Object(), parameters);</span>
+
+<span class="fc" id="L73">        assertEquals(emptyParameters, emptyParameters);</span>
+<span class="fc" id="L74">        assertEquals(parameters, parameters);</span>
+
+<span class="fc" id="L76">        VisualParameters newEmptyParameters = new VisualParameters();</span>
+<span class="fc" id="L77">        VisualParameters newParameters = new VisualParameters(color, opacity, cutType);</span>
+
+<span class="fc" id="L79">        parametersEquals(emptyParameters, newEmptyParameters);</span>
+<span class="fc" id="L80">        parametersEquals(parameters, newParameters);</span>
+
+<span class="fc" id="L82">        newEmptyParameters.setColor(color);</span>
+<span class="fc" id="L83">        parametersNotEquals(parameters,newEmptyParameters);</span>
+<span class="fc" id="L84">        newEmptyParameters.setOpacity(opacity);</span>
+<span class="fc" id="L85">        parametersNotEquals(parameters,newEmptyParameters);</span>
+
+<span class="fc" id="L87">    }</span>
+
+    private void parametersNotEquals(Object parameters1, Object parameters2) {
+<span class="fc" id="L90">        assertNotEquals(parameters1, parameters2);</span>
+<span class="fc" id="L91">        assertNotEquals(parameters2, parameters1);</span>
+<span class="fc" id="L92">    }</span>
+
+    private void parametersEquals(Object parameters1, Object parameters2) {
+<span class="fc" id="L95">        assertEquals(parameters1, parameters2);</span>
+<span class="fc" id="L96">        assertEquals(parameters2, parameters1);</span>
+<span class="fc" id="L97">    }</span>
+
+    @Test
+    public void testHashCode() {
+<span class="fc" id="L101">        assertNotEquals(emptyParameters.hashCode(), parameters.hashCode());</span>
+
+<span class="fc" id="L103">        assertEquals(emptyParameters.hashCode(), emptyParameters.hashCode());</span>
+<span class="fc" id="L104">        assertEquals(parameters.hashCode(), parameters.hashCode());</span>
+
+<span class="fc" id="L106">        VisualParameters newEmptyParameters = new VisualParameters();</span>
+<span class="fc" id="L107">        VisualParameters newParameters = new VisualParameters(color, opacity, cutType);</span>
+
+<span class="fc" id="L109">        assertEquals(emptyParameters.hashCode(), newEmptyParameters.hashCode());</span>
+<span class="fc" id="L110">        assertEquals(parameters.hashCode(), newParameters.hashCode());</span>
+<span class="fc" id="L111">    }</span>
+
+    @Test
+    public void testToString() {
+<span class="fc" id="L115">        String emptyString = &quot;VisualParameters{&quot; +</span>
+                &quot;color: &quot; +
+                null +
+                &quot;, opacity: &quot; +
+                0.0 +
+                &quot;, cut type: &quot; +
+                0 +
+                &quot;}&quot;;
+
+<span class="fc" id="L124">        String parametersString = &quot;VisualParameters{&quot; +</span>
+                &quot;color: &quot; +
+                color +
+                &quot;, opacity: &quot; +
+                opacity +
+                &quot;, cut type: &quot; +
+                cutType +
+                &quot;}&quot;;
+
+<span class="fc" id="L133">        assertEquals(emptyString, emptyParameters.toString());</span>
+<span class="fc" id="L134">        assertEquals(parametersString, parameters.toString());</span>
+<span class="fc" id="L135">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>
