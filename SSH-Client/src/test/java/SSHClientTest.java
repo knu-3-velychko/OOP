@@ -1,9 +1,6 @@
 import org.junit.Test;
 
-import java.io.InputStream;
 import java.net.InetSocketAddress;
-import java.util.logging.Handler;
-import java.util.logging.Logger;
 
 import static org.junit.Assert.assertEquals;
 
@@ -19,11 +16,5 @@ public class SSHClientTest {
         assertEquals(client.getAddress(), address);
         assertEquals(client.getAddress().getHostName(), host);
         assertEquals(client.getAddress().getPort(), port);
-
-        client.connect();
-
-        Handler[] handlers = Logger.getLogger(SSHClient.class.getName()).getHandlers();
-
-        assertEquals(handlers.length, 0);
     }
 }
