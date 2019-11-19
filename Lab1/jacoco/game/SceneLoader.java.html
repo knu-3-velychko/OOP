@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>SceneLoader.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Lab1$Tests_in__Lab1_.exec</a> &gt; <a href="index.source.html" class="el_package">game</a> &gt; <span class="el_source">SceneLoader.java</span></div><h1>SceneLoader.java</h1><pre class="source lang-java linenums">package game;
+
+import com.jme3.asset.AssetManager;
+import com.jme3.asset.TextureKey;
+import com.jme3.bullet.BulletAppState;
+import com.jme3.bullet.control.RigidBodyControl;
+import com.jme3.material.Material;
+import com.jme3.math.Vector3f;
+import com.jme3.scene.Geometry;
+import com.jme3.scene.Node;
+import com.jme3.scene.shape.Box;
+import com.jme3.texture.Texture;
+
+class SceneLoader {
+    private Box ground;
+    private Material material;
+
+<span class="fc" id="L18">    SceneLoader(Node root, BulletAppState bulletAppState, AssetManager assetManager) {</span>
+<span class="fc" id="L19">        setTexture(assetManager);</span>
+<span class="fc" id="L20">        initialize(root, bulletAppState);</span>
+<span class="fc" id="L21">    }</span>
+
+    private void setTexture(AssetManager assetManager) {
+<span class="fc" id="L24">        ground = new Box(100f, 100f, 0.1f);</span>
+
+<span class="fc" id="L26">        material = new Material(assetManager, &quot;Common/MatDefs/Misc/Unshaded.j3md&quot;);</span>
+<span class="fc" id="L27">        TextureKey groundKey = new TextureKey(&quot;Textures/Terrain/BrickWall/BrickWall.jpg&quot;);</span>
+<span class="fc" id="L28">        groundKey.setGenerateMips(true);</span>
+<span class="fc" id="L29">        Texture groundTexture = assetManager.loadTexture(groundKey);</span>
+<span class="fc" id="L30">        groundTexture.setWrap(Texture.WrapMode.MirroredRepeat);</span>
+<span class="fc" id="L31">        material.setTexture(&quot;ColorMap&quot;, groundTexture);</span>
+<span class="fc" id="L32">    }</span>
+
+    private void initialize(Node root, BulletAppState bulletAppState) {
+<span class="fc" id="L35">        initializeBox(ground, &quot;Ground&quot;, 0.1f, -0.1f, -100f, root, bulletAppState);</span>
+<span class="fc" id="L36">    }</span>
+
+    private void initializeBox(Box box, String name, Float x, Float y, Float z, Node root, BulletAppState bulletAppState) {
+<span class="fc" id="L39">        Geometry geometry = new Geometry(name, box);</span>
+<span class="fc" id="L40">        geometry.setMaterial(material);</span>
+<span class="fc" id="L41">        geometry.setLocalTranslation(new Vector3f(x, y, z));</span>
+<span class="fc" id="L42">        geometry.setLocalTranslation(x, y, z);</span>
+<span class="fc" id="L43">        root.attachChild(geometry);</span>
+<span class="fc" id="L44">        geometry.addControl(new RigidBodyControl(0.0f));</span>
+<span class="fc" id="L45">        bulletAppState.getPhysicsSpace().add(geometry);</span>
+<span class="fc" id="L46">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>

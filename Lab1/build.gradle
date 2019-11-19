@@ -1,0 +1,56 @@
+apply plugin: 'java'
+
+sourceCompatibility = 11
+targetCompatibility = 11
+
+group 'game'
+version '1.0-SNAPSHOT'
+
+
+repositories {
+    jcenter()
+    mavenCentral()
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+project.ext {
+    jmeVer = '3.2.4-stable'
+}
+
+dependencies {
+    implementation name: 'jme3-niftygui-3.2.4-stable'
+    implementation name: 'jme3-niftygui-3.2.4-stable-javadoc'
+    implementation name: 'jme3-niftygui-3.2.4-stable-sources'
+    implementation name: 'jme3-niftygui'
+    implementation name: 'nifty-1.4.3'
+    implementation name: 'nifty-default-controls-1.4.3'
+    implementation name: 'nifty-style-black-1.4.3'
+    implementation name: 'xpp3-1.1.4c'
+
+    implementation "org.jmonkeyengine:jme3-core:$jmeVer"
+    implementation "org.jmonkeyengine:jme3-desktop:$jmeVer"
+
+    // implementation "org.jmonkeyengine:jme3-lwjgl:$jmeVer"
+    implementation "org.jmonkeyengine:jme3-lwjgl" +
+            "3:$jmeVer"
+    implementation "org.jmonkeyengine:jme3-effects:$jmeVer"
+    implementation "org.jmonkeyengine:jme3-jogg:$jmeVer"
+    implementation "org.jmonkeyengine:jme3-plugins:$jmeVer"
+
+    implementation "org.jmonkeyengine:jme3-bullet:$jmeVer"
+
+    implementation "org.jmonkeyengine:jme3-bullet-native:$jmeVer"
+    // implementation "org.jmonkeyengine:jme3-jbullet:$jmeVer"
+
+    // This dependency is used by the application.
+    implementation 'com.google.guava:guava:28.0-jre'
+
+    // Use JUnit test framework
+    testImplementation 'junit:junit:4.12'
+
+    implementation 'org.mockito:mockito-core:2.7.22'
+    testImplementation 'org.mockito:mockito-core:2.7.22'
+
+}

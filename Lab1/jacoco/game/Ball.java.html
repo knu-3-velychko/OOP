@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Ball.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Lab1$Tests_in__Lab1_.exec</a> &gt; <a href="index.source.html" class="el_package">game</a> &gt; <span class="el_source">Ball.java</span></div><h1>Ball.java</h1><pre class="source lang-java linenums">package game;
+
+import com.jme3.asset.AssetManager;
+import com.jme3.asset.TextureKey;
+import com.jme3.bullet.BulletAppState;
+import com.jme3.bullet.collision.shapes.CapsuleCollisionShape;
+import com.jme3.bullet.control.GhostControl;
+import com.jme3.bullet.control.RigidBodyControl;
+import com.jme3.material.Material;
+import com.jme3.math.Vector3f;
+import com.jme3.renderer.Camera;
+import com.jme3.scene.Geometry;
+import com.jme3.scene.Node;
+import com.jme3.scene.shape.Sphere;
+import com.jme3.texture.Texture;
+
+
+class Ball {
+    private Material material;
+
+    private Sphere sphere;
+
+<span class="fc" id="L23">    Ball(AssetManager assetManager) {</span>
+<span class="fc" id="L24">        material = new Material(assetManager, &quot;Common/MatDefs/Misc/Unshaded.j3md&quot;);</span>
+<span class="fc" id="L25">        TextureKey key = new TextureKey(&quot;Textures/Terrain/Rock/Rock.PNG&quot;);</span>
+<span class="fc" id="L26">        key.setGenerateMips(true);</span>
+<span class="fc" id="L27">        Texture texture = assetManager.loadTexture(key);</span>
+<span class="fc" id="L28">        material.setTexture(&quot;ColorMap&quot;, texture);</span>
+
+<span class="fc" id="L30">        sphere = new Sphere(32, 32, 3f, true, false);</span>
+<span class="fc" id="L31">        sphere.setTextureMode(Sphere.TextureMode.Projected);</span>
+<span class="fc" id="L32">    }</span>
+
+    Geometry shoot(Node root, BulletAppState bulletAppState, Vector3f start, Vector3f velocity) {
+<span class="fc" id="L35">        Geometry geometry = new Geometry(&quot;ball&quot;, sphere);</span>
+<span class="fc" id="L36">        geometry.setMaterial(material);</span>
+<span class="fc" id="L37">        geometry.setLocalTranslation(start);</span>
+<span class="fc" id="L38">        root.attachChild(geometry);</span>
+<span class="fc" id="L39">        RigidBodyControl physics = new RigidBodyControl(20f);</span>
+<span class="fc" id="L40">        geometry.addControl(physics);</span>
+<span class="fc" id="L41">        bulletAppState.getPhysicsSpace().add(geometry);</span>
+<span class="fc" id="L42">        physics.setLinearVelocity(velocity);</span>
+
+<span class="fc" id="L44">        return geometry;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>
