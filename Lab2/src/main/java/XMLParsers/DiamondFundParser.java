@@ -3,6 +3,9 @@ package XMLParsers;
 import Entities.DiamondFund;
 import XML.XMLValidator;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class DiamondFundParser {
     private GemXMLParser<DiamondFund> parser;
 
@@ -16,7 +19,7 @@ public class DiamondFundParser {
         try {
             return parser.parseGem(xmlPath);
         } catch (Exception e) {
-            e.printStackTrace();
+            Logger.getLogger(DiamondFund.class.getName()).log(Level.INFO, "Got an exception.", e);
             return null;
         }
     }

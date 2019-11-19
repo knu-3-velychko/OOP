@@ -12,6 +12,8 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class GemDOMParser<T> implements GemXMLParser {
     private XMLBuilder<T> builder;
@@ -21,7 +23,7 @@ public class GemDOMParser<T> implements GemXMLParser {
     }
 
     @Override
-    public T parseGem(String xmlPath) throws Exception {
+    public T parseGem(String xmlPath) {
         File xmlFile = new File(xmlPath);
         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
         try {
@@ -29,8 +31,7 @@ public class GemDOMParser<T> implements GemXMLParser {
             Document document = dBuilder.parse(xmlFile);
             parseNodes(document.getChildNodes());
         } catch (SAXException | ParserConfigurationException | IOException e) {
-            e.printStackTrace();
-            throw new Exception("Error in DOM. Can't read file." + e.getMessage());
+            Logger.getLogger(GemDOMParser.class.getName()).log(Level.INFO, "Got an exception.", e);
         }
         return builder.getRoot();
     }
@@ -55,8 +56,7 @@ public class GemDOMParser<T> implements GemXMLParser {
             if (!text.isEmpty()) {
                 builder.addOpenTag(node.getParentNode().getNodeName()).addData(text);
             }
-        }
-        else
+        } else
             builder.addOpenTag(node.getNodeName());
     }
 

@@ -9,6 +9,8 @@ import javax.xml.validation.SchemaFactory;
 import javax.xml.validation.Validator;
 import java.io.File;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class XMLValidator {
     public static boolean validate(String xmlPath, String xsdPath) {
@@ -18,7 +20,7 @@ public class XMLValidator {
             Validator validator = schema.newValidator();
             validator.validate(new StreamSource(new File(xmlPath)));
         } catch (SAXException | IOException e) {
-            e.printStackTrace();
+            Logger.getLogger(XMLValidator.class.getName()).log(Level.INFO, "Got an exception.", e);
             return false;
         }
         return true;

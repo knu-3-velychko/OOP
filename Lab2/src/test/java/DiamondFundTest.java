@@ -18,7 +18,7 @@ public class DiamondFundTest {
     private DiamondFund diamondFund;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         final String name = "Ruby";
         final Preciousness preciousness = Preciousness.Precious;
         final String origin = "South Asia";

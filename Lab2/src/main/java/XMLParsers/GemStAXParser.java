@@ -7,6 +7,8 @@ import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import static javax.xml.stream.XMLStreamConstants.*;
 import static javax.xml.stream.XMLStreamConstants.END_DOCUMENT;
@@ -20,15 +22,14 @@ public class GemStAXParser<T> implements GemXMLParser {
     }
 
     @Override
-    public Object parseGem(String xmlPath) throws Exception {
+    public Object parseGem(String xmlPath) {
         XMLInputFactory xmlInputFactory = XMLInputFactory.newInstance();
         try {
             FileInputStream stream = new FileInputStream(xmlPath);
             reader = xmlInputFactory.createXMLStreamReader(stream);
             parse();
         } catch (FileNotFoundException | XMLStreamException e) {
-            e.printStackTrace();
-            throw new Exception("Error " + e.getMessage());
+            Logger.getLogger(GemStAXParser.class.getName()).log(Level.INFO, "Got an exception.", e);
         }
         return builder.getRoot();
     }
