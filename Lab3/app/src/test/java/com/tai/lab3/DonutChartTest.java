@@ -1,5 +1,7 @@
 package com.tai.lab3;
 
+import com.tai.lab3.Views.DonutChart;
+
 import android.widget.ProgressBar;
 
 import com.anychart.AnyChartView;
