@@ -1,33 +1,67 @@
 package com.tai.lab3;
 
-import com.tai.lab3.Views.DonutChart;
-
+import android.content.Context;
+import android.test.mock.MockContext;
+import android.view.View;
 import android.widget.ProgressBar;
 
-import com.anychart.AnyChartView;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
+import com.anychart.AnyChartView;
+import com.tai.lab3.Views.DonutChart;
+
+import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 
 import static org.junit.Assert.assertEquals;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.doAnswer;
 import static org.mockito.Mockito.mock;
 
 public class DonutChartTest {
     private int maxValue = 100;
-    private AnyChartView view = mock(AnyChartView.class);
+
+    private AnyChartView view;
+
     private ProgressBar progressBar = mock(ProgressBar.class);
 
-    private DonutChart donutChart = new DonutChart(view, progressBar, maxValue);
+    @Mock
+    private Context context;
 
-    @Test
-    public void setMaxValue() {
-        assertEquals(donutChart.getMaxValue(), maxValue);
+    private DonutChart donutChart;
+
+    @Before
+    public void setUp() {
+        MockitoAnnotations.initMocks(this);
+
+        donutChart = new DonutChart(view, progressBar, maxValue);
+
     }
 
     @Test
     public void getMaxValue() {
-        int newMaxValue = 500;
-        donutChart.setMaxValue(newMaxValue);
+        assertEquals(donutChart.getMaxValue(), maxValue);
     }
 
-    //TODO: tests for mocks
+    @Test
+    public void setMaxValue() {
+        int newMaxValue = 500;
+        donutChart.setMaxValue(newMaxValue);
+        assertEquals(donutChart.getMaxValue(), newMaxValue);
+    }
+
+    @Test
+    public void getValue() {
+        assertEquals(donutChart.getValue(), 0);
+    }
+
+    @Test
+    public void setValue() {
+        int newValue = 100;
+        donutChart.setValue(newValue);
+        assertEquals(donutChart.getValue(), newValue);
+    }
 }

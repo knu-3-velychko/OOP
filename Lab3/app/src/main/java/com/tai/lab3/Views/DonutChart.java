@@ -16,9 +16,19 @@ import com.anychart.graphics.vector.text.VAlign;
 
 public class DonutChart {
     private AnyChartView view;
+    private ProgressBar progressBar;
 
     private final int minValue = 0;
+    private int value = 0;
     private int maxValue;
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    public int getValue() {
+        return value;
+    }
 
     public void setMaxValue(int value) {
         maxValue = value;
@@ -31,7 +41,10 @@ public class DonutChart {
     public DonutChart(AnyChartView view, ProgressBar progressBar, int maxValue) {
         this.maxValue = maxValue;
         this.view = view;
+        this.progressBar = progressBar;
+    }
 
+    public void setUp() {
         view.setProgressBar(progressBar);
 
         setCircularGauge();
