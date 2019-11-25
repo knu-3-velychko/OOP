@@ -1,57 +1,104 @@
 package com.tai.lab3.StepDetection;
 
-import android.util.Log;
+import com.tai.lab3.Constants;
 
 public class StepDetector {
 
-    private static final String TAG = StepDetector.class.getSimpleName();
+    private final int accelerationsSize = 50;
+    private final int velocitiesSize = 10;
 
-    private static final int MAX_STEPS_COUNT = 10000;
-
-    /**
-     * Step detecting parameter. For how many samples it is sleeping.
-     * If accelerometer's DELAY_GAME is T ~= 20ms, this means that f = 50Hz and MAX_TEMPO = 240bpms
-     * 60bpm  - 1000ms
-     * 240bpm - 250ms
-     * n is samples
-     * n = 250ms / T
-     * n = 250 / 20 ~= 12
-     */
-    private static final int INACTIVE_SAMPLE = 12;
-
-    private int currentSample = 0;
-
+    private double threshold = Constants.DEFAULT_THRESHOLD;
+    private int delay = Constants.DEFAULT_DELAY;
     private int stepCount = 0;
 
-    private boolean isActiveCounter;
+    private boolean isActive;
+
+    private int accelerationsCounter = 0;
+    private float[] accelerationsX = new float[accelerationsSize];
+    private float[] accelerationsY = new float[accelerationsSize];
+    private float[] accelerationsZ = new float[accelerationsSize];
+
+
+    private int velocitiesCounter = 0;
+    private float[] velocities = new float[velocitiesSize];
+
+    private float lastStepTime = 0;
+    private float oldVelocityEstimate = 0;
+
+    private float norm = 1f;
 
     public StepDetector() {
-        isActiveCounter = true;
+        isActive = true;
     }
 
-    /**
-     * My step detection algorithm.
-     * When the value is over the threshold, the step is found and the algorithm sleeps for
-     * the specified distance which is {@link #INACTIVE_SAMPLE this }.
-     */
-    public boolean detect(double accelerometerValue,  double currentThreshold) {
-        if (currentSample == INACTIVE_SAMPLE) {
-            currentSample = 0;
-            if (!isActiveCounter)
-                isActiveCounter = true;
+    public double getThreshold() {
+        return threshold;
+    }
+
+    public void setThreshold(double threshold) {
+        this.threshold = threshold;
+    }
+
+    public int getDelay() {
+        return delay;
+    }
+
+    public void setDelay(int newDelay) {
+        if (newDelay >= 0)
+            delay = newDelay;
+    }
+
+
+    public boolean detect(long time, float x, float y, float z) {
+        float[] newAcceleration = new float[3];
+        newAcceleration[0] = x;
+        newAcceleration[1] = y;
+        newAcceleration[2] = z;
+
+        saveAcceleration(x, y, z);
+
+        float[] world = getGlobalVector();
+
+        float newVelocity = VectorOperations.dot(world, newAcceleration) - norm;
+
+        saveVelocity(newVelocity);
+
+        float velocityEstimate = VectorOperations.sum(velocities);
+
+        if (!isActive && (velocityEstimate < threshold)) {
+            isActive = true;
         }
-        if (isActiveCounter && (accelerometerValue > currentThreshold)) {
-            currentSample = 0;
-            isActiveCounter = false;
-            Log.d(TAG, "detect() true for threshold " + currentThreshold);
+        if (isActive && (velocityEstimate > threshold) && (time - lastStepTime) > delay) {
+            isActive = false;
             stepCount++;
-            if (stepCount == MAX_STEPS_COUNT)
-                stepCount = 0;
             return true;
         }
 
-        ++currentSample;
         return false;
+    }
+
+    private float[] getGlobalVector() {
+        float[] world = new float[3];
+        float min = Math.min(accelerationsCounter, accelerationsSize);
+        world[0] = VectorOperations.sum(accelerationsX) / min;
+        world[1] = VectorOperations.sum(accelerationsY) / min;
+        world[2] = VectorOperations.sum(accelerationsZ) / min;
+        norm = VectorOperations.norm(world);
+        return VectorOperations.normalize(world);
+    }
+
+    private void saveAcceleration(float x, float y, float z) {
+        accelerationsCounter++;
+        int position = accelerationsCounter % accelerationsSize;
+        accelerationsX[position] = x;
+        accelerationsY[position] = y;
+        accelerationsZ[position] = z;
+    }
+
+    private void saveVelocity(float newVelocity) {
+        velocitiesCounter++;
+        int position = velocitiesCounter % velocitiesSize;
+        velocities[position] = newVelocity;
     }
 
     public int getStepCount() {
