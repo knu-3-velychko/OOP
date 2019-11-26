@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Lab3</string>
-    <string name="default_value">0/100 steps</string>
+    <string name="app_name">My Application</string>
+    <string name="default_value">0/10000</string>
     <string name="settings">Settings</string>
 </resources>
