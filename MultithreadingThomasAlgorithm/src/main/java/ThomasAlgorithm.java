@@ -29,8 +29,7 @@ public class ThomasAlgorithm {
 
         left.join();
         right.join();
-        for (int i = 0; i < size; i++)
-            System.out.println(x[i]);
+
         return x;
     }
 
