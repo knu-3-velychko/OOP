@@ -1,14 +1,16 @@
+import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.CyclicBarrier;
 
 public class ThomasAlgorithm {
     private double[][] matrix;
     private double[] x;
     private int size;
 
-    private final CountDownLatch latch1 = new CountDownLatch(1);
+
+    private CyclicBarrier barrier = new CyclicBarrier(2);
     private volatile double a1;
     private volatile double b1;
-    private final CountDownLatch latch2 = new CountDownLatch(1);
     private volatile double a2;
     private volatile double b2;
 
@@ -21,8 +23,8 @@ public class ThomasAlgorithm {
     double[] solve() throws InterruptedException {
         int size = matrix.length;
 
-        Thread left = new Thread(leftForwardSweep(0, size / 2));
-        Thread right = new Thread(rightForwardSweep(size / 2, size));
+        Thread left = new Thread(leftForwardSweep(0, size / 2, barrier));
+        Thread right = new Thread(rightForwardSweep(size / 2, size, barrier));
 
         right.start();
         left.start();
@@ -33,7 +35,7 @@ public class ThomasAlgorithm {
         return x;
     }
 
-    private Runnable leftForwardSweep(int start, int end) {
+    private Runnable leftForwardSweep(int start, int end, CyclicBarrier barrier) {
         return () -> {
             double y = matrix[0][0];
             double[] a = new double[size];
@@ -50,10 +52,9 @@ public class ThomasAlgorithm {
 
             a1 = a[end - 1];
             b1 = b[end - 1];
-            latch1.countDown();
             try {
-                latch2.await();
-            } catch (InterruptedException e) {
+                barrier.await();
+            } catch (InterruptedException | BrokenBarrierException e) {
                 e.printStackTrace();
             }
 
@@ -65,7 +66,7 @@ public class ThomasAlgorithm {
         };
     }
 
-    private Runnable rightForwardSweep(int start, int end) {
+    private Runnable rightForwardSweep(int start, int end,CyclicBarrier barrier) {
         return () -> {
             double y = matrix[size - 1][size - 1];
             double[] a = new double[size];
@@ -82,10 +83,9 @@ public class ThomasAlgorithm {
 
             a2 = a[start];
             b2 = b[start];
-            latch2.countDown();
             try {
-                latch1.await();
-            } catch (InterruptedException e) {
+                barrier.await();
+            } catch (InterruptedException | BrokenBarrierException e) {
                 e.printStackTrace();
             }
 
