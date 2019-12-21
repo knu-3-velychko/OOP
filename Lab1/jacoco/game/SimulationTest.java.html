@@ -4,31 +4,42 @@ import com.jme3.bullet.BulletAppState;
 import com.jme3.bullet.control.RigidBodyControl;
 import com.jme3.math.Vector3f;
 import com.jme3.scene.Geometry;
+import com.jme3.system.AppSettings;
+import javafx.util.Pair;
 import org.junit.Test;
-import org.lwjgl.system.CallbackI;
 
 import java.util.ArrayList;
 
 import static org.junit.Assert.*;
 
-<span class="fc" id="L14">public class SimulationTest {</span>
+<span class="fc" id="L15">public class SimulationTest {</span>
 
-<span class="fc" id="L16">    private GameController gameController = new GameController();</span>
+<span class="fc" id="L17">    private static GameController gameController = new GameController(true, 20);</span>
 
+    static {
+<span class="fc" id="L20">        gameController.setShowSettings(false);</span>
+
+<span class="fc" id="L22">        AppSettings settings = new AppSettings(true);</span>
+<span class="fc" id="L23">        settings.setResolution(1280, 800);</span>
+<span class="fc" id="L24">        settings.setVSync(true);</span>
+<span class="fc" id="L25">        settings.setDepthBits(24);</span>
+<span class="fc" id="L26">        settings.setGammaCorrection(false);</span>
+<span class="fc" id="L27">        gameController.setSettings(settings);</span>
+<span class="fc" id="L28">    }</span>
     @Test
     public void run() {
-<span class="fc" id="L20">        gameController.start();</span>
-<span class="fc" id="L21">        gameController.okButtonClick();</span>
-<span class="fc" id="L22">        BulletAppState bulletAppState = gameController.getStateManager().getState(BulletAppState.class);</span>
-<span class="fc" id="L23">        Simulation simulation = new Simulation(gameController.getAssetManager(), gameController.getRootNode(), bulletAppState);</span>
+<span class="fc" id="L31">        gameController.start();</span>
+<span class="fc" id="L32">        gameController.okButtonClick();</span>
+<span class="fc" id="L33">        BulletAppState bulletAppState = gameController.getStateManager().getState(BulletAppState.class);</span>
+<span class="fc" id="L34">        Simulation simulation = new Simulation(gameController.getAssetManager(), gameController.getRootNode(), bulletAppState);</span>
 
-<span class="fc" id="L25">        ArrayList&lt;Velocity2D&gt; velocities = new ArrayList&lt;&gt;();</span>
-<span class="fc" id="L26">        velocities.add(new Velocity2D(new Pair(1.0f, 1.0f), new Pair(3.0f, 3.0f)));</span>
-<span class="fc" id="L27">        ArrayList&lt;Geometry&gt; balls = simulation.run(velocities);</span>
-<span class="fc" id="L28">        assertEquals(balls.size(), 1);</span>
-<span class="fc" id="L29">        assertEquals(balls.get(0).getName(), &quot;ball&quot;);</span>
-<span class="fc" id="L30">        assertEquals(balls.get(0).getLocalTranslation(),new Vector3f(1.0f, 1.0f,10.0f));</span>
-<span class="fc" id="L31">        assertEquals(balls.get(0).getControl(RigidBodyControl.class).getLinearVelocity(),new Vector3f(3.0f, 3.0f,0.0f));</span>
-<span class="fc" id="L32">    }</span>
+<span class="fc" id="L36">        ArrayList&lt;Velocity2D&gt; velocities = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L37">        velocities.add(new Velocity2D(new Pair&lt;&gt;(1.0f, 1.0f), new Pair&lt;&gt;(3.0f, 3.0f)));</span>
+<span class="fc" id="L38">        ArrayList&lt;Geometry&gt; balls = simulation.run(velocities);</span>
+<span class="fc" id="L39">        assertEquals(balls.size(), 1);</span>
+<span class="fc" id="L40">        assertEquals(balls.get(0).getName(), &quot;ball&quot;);</span>
+<span class="fc" id="L41">        assertEquals(balls.get(0).getLocalTranslation(),new Vector3f(1.0f, 1.0f,10.0f));</span>
+<span class="fc" id="L42">        assertEquals(balls.get(0).getControl(RigidBodyControl.class).getLinearVelocity(),new Vector3f(3.0f, 3.0f,0.0f));</span>
+<span class="fc" id="L43">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>

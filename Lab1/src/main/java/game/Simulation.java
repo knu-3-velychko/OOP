@@ -25,8 +25,8 @@ class Simulation {
         ArrayList<Geometry> balls = new ArrayList<>();
         for (Velocity2D i : vectors) {
             Ball ball = new Ball(assetManager);
-            Vector3f start = new Vector3f(i.getStart().getX(), i.getStart().getY(), 10f);
-            Vector3f velocity = new Vector3f(i.getVector().getX(), i.getVector().getY(), 0f);
+            Vector3f start = new Vector3f(i.getStart().getKey(), i.getStart().getValue(), 10f);
+            Vector3f velocity = new Vector3f(i.getVector().getKey(), i.getVector().getValue(), 0f);
             balls.add(ball.shoot(root, bulletAppState, start, velocity));
         }
         return balls;
