@@ -11,30 +11,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="90e00859-c3c9-4c83-a59d-19c163c0bcd5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/tai/lab3/Constants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/tai/lab3/StepDetection/VectorOperations.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/tai/lab3/Views/DoughnutChart.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/menu/top_menu.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/values/attrs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/com/tai/lab3/StepDetection/StepDetectorTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/com/tai/lab3/StepDetection/VectorOperationsTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/com/tai/lab3/Views/DoughnutChartTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarIssues.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarIssues.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/tai/lab3/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/tai/lab3/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/tai/lab3/StepDetection/AccelerometerManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/tai/lab3/StepDetection/FrequencyFilter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/tai/lab3/StepDetection/RotationFilter.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/tai/lab3/StepDetection/StepDetector.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/tai/lab3/StepDetection/StepDetector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/tai/lab3/Views/DonutChart.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/tai/lab3/Views/StepsCount.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/tai/lab3/Views/StepsCount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/tai/lab3/DonutChartTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/tai/lab3/StepsCountTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/tai/lab3/StepsCountTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/tai/lab3/StepDetection/StepDetectorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/tai/lab3/StepDetection/StepDetectorTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -48,6 +28,7 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Nexus_5X_API_29_x86" />
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
@@ -57,20 +38,53 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-          <provider editor-type-id="text-editor">
+          <provider editor-type-id="android-designer2" />
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="342">
               <caret line="19" selection-start-line="19" selection-end-line="19" />
             </state>
           </provider>
-          <provider selected="true" editor-type-id="android-designer2" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/test/java/com/tai/lab3/StepDetection/StepDetectorTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="479">
+              <caret line="40" column="18" selection-start-line="40" selection-start-column="18" selection-end-line="40" selection-end-column="18" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tai/lab3/StepDetection/StepDetector.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="436">
+              <caret line="89" column="41" selection-start-line="89" selection-start-column="41" selection-end-line="89" selection-end-column="42" />
+              <folding>
+                <element signature="e#3166#3167#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tai/lab3/StepDetection/VectorOperations.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="35" lean-forward="true" selection-start-column="35" selection-end-column="35" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/test/java/com/tai/lab3/StepDetection/VectorOperationsTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
+            <state relative-caret-position="540">
               <caret line="31" column="1" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
             </state>
           </provider>
@@ -79,8 +93,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tai/lab3/Views/DoughnutChart.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+            <state relative-caret-position="259">
+              <caret line="19" column="31" lean-forward="true" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -91,8 +105,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tai/lab3/Views/StepsCount.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="22" column="21" lean-forward="true" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
+            <state relative-caret-position="239">
+              <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -120,6 +134,7 @@
       <find>Threshold</find>
       <find>ste</find>
       <find>step</find>
+      <find>velocities</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -145,16 +160,16 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/tai/lab3/Views/StepsCount.java" />
         <option value="$PROJECT_DIR$/app/src/test/java/com/tai/lab3/StepsCountTest.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/tai/lab3/Constants.java" />
-        <option value="$PROJECT_DIR$/app/src/test/java/com/tai/lab3/StepDetection/StepDetectorTest.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/top_menu.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/top_menu.xml" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/tai/lab3/MainActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/tai/lab3/StepDetection/StepDetector.java" />
         <option value="$PROJECT_DIR$/app/src/test/java/com/tai/lab3/MainActivityTest.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/tai/lab3/StepDetection/VectorOperations.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/tai/lab3/Views/DoughnutChart.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
+        <option value="$PROJECT_DIR$/app/src/test/java/com/tai/lab3/StepDetection/StepDetectorTest.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/tai/lab3/StepDetection/StepDetector.java" />
       </list>
     </option>
   </component>
@@ -169,7 +184,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane" />
+      <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -202,32 +219,10 @@
               <item name="lab3" type="cbb59c9e:AndroidPsiDirectoryNode" />
               <item name="Views" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Lab3" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="lab3" type="cbb59c9e:AndroidPsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Lab3" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="lab3" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="StepDetection" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Lab3" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="lab3" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="Views" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -413,9 +408,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Android JUnit.All in app" />
+        <item itemvalue="Android JUnit.StepDetectorTest.detect" />
         <item itemvalue="Android JUnit.MainActivityTest" />
         <item itemvalue="Android JUnit.All in app (2)" />
-        <item itemvalue="Android JUnit.StepDetectorTest.detect" />
         <item itemvalue="Android JUnit.All in app (1)" />
       </list>
     </recent_temporary>
@@ -434,42 +429,52 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_in_app_(2) - 2019.11.25 at 08h 45m 29s.xml">
-      <configuration name="All in app (2)" configurationId="AndroidJUnit" />
+    <history-entry file="StepDetectorTest_detect - 2019.12.22 at 00h 01m 35s.xml">
+      <configuration name="StepDetectorTest.detect" configurationId="AndroidJUnit" />
     </history-entry>
-    <history-entry file="All_in_app_(2) - 2019.11.25 at 08h 46m 43s.xml">
-      <configuration name="All in app (2)" configurationId="AndroidJUnit" />
+    <history-entry file="StepDetectorTest_detect - 2019.12.22 at 00h 04m 20s.xml">
+      <configuration name="StepDetectorTest.detect" configurationId="AndroidJUnit" />
     </history-entry>
-    <history-entry file="All_in_app_(2) - 2019.11.25 at 08h 47m 15s.xml">
-      <configuration name="All in app (2)" configurationId="AndroidJUnit" />
+    <history-entry file="StepDetectorTest_detect - 2019.12.22 at 00h 05m 38s.xml">
+      <configuration name="StepDetectorTest.detect" configurationId="AndroidJUnit" />
     </history-entry>
-    <history-entry file="All_in_app_(2) - 2019.11.25 at 08h 47m 27s.xml">
-      <configuration name="All in app (2)" configurationId="AndroidJUnit" />
+    <history-entry file="StepDetectorTest_detect - 2019.12.22 at 00h 07m 11s.xml">
+      <configuration name="StepDetectorTest.detect" configurationId="AndroidJUnit" />
     </history-entry>
-    <history-entry file="All_in_app_(2) - 2019.11.25 at 08h 48m 52s.xml">
-      <configuration name="All in app (2)" configurationId="AndroidJUnit" />
+    <history-entry file="StepDetectorTest_detect - 2019.12.22 at 00h 07m 44s.xml">
+      <configuration name="StepDetectorTest.detect" configurationId="AndroidJUnit" />
     </history-entry>
-    <history-entry file="All_in_app_(2) - 2019.11.25 at 08h 49m 41s.xml">
-      <configuration name="All in app (2)" configurationId="AndroidJUnit" />
+    <history-entry file="StepDetectorTest_detect - 2019.12.22 at 00h 08m 27s.xml">
+      <configuration name="StepDetectorTest.detect" configurationId="AndroidJUnit" />
     </history-entry>
-    <history-entry file="All_in_app_(2) - 2019.11.25 at 08h 51m 26s.xml">
-      <configuration name="All in app (2)" configurationId="AndroidJUnit" />
+    <history-entry file="StepDetectorTest_detect - 2019.12.22 at 00h 09m 00s.xml">
+      <configuration name="StepDetectorTest.detect" configurationId="AndroidJUnit" />
     </history-entry>
-    <history-entry file="All_in_app_(2) - 2019.11.25 at 09h 04m 04s.xml">
-      <configuration name="All in app (2)" configurationId="AndroidJUnit" />
+    <history-entry file="StepDetectorTest_detect - 2019.12.22 at 00h 09m 14s.xml">
+      <configuration name="StepDetectorTest.detect" configurationId="AndroidJUnit" />
     </history-entry>
-    <history-entry file="MainActivityTest - 2019.11.25 at 10h 12m 59s.xml">
-      <configuration name="MainActivityTest" configurationId="AndroidJUnit" />
+    <history-entry file="StepDetectorTest_detect - 2019.12.22 at 00h 09m 28s.xml">
+      <configuration name="StepDetectorTest.detect" configurationId="AndroidJUnit" />
     </history-entry>
-    <history-entry file="All_in_app - 2019.11.25 at 10h 14m 40s.xml">
+    <history-entry file="All_in_app - 2019.12.22 at 00h 09m 40s.xml">
       <configuration name="All in app" configurationId="AndroidJUnit" />
     </history-entry>
   </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1296" height="696" extended-state="6" />
+    <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" sideWeight="0.5026643" side_tool="true" weight="0.6788026" />
-      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.4955595" weight="0.6496764" />
+      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.4955595" visible="true" weight="0.6496764" />
       <window_info id="Structure" order="2" sideWeight="0.5026643" side_tool="true" weight="0.32928804" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Build Variants" order="4" side_tool="true" />
@@ -477,15 +482,15 @@
       <window_info id="Designer" order="6" />
       <window_info id="Resources Explorer" order="7" sideWeight="0.4973357" weight="0.32928804" />
       <window_info id="Capture Tool" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="0" weight="0.3268206" />
+      <window_info anchor="bottom" id="Version Control" order="0" weight="0.32641292" />
       <window_info anchor="bottom" id="SonarQube" order="1" />
       <window_info anchor="bottom" id="Logcat" order="2" weight="0.3285968" />
-      <window_info anchor="bottom" id="TODO" order="3" />
+      <window_info anchor="bottom" id="TODO" order="3" weight="0.3298731" />
       <window_info anchor="bottom" id="Terminal" order="4" weight="0.3285968" />
       <window_info anchor="bottom" id="Event Log" order="5" side_tool="true" weight="0.3285968" />
-      <window_info anchor="bottom" id="Build" order="6" weight="0.3197158" />
-      <window_info anchor="bottom" id="Android Profiler" order="7" weight="0.3285968" />
-      <window_info anchor="bottom" id="Run" order="8" weight="0.8525755" />
+      <window_info anchor="bottom" id="Build" order="6" weight="0.3194925" />
+      <window_info anchor="bottom" id="Android Profiler" order="7" show_stripe_button="false" weight="0.3285968" />
+      <window_info anchor="bottom" id="Run" order="8" weight="0.8523645" />
       <window_info anchor="bottom" id="Debug" order="9" />
       <window_info anchor="bottom" id="Find" order="10" weight="0.3285968" />
       <window_info anchor="right" id="Coverage" order="0" side_tool="true" weight="0.32605177" />
@@ -545,13 +550,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/build/generated/source/buildConfig/debug/com/tai/lab3/BuildConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build/generated/source/buildConfig/debug/com/tai/lab3/BuildConfig.java" />
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
@@ -566,54 +565,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tai/lab3/Views/DonutChart.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="479">
-          <caret line="54" column="81" selection-start-line="54" selection-start-column="81" selection-end-line="54" selection-end-column="81" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#762#763#0" expanded="true" />
-            <element signature="e#796#797#0" expanded="true" />
-            <element signature="e#825#826#0" expanded="true" />
-            <element signature="e#853#854#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tai/lab3/StepDetection/RotationFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="47" selection-start-line="3" selection-start-column="47" selection-end-line="3" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tai/lab3/StepDetection/FrequencyFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/test/java/com/tai/lab3/DonutChartTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tai/lab3/StepDetection/AccelerometerManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="47" column="5" lean-forward="true" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tai/lab3/Views/DonutChart.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tai/lab3/StepDetection/RotationFilter.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tai/lab3/StepDetection/FrequencyFilter.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/test/java/com/tai/lab3/DonutChartTest.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tai/lab3/StepDetection/AccelerometerManager.java" />
     <entry file="file://$PROJECT_DIR$/app/src/test/java/com/tai/lab3/Views/DoughnutChartTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
@@ -634,18 +590,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/test/java/com/tai/lab3/StepDetection/StepDetectorTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="18" column="28" lean-forward="true" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
-          <folding>
-            <element signature="e#831#832#0" expanded="true" />
-            <element signature="e#894#895#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/top_menu.xml">
+      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="4" column="40" selection-start-line="4" selection-start-column="40" selection-end-line="4" selection-end-column="40" />
@@ -654,46 +600,19 @@
           </folding>
         </state>
       </provider>
-      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="12" column="33" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="45" />
         </state>
       </provider>
+      <provider editor-type-id="android-manifest" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/test/java/com/tai/lab3/MainActivityTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tai/lab3/Views/DoughnutChart.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tai/lab3/Views/StepsCount.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="22" column="21" lean-forward="true" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/test/java/com/tai/lab3/MainActivityTest.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tai/lab3/Constants.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
@@ -711,32 +630,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tai/lab3/StepDetection/VectorOperations.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="41" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="41" />
+        <state relative-caret-position="342">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tai/lab3/Views/DoughnutChart.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="19" column="31" lean-forward="true" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/test/java/com/tai/lab3/StepDetection/VectorOperationsTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
+        <state relative-caret-position="540">
           <caret line="31" column="1" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tai/lab3/StepDetection/VectorOperations.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="35" lean-forward="true" selection-start-column="35" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tai/lab3/Views/StepsCount.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/test/java/com/tai/lab3/StepDetection/StepDetectorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="479">
+          <caret line="40" column="18" selection-start-line="40" selection-start-column="18" selection-end-line="40" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/tai/lab3/StepDetection/StepDetector.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="68" column="28" lean-forward="true" selection-start-line="68" selection-start-column="28" selection-end-line="68" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        <state relative-caret-position="436">
+          <caret line="89" column="41" selection-start-line="89" selection-start-column="41" selection-end-line="89" selection-end-column="42" />
+          <folding>
+            <element signature="e#3166#3167#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

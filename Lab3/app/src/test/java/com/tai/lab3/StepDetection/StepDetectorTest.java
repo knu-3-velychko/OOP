@@ -37,6 +37,8 @@ public class StepDetectorTest {
     @Test
     public void detect() {
         assertFalse(stepDetector.detect(0, 0f, 0f, 0f));
+        assertFalse(stepDetector.detect(Constants.DEFAULT_DELAY,0f,0f,0f));
+        assertTrue(stepDetector.detect(Constants.DEFAULT_DELAY*2,100f,100f,100f));
     }
 
     @Test
