@@ -1,6 +1,6 @@
-package com.tai.lab3.StepDetection;
+package com.lab3.StepDetection;
 
-import com.tai.lab3.Constants;
+import com.lab3.Constants;
 
 import org.junit.Test;
 

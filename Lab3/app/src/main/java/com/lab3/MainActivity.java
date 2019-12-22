@@ -1,4 +1,4 @@
-package com.tai.lab3;
+package com.lab3;
 
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -9,9 +9,10 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.textview.MaterialTextView;
-import com.tai.lab3.StepDetection.StepDetector;
-import com.tai.lab3.Views.DoughnutChart;
-import com.tai.lab3.Views.StepsCount;
+import com.lab3.StepDetection.StepDetector;
+import com.lab3.R;
+import com.lab3.Views.DoughnutChart;
+import com.lab3.Views.StepsCount;
 
 public class MainActivity extends AppCompatActivity {
     private StepsCount count;

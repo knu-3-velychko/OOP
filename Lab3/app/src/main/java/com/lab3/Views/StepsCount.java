@@ -1,7 +1,7 @@
-package com.tai.lab3.Views;
+package com.lab3.Views;
 
 import com.google.android.material.textview.MaterialTextView;
-import com.tai.lab3.Constants;
+import com.lab3.Constants;
 
 public class StepsCount {
     private MaterialTextView textView;

@@ -1,26 +1,19 @@
-package com.tai.lab3.Views;
+package com.lab3.Views;
 
 import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
-import android.graphics.Canvas;
 import android.util.AttributeSet;
 
-import com.tai.lab3.R;
+import com.lab3.R;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.Mockito;
-
-import java.time.chrono.ThaiBuddhistEra;
 
 import static org.junit.Assert.*;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.anyCollection;
 import static org.mockito.ArgumentMatchers.anyInt;
-import static org.mockito.ArgumentMatchers.anyList;
 import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.mockingDetails;
 import static org.mockito.Mockito.when;
 
 public class DoughnutChartTest {
