@@ -1,11 +1,13 @@
 apply plugin: 'java'
+apply plugin: 'application'
+
+mainClassName='game.Main'
 
 sourceCompatibility = 11
 targetCompatibility = 11
 
 group 'game'
 version '1.0-SNAPSHOT'
-
 
 repositories {
     jcenter()
