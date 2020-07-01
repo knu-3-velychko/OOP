@@ -1,6 +1,6 @@
-package com.tai.lab3.StepDetection;
+package com.lab3.StepDetection;
 
-import com.tai.lab3.Constants;
+import com.lab3.Constants;
 
 public class StepDetector {
 
@@ -29,6 +29,9 @@ public class StepDetector {
 
     public StepDetector() {
         isActive = true;
+        for (int i = 0; i < velocitiesSize; i++) {
+            velocities[i] = 0f;
+        }
     }
 
     public double getThreshold() {
@@ -98,7 +101,12 @@ public class StepDetector {
     private void saveVelocity(float newVelocity) {
         velocitiesCounter++;
         int position = velocitiesCounter % velocitiesSize;
-        velocities[position] = newVelocity;
+        if (!Float.isNaN(newVelocity)) {
+            velocities[position] = newVelocity;
+        }
+        else{
+            velocities[position]=0f;
+        }
     }
 
     public int getStepCount() {

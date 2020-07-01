@@ -1,4 +1,4 @@
-package com.tai.lab3.Views;
+package com.lab3.Views;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -11,7 +11,7 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.tai.lab3.R;
+import com.lab3.R;
 
 public class DoughnutChart extends ViewGroup {
 

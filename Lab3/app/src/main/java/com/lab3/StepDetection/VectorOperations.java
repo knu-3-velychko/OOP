@@ -1,4 +1,4 @@
-package com.tai.lab3.StepDetection;
+package com.lab3.StepDetection;
 
 public class VectorOperations {
     public static float sum(float[] array) {

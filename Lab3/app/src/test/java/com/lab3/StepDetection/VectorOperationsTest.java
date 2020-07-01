@@ -1,4 +1,4 @@
-package com.tai.lab3.StepDetection;
+package com.lab3.StepDetection;
 
 import org.junit.Test;
 

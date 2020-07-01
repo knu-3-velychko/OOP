@@ -1,4 +1,4 @@
-package com.tai.lab3;
+package com.lab3;
 
 public class Constants {
     public static final int MAX_STEPS=10_000;

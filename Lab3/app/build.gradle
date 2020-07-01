@@ -10,7 +10,7 @@ android {
     useLibrary 'android.test.mock'
 
     defaultConfig {
-        applicationId "com.tai.lab3"
+        applicationId "com.lab3"
         minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
@@ -33,11 +33,11 @@ android {
 }
 
 dependencies {
-    api 'com.google.android.material:material:1.2.0-alpha02'
-    implementation 'com.google.android.material:material:1.2.0-alpha02'
+    api 'com.google.android.material:material:1.2.0-alpha03'
+    implementation 'com.google.android.material:material:1.2.0-alpha03'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'com.android.volley:volley:1.1.1'
-    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.google.code.gson:gson:2.8.6'
     testImplementation 'junit:junit:4.12'// Core library
     androidTestImplementation 'androidx.test:core:1.2.0'
 
@@ -48,7 +48,7 @@ dependencies {
     // Assertions
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.ext:truth:1.2.0'
-    androidTestImplementation 'com.google.truth:truth:0.42'
+    androidTestImplementation 'com.google.truth:truth:1.0'
 
     // Espresso dependencies
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
