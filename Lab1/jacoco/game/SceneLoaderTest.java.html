@@ -4,36 +4,46 @@ import com.jme3.asset.AssetManager;
 import com.jme3.bullet.BulletAppState;
 import com.jme3.math.Vector3f;
 import com.jme3.scene.Node;
+import com.jme3.system.AppSettings;
 import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-<span class="fc" id="L12">public class SceneLoaderTest {</span>
+<span class="fc" id="L13">public class SceneLoaderTest {</span>
 
-<span class="fc" id="L14">    private GameController gameController = new GameController();</span>
+<span class="fc" id="L15">    private static GameController gameController = new GameController(true, 20);</span>
 
+    static {
+<span class="fc" id="L18">        gameController.setShowSettings(false);</span>
+
+<span class="fc" id="L20">        AppSettings settings = new AppSettings(true);</span>
+<span class="fc" id="L21">        settings.setResolution(1280, 800);</span>
+<span class="fc" id="L22">        settings.setVSync(true);</span>
+<span class="fc" id="L23">        settings.setDepthBits(24);</span>
+<span class="fc" id="L24">        settings.setGammaCorrection(false);</span>
+<span class="fc" id="L25">        gameController.setSettings(settings);</span>
+<span class="fc" id="L26">    }</span>
     private Node rootNode;
     private BulletAppState bulletAppState;
-    private AssetManager assetManager;
 
     @Before
     public void setUp() {
-<span class="fc" id="L22">        gameController.start();</span>
-<span class="fc" id="L23">        gameController.okButtonClick();</span>
+<span class="fc" id="L32">        gameController.start();</span>
+<span class="fc" id="L33">        gameController.okButtonClick();</span>
 
-<span class="fc" id="L25">        rootNode = gameController.getRootNode();</span>
-<span class="fc" id="L26">        bulletAppState = gameController.getStateManager().getState(BulletAppState.class);</span>
-<span class="fc" id="L27">        assetManager = gameController.getAssetManager();</span>
+<span class="fc" id="L35">        rootNode = gameController.getRootNode();</span>
+<span class="fc" id="L36">        bulletAppState = gameController.getStateManager().getState(BulletAppState.class);</span>
+<span class="fc" id="L37">        AssetManager assetManager = gameController.getAssetManager();</span>
 
-<span class="fc" id="L29">        SceneLoader sceneLoader = new SceneLoader(rootNode, bulletAppState, assetManager);</span>
-<span class="fc" id="L30">    }</span>
+<span class="fc" id="L39">        new SceneLoader(rootNode, bulletAppState, assetManager);</span>
+<span class="fc" id="L40">    }</span>
 
     @Test
     public void setSceneLoader() {
-<span class="fc" id="L34">        assertFalse(bulletAppState.getPhysicsSpace().getRigidBodyList().isEmpty());</span>
-<span class="fc" id="L35">        assertEquals(rootNode.getChildren().get(0).getName(), &quot;Ground&quot;);</span>
-<span class="fc" id="L36">        assertEquals(rootNode.getChildren().get(0).getWorldTranslation(),new Vector3f(0.1f, -0.1f, -100f));</span>
-<span class="fc" id="L37">    }</span>
+<span class="fc" id="L44">        assertFalse(bulletAppState.getPhysicsSpace().getRigidBodyList().isEmpty());</span>
+<span class="fc" id="L45">        assertEquals(rootNode.getChildren().get(0).getName(), &quot;Ground&quot;);</span>
+<span class="fc" id="L46">        assertEquals(rootNode.getChildren().get(0).getWorldTranslation(),new Vector3f(0.1f, -0.1f, -100f));</span>
+<span class="fc" id="L47">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>

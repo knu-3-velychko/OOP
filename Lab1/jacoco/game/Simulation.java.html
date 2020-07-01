@@ -25,8 +25,8 @@ class Simulation {
 <span class="fc" id="L25">        ArrayList&lt;Geometry&gt; balls = new ArrayList&lt;&gt;();</span>
 <span class="fc bfc" id="L26" title="All 2 branches covered.">        for (Velocity2D i : vectors) {</span>
 <span class="fc" id="L27">            Ball ball = new Ball(assetManager);</span>
-<span class="fc" id="L28">            Vector3f start = new Vector3f(i.getStart().getX(), i.getStart().getY(), 10f);</span>
-<span class="fc" id="L29">            Vector3f velocity = new Vector3f(i.getVector().getX(), i.getVector().getY(), 0f);</span>
+<span class="fc" id="L28">            Vector3f start = new Vector3f(i.getStart().getKey(), i.getStart().getValue(), 10f);</span>
+<span class="fc" id="L29">            Vector3f velocity = new Vector3f(i.getVector().getKey(), i.getVector().getValue(), 0f);</span>
 <span class="fc" id="L30">            balls.add(ball.shoot(root, bulletAppState, start, velocity));</span>
 <span class="fc" id="L31">        }</span>
 <span class="fc" id="L32">        return balls;</span>

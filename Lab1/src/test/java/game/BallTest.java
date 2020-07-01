@@ -1,31 +1,37 @@
 package game;
 
-import com.jme3.app.SimpleApplication;
-import com.jme3.asset.AssetManager;
 import com.jme3.bullet.BulletAppState;
 import com.jme3.bullet.control.RigidBodyControl;
 import com.jme3.math.Vector3f;
-import com.jme3.renderer.Camera;
 import com.jme3.scene.Geometry;
-import com.jme3.scene.Node;
+import com.jme3.system.AppSettings;
 import org.junit.Before;
+import org.junit.Test;
 
-import static org.junit.Assert.*;
-
-import static org.mockito.Mockito.mock;
+import static org.junit.Assert.assertEquals;
 
 public class BallTest {
-    private GameController gameController = new GameController();
-    private Ball ball;
+    private static GameController gameController = new GameController(true, 20);
+
+    static {
+        gameController.setShowSettings(false);
+
+        AppSettings settings = new AppSettings(true);
+        settings.setResolution(1280, 800);
+        settings.setVSync(true);
+        settings.setDepthBits(24);
+        settings.setGammaCorrection(false);
+        gameController.setSettings(settings);
+    }    private Ball ball;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         gameController.start();
         gameController.okButtonClick();
         ball = new Ball(gameController.getAssetManager());
     }
 
-    @org.junit.Test
+    @Test
     public void shoot() {
         BulletAppState bulletAppState = gameController.getStateManager().getState(BulletAppState.class);
         Vector3f start = new Vector3f(3.0f, 3.0f, 3.0f);

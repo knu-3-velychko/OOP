@@ -16,84 +16,108 @@ import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-<span class="fc" id="L19">public class GameController extends SimpleApplication {</span>
+import javafx.util.Pair;
+
+public class GameController extends SimpleApplication {
+<span class="fc" id="L22">    private boolean isSelfTerminated = false;</span>
+<span class="fc" id="L23">    private int secondsTillTermination = 0;</span>
+<span class="fc" id="L24">    private long startTime = 0L;</span>
+
+<span class="fc" id="L26">    GameController(boolean isSelfTerminated, int secondsTillTermination) {</span>
+<span class="fc" id="L27">        this.isSelfTerminated = isSelfTerminated;</span>
+<span class="fc" id="L28">        this.secondsTillTermination = secondsTillTermination;</span>
+<span class="fc" id="L29">    }</span>
+
+<span class="fc" id="L31">    GameController() {</span>
+
+<span class="fc" id="L33">    }</span>
+
     private BulletAppState bulletAppState;
 
-<span class="fc" id="L22">    private ArrayList&lt;Velocity2D&gt; velocities = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L37">    private ArrayList&lt;Velocity2D&gt; velocities = new ArrayList&lt;&gt;();</span>
 
     private Nifty nifty;
     private NiftyJmeDisplay niftyDisplay;
 
     @Override
     public void simpleInitApp() {
-<span class="fc" id="L29">        nifty();</span>
-<span class="fc" id="L30">    }</span>
+<span class="fc" id="L44">        nifty();</span>
+<span class="fc" id="L45">    }</span>
 
     private void setUp() {
-<span class="fc" id="L33">        bulletAppState = new BulletAppState();</span>
-<span class="fc" id="L34">        stateManager.attach(bulletAppState);</span>
+<span class="fc" id="L48">        this.startTime = System.currentTimeMillis();</span>
+<span class="fc" id="L49">        bulletAppState = new BulletAppState();</span>
+<span class="fc" id="L50">        stateManager.attach(bulletAppState);</span>
 
-<span class="fc" id="L36">        viewPort.setBackgroundColor(new ColorRGBA(0.7f, 0.8f, 1f, 1f));</span>
+<span class="fc" id="L52">        viewPort.setBackgroundColor(new ColorRGBA(0.7f, 0.8f, 1f, 1f));</span>
 
-<span class="fc" id="L38">        cam.setLocation(new Vector3f(0f, 0f, 50f));</span>
-<span class="fc" id="L39">        bulletAppState.getPhysicsSpace().setGravity(new Vector3f(0.0f, 0.0f, 0.0f));</span>
+<span class="fc" id="L54">        cam.setLocation(new Vector3f(0f, 0f, 50f));</span>
+<span class="fc" id="L55">        bulletAppState.getPhysicsSpace().setGravity(new Vector3f(0.0f, 0.0f, 0.0f));</span>
 
-<span class="fc" id="L41">        SceneLoader sceneLoader = new SceneLoader(rootNode, bulletAppState, assetManager);</span>
-<span class="fc" id="L42">        Simulation simulation = new Simulation(assetManager, rootNode, bulletAppState);</span>
+<span class="fc" id="L57">        SceneLoader sceneLoader = new SceneLoader(rootNode, bulletAppState, assetManager);</span>
+<span class="fc" id="L58">        Simulation simulation = new Simulation(assetManager, rootNode, bulletAppState);</span>
 
-<span class="fc" id="L44">        simulation.run(velocities);</span>
-<span class="fc" id="L45">    }</span>
+<span class="fc" id="L60">        simulation.run(velocities);</span>
+<span class="fc" id="L61">    }</span>
 
 
     private void nifty() {
-<span class="fc" id="L49">        niftyDisplay = NiftyJmeDisplay.newNiftyJmeDisplay(assetManager, inputManager, audioRenderer, guiViewPort);</span>
-<span class="fc" id="L50">        nifty = niftyDisplay.getNifty();</span>
+<span class="fc" id="L65">        niftyDisplay = NiftyJmeDisplay.newNiftyJmeDisplay(assetManager, inputManager, audioRenderer, guiViewPort);</span>
+<span class="fc" id="L66">        nifty = niftyDisplay.getNifty();</span>
 
-<span class="fc" id="L52">        nifty.fromXml(&quot;GUI/Screen.xml&quot;, &quot;start&quot;);</span>
-<span class="fc" id="L53">        viewPort.addProcessor(niftyDisplay);</span>
-<span class="fc" id="L54">        flyCam.setDragToRotate(true);</span>
+<span class="fc" id="L68">        nifty.fromXml(&quot;GUI/Screen.xml&quot;, &quot;start&quot;);</span>
+<span class="fc" id="L69">        viewPort.addProcessor(niftyDisplay);</span>
+<span class="fc" id="L70">        flyCam.setDragToRotate(true);</span>
 
         // Controls onclick on button
-<span class="fc" id="L57">        Element niftyElement = Objects.requireNonNull(nifty.getCurrentScreen()).findElementById(&quot;okButton&quot;);</span>
-<span class="fc" id="L58">        niftyElement.getElementInteraction().getPrimary().setOnClickMethod(new NiftyMethodInvoker(nifty, &quot;okButtonClick()&quot;, this));</span>
-<span class="fc" id="L59">        System.out.println(this.getViewPort().getProcessors().get(0));</span>
-<span class="fc" id="L60">    }</span>
+<span class="fc" id="L73">        Element niftyElement = Objects.requireNonNull(nifty.getCurrentScreen()).findElementById(&quot;okButton&quot;);</span>
+<span class="fc" id="L74">        niftyElement.getElementInteraction().getPrimary().setOnClickMethod(new NiftyMethodInvoker(nifty, &quot;okButtonClick()&quot;, this));</span>
+<span class="fc" id="L75">        System.out.println(this.getViewPort().getProcessors().get(0));</span>
+<span class="fc" id="L76">    }</span>
 
     public final void okButtonClick() {
-<span class="fc" id="L63">        Logger LOGGER = Logger.getLogger(GameController.class.getName());</span>
+<span class="fc" id="L79">        Logger LOGGER = Logger.getLogger(GameController.class.getName());</span>
 
-<span class="fc" id="L65">        Screen screen = nifty.getCurrentScreen();</span>
+<span class="fc" id="L81">        Screen screen = nifty.getCurrentScreen();</span>
         TextField field1, field2, field3, field4;
         float value1, value2, value3, value4;
-<span class="pc bpc" id="L68" title="1 of 2 branches missed.">        for (int i = 0; i &lt; 10; i++) {</span>
+<span class="fc bfc" id="L84" title="All 2 branches covered.">        for (int i = 0; i &lt; 10; i++) {</span>
 
-<span class="fc" id="L70">            field1 = screen.findNiftyControl(&quot;input&quot; + (i + 1) + &quot;_1&quot;, TextField.class);</span>
-<span class="fc" id="L71">            field2 = screen.findNiftyControl(&quot;input&quot; + (i + 1) + &quot;_2&quot;, TextField.class);</span>
-<span class="fc" id="L72">            field3 = screen.findNiftyControl(&quot;input&quot; + (i + 1) + &quot;_3&quot;, TextField.class);</span>
-<span class="fc" id="L73">            field4 = screen.findNiftyControl(&quot;input&quot; + (i + 1) + &quot;_4&quot;, TextField.class);</span>
+<span class="fc" id="L86">            field1 = screen.findNiftyControl(&quot;input&quot; + (i + 1) + &quot;_1&quot;, TextField.class);</span>
+<span class="fc" id="L87">            field2 = screen.findNiftyControl(&quot;input&quot; + (i + 1) + &quot;_2&quot;, TextField.class);</span>
+<span class="fc" id="L88">            field3 = screen.findNiftyControl(&quot;input&quot; + (i + 1) + &quot;_3&quot;, TextField.class);</span>
+<span class="fc" id="L89">            field4 = screen.findNiftyControl(&quot;input&quot; + (i + 1) + &quot;_4&quot;, TextField.class);</span>
 
-<span class="pc bpc" id="L75" title="3 of 8 branches missed.">            if (&quot;0&quot;.equals(field1.getText()) &amp;&amp; &quot;0&quot;.equals(field2.getText()) &amp;&amp; &quot;0&quot;.equals(field3.getText()) &amp;&amp; &quot;0&quot;.equals(field4.getText()))</span>
-<span class="fc" id="L76">                break;</span>
-<span class="fc" id="L77">            value1 = (float) Double.parseDouble(field1.getText());</span>
-<span class="fc" id="L78">            value2 = (float) Double.parseDouble(field2.getText());</span>
-<span class="fc" id="L79">            value3 = (float) Double.parseDouble(field3.getText());</span>
-<span class="fc" id="L80">            value4 = (float) Double.parseDouble(field4.getText());</span>
+<span class="fc bfc" id="L91" title="All 8 branches covered.">            if (&quot;0&quot;.equals(field1.getText()) &amp;&amp; &quot;0&quot;.equals(field2.getText()) &amp;&amp; &quot;0&quot;.equals(field3.getText()) &amp;&amp; &quot;0&quot;.equals(field4.getText()))</span>
+<span class="fc" id="L92">                break;</span>
+<span class="fc" id="L93">            value1 = (float) Double.parseDouble(field1.getText());</span>
+<span class="fc" id="L94">            value2 = (float) Double.parseDouble(field2.getText());</span>
+<span class="fc" id="L95">            value3 = (float) Double.parseDouble(field3.getText());</span>
+<span class="fc" id="L96">            value4 = (float) Double.parseDouble(field4.getText());</span>
 
-<span class="fc" id="L82">            System.out.println(value3);</span>
-<span class="fc" id="L83">            System.out.println(value4);</span>
+<span class="fc" id="L98">            System.out.println(value3);</span>
+<span class="fc" id="L99">            System.out.println(value4);</span>
 
-
-<span class="fc" id="L86">            velocities.add(new Velocity2D(new Pair(value1, value2), new Pair(value3, value4)));</span>
+<span class="fc" id="L101">            velocities.add(new Velocity2D(new Pair&lt;&gt;(value1, value2), new Pair&lt;&gt;(value3, value4)));</span>
         }
 
-<span class="fc bfc" id="L89" title="All 2 branches covered.">        for (int i = 0; i &lt; velocities.size(); i++) {</span>
-<span class="fc" id="L90">            LOGGER.log(Level.WARNING, &quot;Vector {0} : {1} - {2}&quot;, new Object[]{i, velocities.get(i).getStart().getX(), velocities.get(i).getStart().getY()});</span>
+<span class="fc bfc" id="L104" title="All 2 branches covered.">        for (int i = 0; i &lt; velocities.size(); i++) {</span>
+<span class="fc" id="L105">            LOGGER.log(Level.WARNING, &quot;Vector {0} : {1} - {2}&quot;, new Object[]{i, velocities.get(i).getStart().getKey(), velocities.get(i).getStart().getValue()});</span>
         }
-<span class="fc" id="L92">        System.out.println(&quot;here&quot;);</span>
 
-<span class="fc" id="L94">        viewPort.removeProcessor(niftyDisplay);</span>
-<span class="fc" id="L95">        setUp();</span>
-<span class="fc" id="L96">    }</span>
+<span class="fc" id="L108">        viewPort.removeProcessor(niftyDisplay);</span>
+<span class="fc" id="L109">        setUp();</span>
+<span class="fc" id="L110">    }</span>
+
+    @Override
+    public void simpleUpdate(float ptf) {
+<span class="fc bfc" id="L114" title="All 2 branches covered.">        if (isSelfTerminated) {</span>
+<span class="fc" id="L115">            long endTime = System.currentTimeMillis();</span>
+<span class="pc bpc" id="L116" title="1 of 2 branches missed.">            if (endTime - startTime &gt;= secondsTillTermination * 1000L) {</span>
+<span class="fc" id="L117">                stop();</span>
+            }
+        }
+<span class="fc" id="L120">    }</span>
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>

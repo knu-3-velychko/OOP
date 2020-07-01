@@ -16,7 +16,22 @@ import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import javafx.util.Pair;
+
 public class GameController extends SimpleApplication {
+    private boolean isSelfTerminated = false;
+    private int secondsTillTermination = 0;
+    private long startTime = 0L;
+
+    GameController(boolean isSelfTerminated, int secondsTillTermination) {
+        this.isSelfTerminated = isSelfTerminated;
+        this.secondsTillTermination = secondsTillTermination;
+    }
+
+    GameController() {
+
+    }
+
     private BulletAppState bulletAppState;
 
     private ArrayList<Velocity2D> velocities = new ArrayList<>();
@@ -30,6 +45,7 @@ public class GameController extends SimpleApplication {
     }
 
     private void setUp() {
+        this.startTime = System.currentTimeMillis();
         bulletAppState = new BulletAppState();
         stateManager.attach(bulletAppState);
 
@@ -82,17 +98,25 @@ public class GameController extends SimpleApplication {
             System.out.println(value3);
             System.out.println(value4);
 
-
-            velocities.add(new Velocity2D(new Pair(value1, value2), new Pair(value3, value4)));
+            velocities.add(new Velocity2D(new Pair<>(value1, value2), new Pair<>(value3, value4)));
         }
 
         for (int i = 0; i < velocities.size(); i++) {
-            LOGGER.log(Level.WARNING, "Vector {0} : {1} - {2}", new Object[]{i, velocities.get(i).getStart().getX(), velocities.get(i).getStart().getY()});
+            LOGGER.log(Level.WARNING, "Vector {0} : {1} - {2}", new Object[]{i, velocities.get(i).getStart().getKey(), velocities.get(i).getStart().getValue()});
         }
-        System.out.println("here");
 
         viewPort.removeProcessor(niftyDisplay);
         setUp();
+    }
+
+    @Override
+    public void simpleUpdate(float ptf) {
+        if (isSelfTerminated) {
+            long endTime = System.currentTimeMillis();
+            if (endTime - startTime >= secondsTillTermination * 1000L) {
+                stop();
+            }
+        }
     }
 
 }
